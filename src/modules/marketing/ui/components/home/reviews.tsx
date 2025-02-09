@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/marquee";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const reviews = [
   {
@@ -152,46 +153,81 @@ const reviews = [
     body: "من أفضل المنصات التعليمية التي استخدمتها على الإطلاق.",
     img: "https://avatar.vercel.sh/eman",
   },
+  {
+    name: "سمير",
+    username: "@samir_n",
+    body: "المنصة تقدم تجربة تعليمية متكاملة وشاملة. أنصح بها بشدة!",
+    img: "https://avatar.vercel.sh/samir",
+  },
+  {
+    name: "رنا",
+    username: "@rana_m",
+    body: "الدعم الفني سريع الاستجابة وحل جميع مشاكلي بكفاءة عالية.",
+    img: "https://avatar.vercel.sh/rana",
+  },
+  {
+    name: "باسل",
+    username: "@basel_h",
+    body: "المحتوى التعليمي عالي الجودة ويغطي كل ما نحتاجه للنجاح.",
+    img: "https://avatar.vercel.sh/basel",
+  },
+  {
+    name: "دانا",
+    username: "@dana_r",
+    body: "أحب كيف يمكنني الدراسة في أي وقت يناسبني. مرونة رائعة!",
+    img: "https://avatar.vercel.sh/dana",
+  },
+  {
+    name: "كريم",
+    username: "@kareem_z",
+    body: "التفاعل مع المعلمين والطلاب الآخرين يجعل التعلم أكثر متعة.",
+    img: "https://avatar.vercel.sh/kareem",
+  },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
+const rowSize = Math.ceil(reviews.length / 3);
+const firstRow = reviews.slice(0, rowSize);
+const secondRow = reviews.slice(rowSize, rowSize * 2);
+const thirdRow = reviews.slice(rowSize * 2);
 
 const ReviewCard = ({
-                      img,
-                      name,
-                      username,
-                      body,
-                    }: {
+  img,
+  name,
+  username,
+  body,
+}: {
   img: string;
   name: string;
   username: string;
   body: string;
 }) => {
   return (
-    <figure
+    <Card
       className={cn(
-        "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        "border bg-accent/15 hover:bg-accent"
+        "relative w-64 cursor-pointer overflow-hidden !p-4",
+        "shadow-none bg-accent/15 hover:bg-accent"
       )}
     >
-      <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+      <CardHeader className="flex flex-row justify-between p-0 gap-2">
+        <div  className="flex flex-row items-center p-0 gap-2">
+        <img className="rounded-full h-10 w-10" width="50" height="50" alt="" src={"https://i.imgur.com/pnsLqpq.png"} />
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
+          <span className="text-sm font-medium dark:text-white">
             {name}
-          </figcaption>
+          </span>
           <p className="text-xs font-medium dark:text-white/40">{username}</p>
         </div>
-      </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
-    </figure>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" width="1200" height="1227" fill="none" viewBox="0 0 1200 1227"><path fill="#000" d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"/></svg>
+      </CardHeader>
+      <CardContent className="mt-2 text-sm p-0">{body}</CardContent>
+    </Card>
   );
 };
 
 export function Reviews() {
   return (
-    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden my-12 md:my-24">
       <Marquee pauseOnHover className="[--duration:50s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
@@ -199,6 +235,11 @@ export function Reviews() {
       </Marquee>
       <Marquee reverse pauseOnHover className="[--duration:50s]">
         {secondRow.map((review) => (
+          <ReviewCard key={review.username} {...review} />
+        ))}
+      </Marquee>
+      <Marquee pauseOnHover className="[--duration:50s]">
+        {thirdRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>

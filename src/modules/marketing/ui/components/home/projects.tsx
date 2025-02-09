@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
 
 interface Project {
   id: number
@@ -77,8 +78,8 @@ export function Projects() {
   }, [api])
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-8 rtl" dir="rtl">
-      <div className="flex items-center justify-between mb-6">
+    <div className="w-full max-w-6xl mx-auto px-4 my-12 relative">
+      <div className="flex items-center justify-between mb-6 no-select">
         <h2 className="text-2xl font-bold">المشاريع</h2>
         <Button variant="outline">
           المزيد
@@ -90,14 +91,19 @@ export function Projects() {
           loop: false,
           direction: "rtl"
         }}
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}
         className="w-full"
         setApi={setApi}
       >
-        <CarouselContent className="-ml-2 md:-ml-4">
+        <CarouselContent>
           {projects.map((project) => (
-            <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/4">
-              <Card className="overflow-hidden">
-                <div className="aspect-[4/3] relative">
+            <CarouselItem key={project.id} className="pb-2 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <Card className="overflow-hidden shadow-none no-select">
+                <div className="relative aspect-[4/3]">
                   <Image
                     // src={project.image}
                     src={"/img.png"}
@@ -116,12 +122,12 @@ export function Projects() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="hidden md:flex -right-12 left-auto"/>
-        <CarouselNext className="hidden md:flex -left-12 right-auto"/>
+        <CarouselPrevious className="flex !absolute translate-x-0 translate-y-0 !top-[-59px] !right-[calc(100%-146px)] z-50"/>
+        <CarouselNext className="flex !absolute translate-x-0 translate-y-0 !top-[-59px] !right-[calc(100%-110px)] z-50"/>
       </Carousel>
-      <div className="py-2 text-center text-sm text-muted-foreground mt-2">
+      {/* <div className="py-2 text-center text-sm text-muted-foreground mt-2">
         الشريحة {current} من {count}
-      </div>
+      </div> */}
     </div>
   )
 }

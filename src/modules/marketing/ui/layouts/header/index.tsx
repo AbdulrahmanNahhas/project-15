@@ -232,7 +232,7 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
 
         {/* Login & Mobile Menu */}
         <div className="flex items-center gap-4">
-          <Button className={"rounded-full"} asChild>
+          <Button className={"rounded-full hidden xs:block"} asChild>
             <Link href="/sign-in">
               تسجيل الدخول
             </Link>

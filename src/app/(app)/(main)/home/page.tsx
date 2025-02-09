@@ -25,105 +25,41 @@ import { Separator } from "@/components/ui/separator"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
-const subjects = [
-  { id: 1, name: "الرياضيات", progress: 75, icon: PenTool },
-  { id: 2, name: "العلوم", progress: 60, icon: Snowflake },
-  { id: 3, name: "اللغة العربية", progress: 90, icon: BookOpen },
-  { id: 4, name: "التاريخ", progress: 45, icon: GraduationCap },
-]
-
-const assignments = [
-  { id: 1, title: "واجب الرياضيات", subject: "الرياضيات", dueDate: "2023-06-15", completed: false },
-  { id: 2, title: "تجربة العلوم", subject: "العلوم", dueDate: "2023-06-12", completed: true },
-  { id: 3, title: "كتابة مقال", subject: "اللغة العربية", dueDate: "2023-06-14", completed: false },
-  { id: 4, title: "عرض تقديمي عن الحضارات القديمة", subject: "التاريخ", dueDate: "2023-06-18", completed: false },
-]
-
-const exams = [
-  { id: 1, subject: "الرياضيات", date: "2023-06-20", time: "09:00 ص" },
-  { id: 2, subject: "العلوم", date: "2023-06-22", time: "10:30 ص" },
-  { id: 3, subject: "اللغة العربية", date: "2023-06-25", time: "11:00 ص" },
-]
-
 export default function Dashboard() {
   return (
     <div className="min-h-screen bg-transparent container mx-auto" dir="rtl">
       <div className="flex flex-col lg:flex-row gap-6 p-4 sm:p-6">
         {/* Main Content */}
         <div className="flex-1 space-y-6">
-          {/* Subject Progress */}
-          <Card>
+          {/* Card 1*/}
+          <Card className="shadow-none">
             <CardHeader className="flex !items-start justify-between flex-row">
-              <h2 className="text-lg sm:text-xl font-bold">تقدم المواد الدراسية</h2>
-              <Button variant={"outline"} size={"sm"} className="mb-auto !mt-0 border-0 text-primary shadow-sm text-xs"><ExternalLink/>التقدم</Button>
+              <h2 className="text-lg sm:text-xl font-bold"> Card Title</h2>
+              <Button variant={"outline"} size={"sm"} className="!mt-0"><ExternalLink/>Link</Button>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {subjects.map((subject) => (
-                  <div key={subject.id} className="flex items-center space-x-4 space-x-reverse">
-                    <subject.icon className="h-8 w-8 text-primary" />
-                    <div className="flex-1">
-                      <h3 className="font-medium">{subject.name}</h3>
-                      <div className="flex items-center">
-                        <Progress value={subject.progress} className="flex-1 mr-2" />
-                        <span className="text-sm font-medium">{subject.progress}%</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              Card
             </CardContent>
           </Card>
 
-          {/* Assignments */}
-          <Card>
-            <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-2 sm:space-y-0">
-              <h2 className="text-xl sm:text-2xl font-bold">الواجبات المدرسية</h2>
-              <Button variant="outline">إضافة واجب جديد</Button>
-            </CardHeader>
-            <CardContent className="overflow-x-auto">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="w-[40%]">الواجب</TableHead>
-                    <TableHead className="w-[20%]">المادة</TableHead>
-                    <TableHead className="w-[20%]">تاريخ التسليم</TableHead>
-                    <TableHead className="w-[20%]">الحالة</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {assignments.map((assignment) => (
-                    <TableRow key={assignment.id}>
-                      <TableCell className="font-medium">{assignment.title}</TableCell>
-                      <TableCell>{assignment.subject}</TableCell>
-                      <TableCell>{assignment.dueDate}</TableCell>
-                      <TableCell>
-                        {assignment.completed ? (
-                          <Badge className="bg-green-500">مكتمل</Badge>
-                        ) : (
-                          <Badge className="bg-yellow-500">قيد التنفيذ</Badge>
-                        )}
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </CardContent>
-          </Card>
-
-          {/* Weekly Performance Chart */}
-          <Card>
-            <CardHeader>
-              <h2 className="text-xl sm:text-2xl font-bold">الأداء الأسبوعي</h2>
+          {/* Card 2*/}
+          <Card className="shadow-none">
+            <CardHeader className="flex !items-start justify-between flex-row">
+              <h2 className="text-lg sm:text-xl font-bold"> Card Title</h2>
+              <Button variant={"outline"} size={"sm"} className="!mt-0"><ExternalLink/>Link</Button>
             </CardHeader>
             <CardContent>
-              <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={subjects}>
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Bar dataKey="progress" fill="#3b82f6" />
-                </BarChart>
-              </ResponsiveContainer>
+              Card
+            </CardContent>
+          </Card>
+          {/* Card 3*/}
+          <Card className="shadow-none">
+            <CardHeader className="flex items-start justify-between flex-row">
+              <h2 className="text-lg sm:text-xl font-bold"> Card Title</h2>
+              <Button variant={"outline"} size={"sm"} className="!mt-0"><ExternalLink/>Link</Button>
+            </CardHeader>
+            <CardContent>
+              Card
             </CardContent>
           </Card>
         </div>
@@ -132,7 +68,6 @@ export default function Dashboard() {
         <div className="lg:w-[30%] min-w-[340px] space-y-6">
           <ProfileComponent />
           <StreakComponent />
-          <ExamsComponent />
         </div>
       </div>
     </div>
@@ -236,56 +171,3 @@ const StreakComponent = () => {
   </div>
   )
 }
-
-const ExamsComponent = () => {
-  return (
-    <Card className="shadow-sm">
-      <CardHeader>
-        <h2 className="text-lg sm:text-xl font-bold">الاختبارات القادمة</h2>
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-4">
-          {exams.map((exam) => (
-            <div key={exam.id} className="flex items-center space-x-4 space-x-reverse">
-              <div className="flex-shrink-0 w-12 sm:w-14 text-center">
-                <div className="text-xl sm:text-2xl font-bold">{exam.date.split("-")[2]}</div>
-                <div className="text-xs text-gray-500">
-                  {
-                    [
-                      "يناير",
-                      "فبراير",
-                      "مارس",
-                      "أبريل",
-                      "مايو",
-                      "يونيو",
-                      "يوليو",
-                      "أغسطس",
-                      "سبتمبر",
-                      "أكتوبر",
-                      "نوفمبر",
-                      "ديسمبر",
-                    ][Number.parseInt(exam.date.split("-")[1]) - 1]
-                  }
-                </div>
-              </div>
-              <div className="flex-1">
-                <h3 className="font-medium">{exam.subject}</h3>
-                <p className="text-sm text-gray-500">{exam.time}</p>
-              </div>
-              <Button variant="outline" size="sm">
-                التفاصيل
-              </Button>
-            </div>
-          ))}
-        </div>
-      </CardContent>
-      <CardFooter>
-        <Button variant="outline" className="w-full">
-          <Calendar className="ml-2 h-4 w-4" />
-          عرض جميع الاختبارات
-        </Button>
-      </CardFooter>
-    </Card>
-  )
-}
-

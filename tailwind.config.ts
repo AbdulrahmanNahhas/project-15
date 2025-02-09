@@ -14,6 +14,9 @@ export default {
   		}
   	},
   	extend: {
+			screens: {
+				xs: '540px',
+			},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
