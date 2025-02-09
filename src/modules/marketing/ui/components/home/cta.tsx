@@ -1,6 +1,7 @@
 import {Button} from "@/components/ui/button";
 import {ArrowLeft} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function CTA() {
   return (
@@ -31,8 +32,11 @@ export function CTA() {
               <Button
                 variant={"default"}
                 className={"bg-white text-foreground hover:bg-white/90 scale-100 hover:scale-105 transition-all !duration-300"}
+                asChild
               >
+              <Link href="/sign-in">
                 تسجيل الدخول
+              </Link>
               </Button>
               <Button variant={"link"} className={"text-white"}>
                 تواصل معنا

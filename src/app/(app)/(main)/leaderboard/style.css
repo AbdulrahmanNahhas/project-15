@@ -1,0 +1,34 @@
+.league-icon--active.league-icon--pink {
+  fill: #fbcfe8;
+  stroke: #f9a8d4;
+}
+
+.league-icon--active.league-icon--blue {
+  fill: #bfdbfe;
+  stroke: #93c5fd;
+}
+
+.league-icon--active.league-icon--green {
+  fill: #bbf7d0;
+  stroke: #86efac;
+}
+
+.league-icon--active.league-icon--red {
+  fill: #fecaca;
+  stroke: #fca5a5;
+}
+
+.league-icon--active.league-icon--purple {
+  fill: #e9d5ff;
+  stroke: #d8b4fe;
+}
+
+.league-icon--active.league-icon--gray {
+  fill: #f3f4f6;
+  stroke: #d1d5db;
+}
+
+.league-icon--inactive {
+  fill: #f3f4f6;
+  stroke: #e5e7eb;
+}

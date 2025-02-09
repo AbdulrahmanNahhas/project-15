@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/navigation-menu"
 
 // Icons & Utils
-import { Menu } from 'lucide-react'
+import { Clock2Icon, Icon, Menu, TvIcon } from 'lucide-react'
 import { motion, useScroll } from 'motion/react'
 import { cn } from "@/lib/utils"
 
@@ -50,7 +50,7 @@ const services = [
   {
     title: "خدمات المتطوعين",
     href: "/services/volunteer-services", 
-    description: "تعرف على الخدمات التي نقدمها للمتطوعين",
+    description: "الخدمات التي نقدمها للمتطوعين",
   },
   {
     title: "دليل المتدرب",
@@ -83,14 +83,17 @@ const ListItem = ({ className, title, children, href }: ListItemProps) => {
       <Link
         href={href}
         className={cn(
-          "block select-none space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+          "select-none flex items-start gap-2 space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
           className
         )}
       >
-        <div className="text-sm font-medium leading-none">{title}</div>
-        <p className="block text-sm leading-snug text-muted-foreground">
-          {children}
-        </p>
+        <Clock2Icon className="h-auto w-10 aspect-square border rounded-sm p-2" />
+        <div className="flex flex-col gap-1 w-full">
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="block text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </div>
       </Link>
     </NavigationMenuLink>
   )
@@ -149,7 +152,7 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
             {/* Home */}
             <NavigationMenuItem className={"!m-0"}>
               <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent rounded-full")}>
                   الرئيسية
                 </NavigationMenuLink>
               </Link>
@@ -157,7 +160,7 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
 
             {/* About Us */}
             <NavigationMenuItem className={"!m-0"}>
-              <NavigationMenuTrigger className={"bg-transparent gap-1"}>من نحن</NavigationMenuTrigger>
+              <NavigationMenuTrigger className={"bg-transparent gap-1 rounded-full"}>من نحن</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                   <li className="row-span-3">
@@ -186,9 +189,9 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
 
             {/* Community */}
             <NavigationMenuItem className={"!m-0"}>
-              <NavigationMenuTrigger className={"bg-transparent gap-1"}>المجتمع</NavigationMenuTrigger>
+              <NavigationMenuTrigger className={"bg-transparent gap-1 rounded-full"}>المجتمع</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[380px]">
                   <ListItem href="/community/news" title="الأخبار والإعلانات">
                     آخر الأخبار والإعلانات عن أنشطتنا ومبادراتنا
                   </ListItem>
@@ -204,7 +207,7 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
 
             {/* Services */}
             <NavigationMenuItem className={"!m-0"}>
-              <NavigationMenuTrigger className={"bg-transparent gap-1"}>الخدمات</NavigationMenuTrigger>
+              <NavigationMenuTrigger className={"bg-transparent gap-1 rounded-full"}>الخدمات</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                   {services.map((service) => (
@@ -219,7 +222,7 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
             {/* Blog */}
             <NavigationMenuItem className={"!m-0"}>
               <Link href="/blog" legacyBehavior passHref>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent rounded-full")}>
                   المدونة
                 </NavigationMenuLink>
               </Link>
@@ -229,8 +232,10 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
 
         {/* Login & Mobile Menu */}
         <div className="flex items-center gap-4">
-          <Button className={"rounded-full"}>
-            تسجيل الدخول
+          <Button className={"rounded-full"} asChild>
+            <Link href="/sign-in">
+              تسجيل الدخول
+            </Link>
           </Button>
 
           {/* Mobile Menu Sheet */}
@@ -245,31 +250,69 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] h-full flex flex-col place-items-stretch">
-              <nav className="flex flex-col gap-4">
-                {/* Logo */}
-                <Link className="flex items-center gap-x-2" href="#">
-                  <Image className="h-8 w-auto" alt={"Logo"} src={"/logo.png"} width={50} height={50} />
-                  <span className="text-xl font-semibold whitespace-nowrap">المنصة السورية</span>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] h-full flex flex-col place-items-stretch overflow-scroll">
+              {/* Logo */}
+              <Link className="flex items-center gap-x-2" href="/">
+                <Image className="h-8 w-auto" alt={"Logo"} src={"/logo.png"} width={50} height={50} />
+                <span className="text-xl font-semibold whitespace-nowrap">المنصة السورية</span>
+              </Link>
+              <nav className="flex flex-col gap-4 h-full overflow-scroll">
+                
+                {/* Main Links */}
+                <div className="flex flex-col gap-2 h-full">
+                  <Link className="text-lg font-medium hover:bg-accent hover:text-accent-foreground rounded-lg p-3 transition-colors" href="/">
+                    الرئيسية
                   </Link>
-                <Link className="text-lg font-semibold" href="/">
-                  الرئيسية
-                </Link>
-                <Link className="text-lg font-semibold" href="/about">
-                  من نحن
-                </Link>
-                <Link className="text-lg font-semibold" href="/community">
-                  المجتمع
-                </Link>
-                <Link className="text-lg font-semibold" href="/services">
-                  الخدمات
-                </Link>
-                <Link className="text-lg font-semibold" href="/blog">
-                  المدونة
-                </Link>
+                  
+                  {/* About Us Links */}
+                  <div className="flex flex-col gap-1">
+                    <Link className="text-lg font-medium hover:bg-accent hover:text-accent-foreground rounded-lg p-3 transition-colors" href="/about">
+                      من نحن
+                    </Link>
+                    {aboutUs.map((item) => (
+                      <Link key={item.href} className="text-sm text-muted-foreground hover:text-foreground pr-6 py-2 transition-colors" href={item.href}>
+                        {item.title}
+                      </Link>
+                    ))}
+                  </div>
+
+                  {/* Community Links */}
+                  <div className="flex flex-col gap-1">
+                    <Link className="text-lg font-medium hover:bg-accent hover:text-accent-foreground rounded-lg p-3 transition-colors" href="/community">
+                      المجتمع
+                    </Link>
+                    <Link className="text-sm text-muted-foreground hover:text-foreground pr-6 py-2 transition-colors" href="/community/news">
+                      الأخبار والإعلانات
+                    </Link>
+                    <Link className="text-sm text-muted-foreground hover:text-foreground pr-6 py-2 transition-colors" href="/community/forum">
+                      المنتدى
+                    </Link>
+                    <Link className="text-sm text-muted-foreground hover:text-foreground pr-6 py-2 transition-colors" href="/community/resources">
+                      وثائق وإرشادات
+                    </Link>
+                  </div>
+
+                  {/* Services Links */}
+                  <div className="flex flex-col gap-1">
+                    <Link className="text-lg font-medium hover:bg-accent hover:text-accent-foreground rounded-lg p-3 transition-colors" href="/services">
+                      الخدمات
+                    </Link>
+                    {services.map((service) => (
+                      <Link key={service.href} className="text-sm text-muted-foreground hover:text-foreground pr-6 py-2 transition-colors" href={service.href}>
+                        {service.title}
+                      </Link>
+                    ))}
+                  </div>
+
+                  <Link className="text-lg font-medium hover:bg-accent hover:text-accent-foreground rounded-lg p-3 transition-colors" href="/blog">
+                    المدونة
+                  </Link>
+                </div>
               </nav>
-              <Button size={"lg"} className={"mt-auto"}>
-                تسجيل الدخول
+              <Button size={"lg"} className='h-12' asChild>
+                <Link href="/sign-in">
+                  تسجيل الدخول
+                </Link>
               </Button>
             </SheetContent>
           </Sheet>

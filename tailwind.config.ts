@@ -8,11 +8,11 @@ export default {
 			"./src/modules/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-		container: {
-			screens: {
-				xl: "1152px"
-			}
-		},
+  	container: {
+  		screens: {
+  			xl: '1152px'
+  		}
+  	},
   	extend: {
   		colors: {
   			background: 'hsl(var(--background))',

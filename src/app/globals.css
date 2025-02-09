@@ -123,3 +123,13 @@ body {
   user-select: none; /* Non-prefixed version, currently
                                 supported by Chrome, Edge, Opera and Firefox */
 }
+
+/* Fix Shadows */
+.auth-card-shadow {
+  --tw-shadow: 0 0 150px -12px rgb(0 0 0 / 0.1) !important;
+  --tw-shadow-colored: 0 0 150px -12px var(--tw-shadow-color) !important;
+  --tw-shadow-color: hsl(var(--primary) / 0.5) !important;
+  --tw-shadow: var(--tw-shadow-colored) !important;
+
+  filter: drop-shadow(rgba(0, 0, 0, 0.05) 0px 1px 1px) imo !important;
+}

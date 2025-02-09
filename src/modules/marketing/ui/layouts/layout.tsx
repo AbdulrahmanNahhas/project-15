@@ -5,7 +5,7 @@ import Footer from './footer'
 import { Banner } from "./banner"
 
 import { Button } from '@/components/ui/button'
-import { Clock, TicketPercent, X } from 'lucide-react'
+import { Clock, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils';
 
