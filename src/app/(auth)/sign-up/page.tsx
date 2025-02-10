@@ -31,7 +31,7 @@ import {
 // Custom Components
 import FormError from "@/modules/auth/components/form-error";
 import FormSuccess from "@/modules/auth/components/form-success";
-// import { Social } from "@/components/auth/social";
+import { Social } from "@/modules/auth/components/social";
 
 // Utils
 import { cn } from "@/lib/utils";
@@ -267,7 +267,7 @@ const SignUpPage = () => {
         </Form>
 
         {/* Social Login */}
-        {/* <Social className="mt-2"/> */}
+        <Social className="mt-2"/>
 
         {/* Sign In Link */}
         <div className="flex mt-4 items-center justify-center">

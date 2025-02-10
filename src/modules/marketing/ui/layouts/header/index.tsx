@@ -106,13 +106,9 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
 
   // Handle scroll events
   useEffect(() => {
-    const unsubscribe = scrollY.onChange((latest) => {
+    return scrollY.on("change", (latest) => {
       setIsScrolled(latest > 0)
     })
-
-    return () => {
-      unsubscribe()
-    }
   }, [scrollY])
 
   return (

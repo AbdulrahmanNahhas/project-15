@@ -11,9 +11,7 @@ const AppLayout = async ({ children }: { children: React.ReactNode }) => {
       <AppSidebar side="right" />
       <SidebarInset>
         <SidebarNavbar />
-        <main className="px-4">
-        {children}
-        </main>
+        <main className="px-4">{children}</main>
       </SidebarInset>
     </SidebarProvider>
   );

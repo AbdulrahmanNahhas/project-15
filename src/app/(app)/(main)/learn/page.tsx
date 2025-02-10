@@ -96,11 +96,11 @@ const subjects = [
 
 export default function Learn () {
   return (
-    <>
-      <h1 className={"my-6 font-black text-3xl mx-auto"}>
+    <div className="container mx-auto">
+      <h1 className={"my-6 font-bold text-3xl mx-auto border-b pb-5"}>
         المواد الدراسية
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 p-3 container mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 my-6 container mx-auto">
         {subjects.map((subject, index) => (
           <Card key={index} className="group hover:bg-accent shadow-none">
             <Link href={`/learn/1`} className="flex md:flex-col gap-0">
@@ -124,6 +124,6 @@ export default function Learn () {
           </Card>
         ))}
       </div>
-    </>
+    </div>
   )
 }
