@@ -1,23 +1,15 @@
-// استيراد المكونات الأساسية
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
-import { MoreHorizontal, Zap, X, BadgeCheck } from "lucide-react"
+import { MoreHorizontal, Zap } from "lucide-react"
 import EarnBadge from "@/modules/app/ui/components/user/earn-badge"
 
-/**
- * صفحة الملف الشخصي
- * تعرض معلومات الطالب والإحصائيات والإنجازات
- */
 export default function ProfilePage() {
   return (
     <div className="container mx-auto p-4 space-y-6">
-      {/* رأس الصفحة */}
       <div className="space-y-4">
-        {/* معلومات الطالب الأساسية */}
         <div className="flex justify-between items-center mb-10">
           <div className="flex gap-4 items-center">
             <Avatar className="w-24 h-24">

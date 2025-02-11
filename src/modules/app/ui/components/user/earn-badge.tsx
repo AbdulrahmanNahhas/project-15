@@ -2,8 +2,9 @@ import React from 'react'
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { BadgeCheck, CheckIcon, Zap } from "lucide-react"
+import { BadgeCheck, CheckIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
+
 const EarnBadge = () => {
   return (
     <Card className="border-0 shadow-none space-y-4 bg-accent/75 rounded-3xl p-12">

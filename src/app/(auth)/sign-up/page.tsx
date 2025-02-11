@@ -3,7 +3,7 @@
 // React and Next.js imports
 import { useState, useTransition } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 // Form validation
 import * as z from "zod";
@@ -49,7 +49,7 @@ const SignUpPage = () => {
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
-  const router = useRouter();
+  // const router = useRouter();
 
   // Initialize form with Zod schema
   const form = useForm<z.infer<typeof RegisterSchema>>({
@@ -72,6 +72,7 @@ const SignUpPage = () => {
     setSuccess("");
 
     startTransition(() => {
+      console.log(values);
       // register(values)
       //   .then((data) => {
       //     if (data?.error) {

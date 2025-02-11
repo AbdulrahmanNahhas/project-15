@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/navigation-menu"
 
 // Icons & Utils
-import { Clock2Icon, Icon, Menu, TvIcon } from 'lucide-react'
+import { Clock2Icon, Menu } from 'lucide-react'
 import { motion, useScroll } from 'motion/react'
 import { cn } from "@/lib/utils"
 

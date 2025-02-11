@@ -7,14 +7,14 @@ export function Video() {
         className="dark:hidden block"
         animationStyle="top-in-bottom-out"
         videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-        thumbnailSrc="https://wallpapers.com/images/featured/education-d4w62mny8rdusxe0.jpg"
+        thumbnailSrc="/videowallpaper.png"
         thumbnailAlt="Hero Video"
       />
       <HeroVideoDialog
         className="hidden dark:block"
         animationStyle="top-in-bottom-out"
         videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-        thumbnailSrc="https://wallpapers.com/images/featured/education-d4w62mny8rdusxe0.jpg"
+        thumbnailSrc="/videowallpaper.png"
         thumbnailAlt="Hero Video"
       />
     </div>

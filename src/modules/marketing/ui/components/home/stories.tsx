@@ -2,8 +2,9 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 // import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { ArrowLeftIcon, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 type Story = {
   quote: string;
@@ -20,9 +21,9 @@ export const Stories = ({
 }) => {
   const [active, setActive] = useState(0);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setActive((prev) => (prev + 1) % testimonials.length);
-  };
+  }, [testimonials.length]);
 
   const handlePrev = () => {
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
@@ -37,7 +38,7 @@ export const Stories = ({
       const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
+  }, [autoplay, handleNext]);
 
   const randomRotateY = (index: number) => {
     const predefinedRotations = [-10, -7, -5, 5, 7, 10]; // Define a set of rotations
@@ -81,7 +82,7 @@ export const Stories = ({
                   }}
                   className="absolute inset-0 origin-bottom"
                 >
-                  <img
+                  <Image
                     src={testimonial.src}
                     alt={testimonial.name}
                     width={500}

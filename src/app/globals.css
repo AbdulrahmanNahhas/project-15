@@ -126,8 +126,8 @@ body {
 
 /* Fix Shadows */
 .auth-card-shadow {
-  --tw-shadow: 0 0 150px -12px rgb(0 0 0 / 0.1) !important;
-  --tw-shadow-colored: 0 0 150px -12px var(--tw-shadow-color) !important;
+  --tw-shadow: 0 0 80px -12px rgb(0 0 0 / 0.1) !important;
+  --tw-shadow-colored: 0 0 80px -12px var(--tw-shadow-color) !important;
   --tw-shadow-color: hsl(var(--primary) / 0.5) !important;
   --tw-shadow: var(--tw-shadow-colored) !important;
 

@@ -47,7 +47,7 @@ export function CTA() {
           <div className="relative mt-16 h-80 lg:mt-8">
             <Image
               alt="App screenshot"
-              src="/Wallpaper.png"
+              src="/cta-wallpaper.png"
               width={1824}
               height={1080}
               className="absolute right-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"

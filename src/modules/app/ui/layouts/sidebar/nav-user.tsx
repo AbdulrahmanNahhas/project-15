@@ -1,13 +1,9 @@
 "use client"
 
 import {
-  BadgeCheck,
-  Bell,
   ChevronsUpDown,
-  CreditCard,
   LogOut,
   Settings2Icon,
-  Sparkles,
   UserIcon,
 } from "lucide-react"
 
@@ -21,7 +17,6 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"

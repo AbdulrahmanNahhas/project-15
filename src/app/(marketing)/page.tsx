@@ -6,7 +6,6 @@ import {
   Campaigns,
   Companies,
   Projects,
-  Stories,
   Video,
   Posts,
   CTA,

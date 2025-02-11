@@ -61,20 +61,20 @@ const projects: Project[] = [
 
 export function Projects() {
   const [api, setApi] = React.useState<CarouselApi>()
-  const [current, setCurrent] = React.useState(0)
-  const [count, setCount] = React.useState(0)
+  // const [current, setCurrent] = React.useState(0)
+  // const [count, setCount] = React.useState(0)
 
   React.useEffect(() => {
     if (!api) {
       return
     }
 
-    setCount(api.scrollSnapList().length)
-    setCurrent(api.selectedScrollSnap() + 1)
+    // setCount(api.scrollSnapList().length)
+    // setCurrent(api.selectedScrollSnap() + 1)
 
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1)
-    })
+    // api.on("select", () => {
+    //   setCurrent(api.selectedScrollSnap() + 1)
+    // })
   }, [api])
 
   return (
@@ -122,8 +122,8 @@ export function Projects() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="flex !absolute translate-x-0 translate-y-0 !top-[-59px] !right-[calc(100%-146px)] z-50"/>
-        <CarouselNext className="flex !absolute translate-x-0 translate-y-0 !top-[-59px] !right-[calc(100%-110px)] z-50"/>
+        <CarouselPrevious className="flex !absolute translate-x-0 translate-y-0 !top-[-59px] !right-[calc(100%-146px)]"/>
+        <CarouselNext className="flex !absolute translate-x-0 translate-y-0 !top-[-59px] !right-[calc(100%-110px)]"/>
       </Carousel>
       {/* <div className="py-2 text-center text-sm text-muted-foreground mt-2">
         الشريحة {current} من {count}

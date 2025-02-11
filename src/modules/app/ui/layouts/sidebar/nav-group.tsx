@@ -1,31 +1,17 @@
 "use client"
 
 import {
-  Folder,
-  Forward,
-  MoreHorizontal,
-  Trash2,
   type LucideIcon,
 } from "lucide-react"
 
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import {
   SidebarGroup,
   SidebarGroupLabel,
   SidebarMenu,
-  SidebarMenuAction,
   SidebarMenuButton,
-  SidebarMenuItem,
-  useSidebar,
+  SidebarMenuItem
 } from "@/components/ui/sidebar"
 import Link from "next/link";
-
 
 export function NavGroup({
   items,
@@ -50,10 +36,11 @@ export function NavGroup({
             <SidebarMenuButton
               tooltip={item.name}
               isActive={item.isActive}
-              asChild>
+              asChild disabled={item.url === "#"}
+              className={item.url === "#" ? "opacity-50 cursor-not-allowed" : ""}>
               <Link href={item.url}>
-                {item.icon && <item.icon />}
-                <span>{item.name}</span>
+                {item.icon && <item.icon className={item.url === "#" ? "text-muted-foreground" : ""} />}
+                <span className={item.url === "#" ? "text-muted-foreground" : ""}>{item.name}</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>

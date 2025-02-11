@@ -1,41 +1,19 @@
 "use client";
 
 import * as React from "react";
+
 import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
   LibraryIcon,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react";
-import {
   Award,
-  BookIcon,
-  EditIcon,
   FileText,
-  Flag, Folders, HomeIcon,
+  Flag,
   Layers,
   LineChart,
-  MicIcon, Sliders,
-  Users
-} from "lucide-react"
-import {
-  Blocks,
-  Calendar,
+  MicIcon,
+  Users,
   Home,
-  Inbox,
-  MessageCircleQuestion,
-  Search,
-  Sparkles,
-  Trash2,
-} from "lucide-react";
-
+  Inbox
+} from "lucide-react"
 import { NavMain } from "@/modules/app/ui/layouts/sidebar/nav-main";
 import { NavUser } from "@/modules/app/ui/layouts/sidebar/nav-user";
 import {
@@ -58,20 +36,20 @@ const data = {
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
-    {
-      title: "Search",
-      url: "#",
-      icon: Search,
-    },
-    {
-      title: "روبوتنا الذكي",
-      url: "#", 
-      icon: Sparkles,
-      isActive: true,
-    },
+    // {
+    //   title: "Search",
+    //   url: "#",
+    //   icon: Search,
+    // },
+    // {
+    //   title: "روبوتنا الذكي",
+    //   url: "#", 
+    //   icon: Sparkles,
+    //   isActive: true,
+    // },
     {
       title: "لوحة التحكم",
-      url: "#",
+      url: "/home",
       icon: Home,
     },
     {
@@ -79,11 +57,11 @@ const data = {
       url: "#",
       icon: Inbox,
     },
-    {
-      title: "المكتبة الرقمية", 
-      url: "#",
-      icon: LibraryIcon,
-    },
+    // {
+    //   title: "المكتبة الرقمية", 
+    //   url: "#",
+    //   icon: LibraryIcon,
+    // },
   ],
   navSecondary: [
     {
@@ -102,23 +80,23 @@ const data = {
         },
         {
           name: "المكتبة الرقمية",
-          url: "/library",
-          icon: BookIcon,
+          url: "/books",
+          icon: LibraryIcon,
         },
         {
           name: "الندوات",
-          url: "/coming-soon",
+          url: "#",
           icon: MicIcon,
         }
       ],
     },
     {
       title: "التفاعلات",
-      url: "",
+      url: "#",
       items: [
         {
           name: "المجتمع",
-          url: "/community",
+          url: "#",
           icon: Users,
         },
         // {
@@ -128,69 +106,69 @@ const data = {
         // },
         {
           name: "المسابقات",
-          url: "/events",
+          url: "#",
           icon: Flag,
         },
       ],
     },
     {
       title: "الإحصائيات",
-      url: "",
+      url: "#",
       items: [
         {
           name: "التقدم",
-          url: "/test",
+          url: "#",
           icon: LineChart,
         },
         {
           name: "الإنجازات",
-          url: "/test",
+          url: "#",
           icon: Award,
         },
-        {
-          name: "التحليل",
-          url: "/test",
-          icon: PieChart,
-        },
-        {
-          name: "الأداء",
-          url: "/test",
-          icon: Sliders,
-        },
+        // {
+        //   name: "التحليل",
+        //   url: "#",
+        //   icon: PieChart,
+        // },
+        // {
+        //   name: "الأداء",
+        //   url: "#",
+        //   icon: Sliders,
+        // },
       ],
     },
-    {
-      title: "الأدوات",
-      url: "",
-      items: [
-        {
-          name: "إدارة المحتوى",
-          url: "/test",
-          icon: EditIcon,
-        },
-        {
-          name: "الأدوات التعليمية",
-          url: "/test",
-          icon: BookOpen,
-        },
-        {
-          name: "الموارد",
-          url: "/test",
-          icon: Folders,
-        },
-        {
-          name: "التقارير",
-          url: "/test",
-          icon: FileText,
-        },
-      ],
-    },
+    // {
+    //   title: "الأدوات",
+    //   url: "#",
+    //   items: [
+    //     {
+    //       name: "إدارة المحتوى",
+    //       url: "/test",
+    //       icon: EditIcon,
+    //     },
+    //     {
+    //       name: "الأدوات التعليمية",
+    //       url: "/test",
+    //       icon: BookOpen,
+    //     },
+    //     {
+    //       name: "الموارد",
+    //       url: "/test",
+    //       icon: Folders,
+    //     },
+    //     {
+    //       name: "التقارير",
+    //       url: "/test",
+    //       icon: FileText,
+    //     },
+    //   ],
+    // },
   ],
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="icon" {...props}>
+    <Sidebar collapsible="icon" className="sidebar" {...props}>
       <SidebarHeader className="border-b-0 lg:p-2">
         <SidebarMenuButton size="lg" asChild>
           <Link href="#">
