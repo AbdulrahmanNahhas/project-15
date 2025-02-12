@@ -205,7 +205,7 @@ const SignInPageContent = () => {
        </div>
      </div>
    </div>
- );};
+);};
 const SignInPage = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>

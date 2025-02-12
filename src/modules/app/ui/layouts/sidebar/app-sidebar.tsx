@@ -12,7 +12,8 @@ import {
   MicIcon,
   Users,
   Home,
-  Inbox
+  Inbox,
+  BookOpen,
 } from "lucide-react"
 import { NavMain } from "@/modules/app/ui/layouts/sidebar/nav-main";
 import { NavUser } from "@/modules/app/ui/layouts/sidebar/nav-user";
@@ -69,13 +70,18 @@ const data = {
       url: "/learn",
       items: [
         {
-          name: "الدروس",
+          name: "المنهاج الدراسي",
           url: "/learn",
           icon: FileText,
         },
         {
-          name: "المسارات والدورات",
+          name: "الدورات",
           url: "/courses",
+          icon: BookOpen,
+        },
+        {
+          name: "المسارات",
+          url: "/paths",
           icon: Layers,
         },
         {

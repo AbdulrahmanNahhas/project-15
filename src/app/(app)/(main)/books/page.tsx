@@ -186,8 +186,10 @@ const BookCard = ({ book }: { book: Book }) => {
 
 export default function BooksPage() {
   return (
-    <div className="container mx-auto px-4 py-8" dir="rtl">
-      <h1 className="text-3xl font-bold mb-8 text-center">المكتبة الرقمية</h1>
+    <div className="container mx-auto">
+    <h1 className={"my-6 font-bold text-3xl mx-auto border-b pb-5"}>
+      المكتبة الرقمية
+    </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {books.map((book) => (
           <BookCard key={book.id} book={book} />
