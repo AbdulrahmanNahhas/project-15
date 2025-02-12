@@ -7,23 +7,10 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import {
-  AwardIcon,
-  BookOpen,
-  CheckCircle,
-  HomeIcon,
-  FileText,
-  Layers,
-  LibraryIcon,
-  MicIcon,
-  Users,
-  Flag,
-  LineChart,
-  Award,
-} from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
+import { IconAwardFilled, IconBook2, IconCheckbox } from "@tabler/icons-react";
 
 export default function Dashboard() {
   return (
@@ -44,7 +31,6 @@ export default function Dashboard() {
               <Link href="/home">
                 <Card className="shadow-none hover:bg-accent/50 transition-all duration-300">
                   <CardContent className="p-4 flex items-center gap-2">
-                    <HomeIcon className="w-4 h-4" />
                     الصفحة الرئيسية
                   </CardContent>
                 </Card>
@@ -54,7 +40,6 @@ export default function Dashboard() {
               <Link href="/learn">
                 <Card className="shadow-none hover:bg-accent/50 transition-all duration-300">
                   <CardContent className="p-4 flex items-center gap-2">
-                    <FileText className="w-4 h-4" />
                     الدروس
                   </CardContent>
                 </Card>
@@ -62,7 +47,6 @@ export default function Dashboard() {
               <Link href="/courses">
                 <Card className="shadow-none hover:bg-accent/50 transition-all duration-300">
                   <CardContent className="p-4 flex items-center gap-2">
-                    <Layers className="w-4 h-4" />
                     المسارات والدورات
                   </CardContent>
                 </Card>
@@ -70,7 +54,6 @@ export default function Dashboard() {
               <Link href="/books">
                 <Card className="shadow-none hover:bg-accent/50 transition-all duration-300">
                   <CardContent className="p-4 flex items-center gap-2">
-                    <LibraryIcon className="w-4 h-4" />
                     المكتبة الرقمية
                   </CardContent>
                 </Card>
@@ -78,7 +61,6 @@ export default function Dashboard() {
               <Link href="#">
                 <Card className="shadow-none hover:bg-accent/50 transition-all duration-300">
                   <CardContent className="p-4 flex items-center gap-2">
-                    <MicIcon className="w-4 h-4" />
                     الندوات
                   </CardContent>
                 </Card>
@@ -88,7 +70,6 @@ export default function Dashboard() {
               <Link href="#">
                 <Card className="shadow-none hover:bg-accent/50 transition-all duration-300">
                   <CardContent className="p-4 flex items-center gap-2">
-                    <Users className="w-4 h-4" />
                     المجتمع
                   </CardContent>
                 </Card>
@@ -96,7 +77,6 @@ export default function Dashboard() {
               <Link href="#">
                 <Card className="shadow-none hover:bg-accent/50 transition-all duration-300">
                   <CardContent className="p-4 flex items-center gap-2">
-                    <Flag className="w-4 h-4" />
                     المسابقات
                   </CardContent>
                 </Card>
@@ -106,7 +86,6 @@ export default function Dashboard() {
               <Link href="#">
                 <Card className="shadow-none hover:bg-accent/50 transition-all duration-300">
                   <CardContent className="p-4 flex items-center gap-2">
-                    <LineChart className="w-4 h-4" />
                     التقدم
                   </CardContent>
                 </Card>
@@ -114,7 +93,6 @@ export default function Dashboard() {
               <Link href="#">
                 <Card className="shadow-none hover:bg-accent/50 transition-all duration-300">
                   <CardContent className="p-4 flex items-center gap-2">
-                    <Award className="w-4 h-4" />
                     الإنجازات
                   </CardContent>
                 </Card>
@@ -164,7 +142,7 @@ const ProfileComponent = () => {
         <Separator className="my-4 sm:my-6" />
         <div className="space-y-4">
           <div className="flex items-center">
-            <BookOpen className="ml-2 h-5 w-5 text-blue-500" />
+            <IconBook2 className="ml-2 h-5 w-5 text-blue-500" />
             <div className="flex-1">
               <div className="flex justify-between">
                 <span className="font-medium">المواد المكتملة</span>
@@ -174,7 +152,7 @@ const ProfileComponent = () => {
             </div>
           </div>
           <div className="flex items-center">
-            <CheckCircle className="ml-2 h-5 w-5 text-green-500" />
+            <IconCheckbox className="ml-2 h-5 w-5 text-green-500" />
             <div className="flex-1">
               <div className="flex justify-between">
                 <span className="font-medium">الواجبات المنجزة</span>
@@ -184,7 +162,7 @@ const ProfileComponent = () => {
             </div>
           </div>
           <div className="flex items-center">
-            <AwardIcon className="ml-2 h-5 w-5 text-yellow-500" />
+            <IconAwardFilled className="ml-2 h-5 w-5 text-yellow-500" />
             <div className="flex-1">
               <div className="flex justify-between">
                 <span className="font-medium">المعدل التراكمي</span>

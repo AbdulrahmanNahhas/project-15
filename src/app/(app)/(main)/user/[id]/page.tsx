@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
-import { MoreHorizontal, Zap } from "lucide-react"
+import { IconFlame, IconDots } from "@tabler/icons-react"
 import EarnBadge from "@/modules/app/ui/components/user/earn-badge"
 
 export default function ProfilePage() {
@@ -31,7 +31,7 @@ export default function ProfilePage() {
           <div className="flex gap-2">
             <Button variant="outline">تعديل الملف</Button>
             <Button variant="ghost" size="icon">
-              <MoreHorizontal className="h-4 w-4" />
+              <IconDots className="h-4 w-4" />
             </Button>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function ProfilePage() {
             </div>
             <div className="flex gap-2">
               <Badge variant="outline" className="py-2 px-3">
-                <Zap className="h-4 w-4 mr-2" />
+                <IconFlame className="h-4 w-4 mr-2" />
                 طالب مجتهد
               </Badge>
             </div>

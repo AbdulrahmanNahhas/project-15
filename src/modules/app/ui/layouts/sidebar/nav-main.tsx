@@ -9,6 +9,8 @@ import {
   SidebarMenuItem
 } from "@/components/ui/sidebar";
 import Link from "next/link";
+import { TablerIcon } from "@tabler/icons-react";
+import { usePathname } from "next/navigation";
 
 export function NavMain({
   items,
@@ -16,8 +18,8 @@ export function NavMain({
   items: {
     title: string;
     url: string;
-    icon?: LucideIcon;
-    isActive?: boolean;
+    icon?: LucideIcon | TablerIcon;
+    activeIcon?: LucideIcon | TablerIcon;
     items?: {
       title: string;
       url: string;
@@ -27,20 +29,26 @@ export function NavMain({
   return (
     <SidebarGroup>
     <SidebarMenu>
-      {items.map((item, index) => (
-        <SidebarMenuItem key={index}>
-          <SidebarMenuButton
-            tooltip={item.title}
-            asChild
-            isActive={item.isActive}
-          >
-            <Link href={item.url}>
-              {item.icon && <item.icon />}
-              <span>{item.title}</span>
-            </Link>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
-      ))}
+      {items.map((item, index) => {
+        const pathname = usePathname();
+        const isActive = pathname === item.url;
+        return (
+          <SidebarMenuItem key={index}>
+            <SidebarMenuButton
+              tooltip={item.title}
+              asChild
+              isActive={isActive}
+            >
+              <Link href={item.url}>
+                {isActive && item.activeIcon && <item.activeIcon />}
+                {(item.icon && !isActive) && <item.icon />}
+                {(item.icon && isActive && !item.activeIcon) && <item.icon />}                
+
+                <span>{item.title}</span>
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        )})}
     </SidebarMenu>
     </SidebarGroup>
   );

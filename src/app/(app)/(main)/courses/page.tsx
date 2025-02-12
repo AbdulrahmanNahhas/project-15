@@ -1,12 +1,12 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Layers, Figma, Type, Pencil, Box, Layout, TrendingDown, Compass, Users } from "lucide-react"
+import { IconBrandFigma, IconPencil, IconBox, IconLayout, IconTrendingDown, IconCompass, IconUsers, IconLayersSubtract, IconTypography } from "@tabler/icons-react"
 import Link from "next/link"
 
 const courses = [
   {
-    icon: <Layers className="w-12 h-12 text-primary" />,
+    icon: <IconLayersSubtract className="w-12 h-12 text-primary" />,
     title: "أساسيات تجربة المستخدم",
     description: "أتقن أساسيات تجربة المستخدم لبناء أساس قوي في التصميم المتمحور حول المستخدم.",
     level: "مبتدئ",
@@ -14,56 +14,56 @@ const courses = [
     popular: true,
   },
   {
-    icon: <Figma className="w-12 h-12 text-primary" />,
+    icon: <IconBrandFigma className="w-12 h-12 text-primary" />,
     title: "مقدمة في فيجما",
     description: "أتقن الوظائف الأساسية لفيجما من البداية. تعلم الأدوات والتقنيات الأساسية.",
     level: "مبتدئ", 
     duration: "5 ساعات",
   },
   {
-    icon: <Type className="w-12 h-12 text-primary" />,
+    icon: <IconTypography className="w-12 h-12 text-primary" />,
     title: "مصطلحات التصميم",
     description: "هذه الدورة هي مقدمة أساسية لمصطلحات التصميم للمحترفين في مختلف الصناعات.",
     level: "مبتدئ",
     duration: "3 ساعات",
   },
   {
-    icon: <Pencil className="w-12 h-12 text-primary" />,
+    icon: <IconPencil className="w-12 h-12 text-primary" />,
     title: "كتابة تجربة المستخدم",
     description: "تعلم كيفية كتابة نصوص واجهة المستخدم بفعالية وتطوير مهارات التواصل مع مستخدميك.",
     level: "متوسط",
     duration: "4 ساعات",
   },
   {
-    icon: <Box className="w-12 h-12 text-primary" />,
+    icon: <IconBox className="w-12 h-12 text-primary" />,
     title: "مكونات واجهة المستخدم 1",
     description: "اكتسب فهماً قوياً لمكونات واجهة المستخدم الأساسية واستخدامها الصحيح.",
     level: "متوسط",
     duration: "7 ساعات",
   },
   {
-    icon: <Layout className="w-12 h-12 text-primary" />,
+    icon: <IconLayout className="w-12 h-12 text-primary" />,
     title: "أنماط التصميم الشائعة",
     description: "استكشف أنماط التصميم الأكثر قابلية لإعادة الاستخدام والأكثر استخداماً في تصميم المنتجات.",
     level: "متوسط",
     duration: "5 ساعات",
   },
   {
-    icon: <TrendingDown className="w-12 h-12 text-primary" />,
+    icon: <IconTrendingDown className="w-12 h-12 text-primary" />,
     title: "مكافحة تسرب العملاء",
     description: "أتقن التقنيات المثبتة لتقليل تسرب العملاء وبناء علاقات دائمة مع مستخدمي المنتجات الرقمية.",
     level: "متقدم",
     duration: "4 ساعات",
   },
   {
-    icon: <Compass className="w-12 h-12 text-primary" />,
+    icon: <IconCompass className="w-12 h-12 text-primary" />,
     title: "اكتشاف المنتج",
     description: "أتقن أساسيات اكتشاف المنتج لإنشاء حلول تلبي احتياجات العملاء وتحقق نتائج الأعمال.",
     level: "متقدم",
     duration: "3 ساعات",
   },
   {
-    icon: <Users className="w-12 h-12 text-primary" />,
+    icon: <IconUsers className="w-12 h-12 text-primary" />,
     title: "فرق التصميم والمنتج متعددة الوظائف",
     description: "أتقن فن التعاون متعدد الوظائف بين فرق التصميم والمنتج.",
     level: "مبتدئ",
@@ -74,21 +74,20 @@ const courses = [
 const CoursesPage = () => {
   return (
     <div className="container mx-auto mt-6">
-      <div className="flex flex-col gap-4 border-b  pb-5 mb-4">
+      <Tabs defaultValue="discover" className="mb-8">
+      <div className="flex flex-col gap-4 border-b pb-4 mb-6">
       <h1 className="text-3xl font-bold">الدورات التدريبية</h1>
       <p className="text-lg text-muted-foreground">
         طور مهاراتك في التصميم من خلال دورات احترافية تفاعلية وعملية.
       </p>
-      </div>
-
-      <Tabs defaultValue="discover" className="mb-8">
-        <TabsList className="bg-muted/50 p-1 rounded-lg">
+        <TabsList className="bg-muted/50 p-1 rounded-lg w-fit">
           <TabsTrigger value="discover" className="rounded-md">اكتشف</TabsTrigger>
           <TabsTrigger value="beginner" className="rounded-md">مبتدئ</TabsTrigger>
           <TabsTrigger value="intermediate" className="rounded-md">متوسط</TabsTrigger>
           <TabsTrigger value="advanced" className="rounded-md">متقدم</TabsTrigger>
         </TabsList>
-      </Tabs>
+      </div>
+
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.map((course, index) => (
@@ -117,6 +116,7 @@ const CoursesPage = () => {
           </Link>
         ))}
       </div>
+      </Tabs>
     </div>
   )
 }

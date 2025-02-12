@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Download, Eye, Share } from "lucide-react"
+import { IconDownload, IconEye, IconShare } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button"
 
 import {
@@ -121,11 +121,11 @@ const BookCard = ({ book }: { book: Book }) => {
           <p className="text-muted-foreground mb-4 line-clamp-2 text-sm">{book.description}</p>
           <div className="flex gap-2 mt-auto">
             <Button variant="default" size="sm" className="flex-1 gap-1">
-              <Download className="w-3.5 h-3.5" />
+              <IconDownload className="w-3.5 h-3.5" />
               تحميل
             </Button>
             <Button variant="outline" size="sm" className="gap-1">
-              <Share className="w-3.5 h-3.5" />
+              <IconShare className="w-3.5 h-3.5" />
               مشاركة
             </Button>
           </div>
@@ -163,15 +163,15 @@ const BookCard = ({ book }: { book: Book }) => {
               </p>
               <div className="flex gap-3 mt-6">
                 <Button variant="default" size="lg" className="flex-1 gap-2">
-                  <Download className="w-4 h-4" />
+                  <IconDownload className="w-4 h-4" />
                   تحميل
                 </Button>
                 <Button variant="default" size="lg" className="flex-1 gap-2">
-                  <Eye className="w-4 h-4" />
+                  <IconEye className="w-4 h-4" />
                   قراءة
                 </Button>
                 <Button variant="outline" size="lg" className="gap-2">
-                  <Share className="w-4 h-4" />
+                  <IconShare className="w-4 h-4" />
                   مشاركة
                 </Button>
               </div>

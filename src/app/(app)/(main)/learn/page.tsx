@@ -3,92 +3,79 @@
 import React from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
-import {
-  Brush,
-  Calculator,
-  Globe,
-  History,
-  Moon,
-  Monitor,
-  Ruler,
-  Star,
-  Languages,
-  EarthIcon,
-  AtomIcon,
-  FlaskConicalIcon,
-} from "lucide-react";
+import { IconCalculator, IconRuler, IconAtom, IconFlask, IconGlobe, IconHistory, IconMoon, IconDeviceDesktop, IconStar, IconLanguage, IconWorld, IconBrush } from "@tabler/icons-react";
 
 const subjects = [
   {
     title: "الجبر",
-    icon: <Calculator className="text-white size-14" />,
+    icon: <IconCalculator className="text-white size-16" />,
     color: "#2A84EF", // Blue
     description: "استكشف مفاهيم الجبر المتقدمة.",
   },
   {
     title: "الهندسة",
-    icon: <Ruler className="text-white size-14" />,
+    icon: <IconRuler className="text-white size-16" />,
     color: "#2A84EF", // Blue (same as Algebra)
     description: "تعلم هندسة المستويات والمجسمات.",
   },
   {
     title: "الفيزياء",
-    icon: <AtomIcon className="text-white size-14" />,
+    icon: <IconAtom className="text-white size-16" />,
     color: "#7944E3", // Amber
     description: "تعرف على المبادئ الأساسية للفيزياء.",
   },
   {
     title: "الكيمياء",
-    icon: <FlaskConicalIcon className="text-white size-14" />,
+    icon: <IconFlask className="text-white size-16" />,
     color: "#7944E3", // Amber (same as Physics)
     description: "تعرف على المبادئ الأساسية للكيمياء.",
   },
   {
     title: "علم الأحياء والأرض",
-    icon: <EarthIcon className="text-white size-14" />,
+    icon: <IconWorld className="text-white size-16" />,
     color: "#7944E3", // Green
     description: "اكتشف عالم الأحياء وعلم الأرض.",
   },
   {
     title: "التربية الدينية الاسلامية",
-    icon: <Moon className="text-white size-14" />,
+    icon: <IconMoon className="text-white size-16" />,
     color: "#1D4ED8", // Deep Blue
     description: "تعلم القيم الدينية والمبادئ الإسلامية.",
   },
   {
     title: "التربية الفنية",
-    icon: <Brush className="text-white size-14" />,
+    icon: <IconBrush className="text-white size-16" />,
     color: "#EC4899", // Pink
     description: "تنمية المهارات الفنية والإبداعية.",
   },
   {
     title: "الثورة السورية",
-    icon: <Star className="text-white size-14" />,
+    icon: <IconStar className="text-white size-16" />,
     color: "#12B06F", // Cool Gray
     description:
       "تعلم عن حقائق الثورة السورية العظيمة التي بدأت عام 2011 وما زالت مستمرة إلى يومنا هذا.",
   },
   {
     title: "التاريخ",
-    icon: <History className="text-white size-14" />,
+    icon: <IconHistory className="text-white size-16" />,
     color: "#12B06F", // Warm Brown
     description: "تعرف على تاريخ الأمة الإسلامية.",
   },
   {
     title: "جغرافية الوطن العربي وسوريا",
-    icon: <Globe className="text-white size-14" />,
+    icon: <IconGlobe className="text-white size-16" />,
     color: "#10B981", // Emerald Green
     description: "استكشاف جغرافية الوطن العربي وسوريا.",
   },
   {
     title: "تكنولوجيا المعلومات والاتصالات",
-    icon: <Monitor className="text-white size-14" />,
+    icon: <IconDeviceDesktop className="text-white size-16" />,
     color: "#4A152F", // Teal
     description: "تعلم أساسيات تكنولوجيا المعلومات والاتصالات.",
   },
   {
     title: "اللغة الانكليزية",
-    icon: <Languages className="text-white size-14" />,
+    icon: <IconLanguage className="text-white size-16" />,
     color: "#F06013", // Indigo
     description: "تعلم أساسيات اللغة الإنجليزية.",
   },

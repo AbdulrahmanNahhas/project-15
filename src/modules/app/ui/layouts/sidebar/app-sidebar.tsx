@@ -3,18 +3,18 @@
 import * as React from "react";
 
 import {
-  LibraryIcon,
-  Award,
-  FileText,
-  Flag,
-  Layers,
-  LineChart,
-  MicIcon,
-  Users,
-  Home,
-  Inbox,
-  BookOpen,
-} from "lucide-react"
+  IconBook,
+  IconAward,
+  IconFileText,
+  IconFlag,
+  IconRouteSquare,
+  IconChartLine,
+  IconMicrophone,
+  IconUsers,
+  IconInbox,
+  IconBookFilled,
+  IconBook2
+} from '@tabler/icons-react';
 import { NavMain } from "@/modules/app/ui/layouts/sidebar/nav-main";
 import { NavUser } from "@/modules/app/ui/layouts/sidebar/nav-user";
 import {
@@ -28,6 +28,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { NavGroup } from "@/modules/app/ui/layouts/sidebar/nav-group";
+import { IconHome, IconHomeFilled, IconSchool } from '@tabler/icons-react';
 
 // This is sample data.
 const data = {
@@ -51,18 +52,14 @@ const data = {
     {
       title: "لوحة التحكم",
       url: "/home",
-      icon: Home,
+      icon: IconHome,
+      activeIcon: IconHomeFilled,
     },
     {
       title: "الأخبار",
       url: "#",
-      icon: Inbox,
+      icon: IconInbox,
     },
-    // {
-    //   title: "المكتبة الرقمية", 
-    //   url: "#",
-    //   icon: LibraryIcon,
-    // },
   ],
   navSecondary: [
     {
@@ -72,27 +69,28 @@ const data = {
         {
           name: "المنهاج الدراسي",
           url: "/learn",
-          icon: FileText,
+          icon: IconSchool,
         },
         {
           name: "الدورات",
           url: "/courses",
-          icon: BookOpen,
+          icon: IconBook2,
+          activeIcon: IconBook2,
         },
         {
           name: "المسارات",
           url: "/paths",
-          icon: Layers,
+          icon: IconRouteSquare,
         },
         {
           name: "المكتبة الرقمية",
           url: "/books",
-          icon: LibraryIcon,
+          icon: IconBook,
         },
         {
           name: "الندوات",
           url: "#",
-          icon: MicIcon,
+          icon: IconMicrophone,
         }
       ],
     },
@@ -103,7 +101,7 @@ const data = {
         {
           name: "المجتمع",
           url: "#",
-          icon: Users,
+          icon: IconUsers,
         },
         // {
         //   name: "المتصدرون",
@@ -113,7 +111,7 @@ const data = {
         {
           name: "المسابقات",
           url: "#",
-          icon: Flag,
+          icon: IconFlag,
         },
       ],
     },
@@ -124,12 +122,12 @@ const data = {
         {
           name: "التقدم",
           url: "#",
-          icon: LineChart,
+          icon: IconChartLine,
         },
         {
           name: "الإنجازات",
           url: "#",
-          icon: Award,
+          icon: IconAward,
         },
         // {
         //   name: "التحليل",
@@ -155,7 +153,7 @@ const data = {
     //     {
     //       name: "الأدوات التعليمية",
     //       url: "/test",
-    //       icon: BookOpen,
+    //       icon: IconBook2,
     //     },
     //     {
     //       name: "الموارد",
@@ -165,7 +163,7 @@ const data = {
     //     {
     //       name: "التقارير",
     //       url: "/test",
-    //       icon: FileText,
+    //       icon: IconFileText,
     //     },
     //   ],
     // },

@@ -30,7 +30,7 @@ import FormSuccess from "@/modules/auth/components/form-success";
 import { Social } from "@/modules/auth/components/social";
 
 // Icons
-import { CircleHelp } from "lucide-react";
+import { IconHelp } from "@tabler/icons-react";
 
 // Schemas
 import { LoginSchema } from "@/modules/auth/schemas";
@@ -122,7 +122,7 @@ const SignInPageContent = () => {
            <FormSuccess message={success} />
            {message && (
              <div className="bg-foreground/5 p-3 rounded-md flex items-center gap-x-2 text-sm text-foreground border">
-               <CircleHelp className="h-4 w-4" />
+               <IconHelp className="h-4 w-4" />
                <p>{message}</p>
              </div>
            )}
