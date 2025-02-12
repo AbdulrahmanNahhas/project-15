@@ -1,7 +1,6 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Layers, Clock, Play, Star, Share2 } from "lucide-react";
 
 const CourseHeader = ({

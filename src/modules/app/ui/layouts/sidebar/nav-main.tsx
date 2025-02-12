@@ -26,12 +26,14 @@ export function NavMain({
     }[];
   }[];
 }) {
+  const pathname = usePathname();
+  
   return (
     <SidebarGroup>
     <SidebarMenu>
       {items.map((item, index) => {
-        const pathname = usePathname();
         const isActive = pathname === item.url;
+
         return (
           <SidebarMenuItem key={index}>
             <SidebarMenuButton

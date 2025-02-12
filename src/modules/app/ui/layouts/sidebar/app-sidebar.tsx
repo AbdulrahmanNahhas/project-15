@@ -5,14 +5,14 @@ import * as React from "react";
 import {
   IconBook,
   IconAward,
-  IconFileText,
+  // IconFileText,
   IconFlag,
   IconRouteSquare,
   IconChartLine,
   IconMicrophone,
   IconUsers,
   IconInbox,
-  IconBookFilled,
+  // IconBookFilled,
   IconBook2
 } from '@tabler/icons-react';
 import { NavMain } from "@/modules/app/ui/layouts/sidebar/nav-main";

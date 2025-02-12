@@ -30,13 +30,13 @@ export function NavGroup({
   }[]
 }) {
   // const { isMobile } = useSidebar()
+  const pathname = usePathname();
 
   return (
     <SidebarGroup>
       <SidebarGroupLabel>{title}</SidebarGroupLabel>
       <SidebarMenu>
       {items.map((item, index) => {
-        const pathname = usePathname();
         const isActive = pathname === item.url;
 
         return (
