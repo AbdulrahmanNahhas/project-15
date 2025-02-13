@@ -10,61 +10,10 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
+import { unitsSidebar } from "@/data/app/study/untis";
 import { IconChevronRight } from "@tabler/icons-react";
-// import {NavUser} from "@/components/layout/nav-user";
 import Image from "next/image";
 import Link from "next/link";
-
-const data = {
-  version: ["0.0.1"],
-  user: {
-    name: "عبدالرحمن النحاس",
-    email: "nahhas@gmail.com",
-    avatar: "/avatars/test.jpg",
-  },
-  units: [
-    {
-      title: "المعادلات والمتباينات الخطية",
-      description: "حل وتمثيل المعادلات والمتباينات الخطية في متغير واحد ومتغيرين.",
-    },
-    {
-      title: "الدوال وتمثيلها البياني",
-      description: "استكشاف أنواع مختلفة من الدوال وتمثيلها البياني."
-    },
-    {
-      title: "الدوال التربيعية والمعادلات",
-      description: "دراسة الدوال التربيعية وتمثيلها البياني وحل المعادلات التربيعية.",
-    },
-    {
-      title: "الدوال متعددة الحدود",
-      description: "استكشاف دوال متعددة الحدود من درجات أعلى وخصائصها.",
-    },
-    {
-      title: "الدوال الكسرية",
-      description: "دراسة الدوال الكسرية وتمثيلها البياني وحل المعادلات الكسرية.",
-    },
-    {
-      title: "الدوال الجذرية والأسس الكسرية",
-      description: "استكشاف الدوال الجذرية وخصائص الأسس الكسرية.",
-    },
-    {
-      title: "الدوال الأسية واللوغاريتمية",
-      description: "دراسة النمو والانحلال الأسي والتعرف على اللوغاريتمات.",
-    },
-    {
-      title: "المتتاليات والمتسلسلات",
-      description: "استكشاف المتتاليات والمتسلسلات الحسابية والهندسية.",
-    },
-    {
-      title: "القطوع المخروطية",
-      description: "دراسة خصائص القطوع المخروطية وتمثيلها البياني.",
-    },
-    {
-      title: "الاحتمالات والإحصاء",
-      description: "مقدمة في نظرية الاحتمالات والتحليل الإحصائي.",
-    },
-  ]
-}
 
 export function UnitsSidebar() {
   return (
@@ -101,7 +50,7 @@ export function UnitsSidebar() {
             </SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                {data.units.map((unit, index) => (
+                {unitsSidebar.map((unit, index) => (
                   <SidebarMenuItem key={unit.title}>
                     <SidebarMenuButton className={"h-auto"}>
                       <span className={"font-normal text-foreground w-6 flex items-center justify-center !text-center text-lg relative left-0.5 bottom-1"}>

@@ -1,4 +1,4 @@
-import HeroVideoDialog from "@/components/video-dialog";
+import HeroVideoDialog from "@/components/common/video-dialog";
 
 export function Video() {
   return (

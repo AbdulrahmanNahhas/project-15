@@ -1,67 +1,11 @@
 "use client"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-// import { Badge } from "@/components/ui/badge"
-import {
-  Pentagon,
-  Hexagon,
-  Circle,
-  Triangle,
-  Square,
-  Diamond,
-  Clock3,
-  Lock,
-  ArrowUp,
-  type LucideIcon
-} from "lucide-react"
+import {Clock3,Lock,ArrowUp,type LucideIcon} from "lucide-react"
 import {Card, CardContent} from "@/components/ui/card";
 import {cn} from "@/lib/utils";
 import "./style.css";
-
-const leagueData = {
-  daysLeft: 3,
-  currentLeague: 1,
-  leagues: [
-    { name: "نواة التميّز", icon: Pentagon, color: "pink" },
-    { name: "روّاد المعرفة", icon: Hexagon, color: "blue" },
-    { name: "أبطال التعلّم", icon: Circle, color: "green" },
-    { name: "قادة المستقبل", icon: Triangle, color: "red" },
-    { name: "سفراء العلم", icon: Diamond, color: "purple" },
-    { name: "قمم التفوق", icon: Square, color: "gray" },
-  ],
-  users : [
-    { id: 1, name: "علي الدوسري", role: "Software Engineer", isPro: true, xp: 3271, avatar: "/placeholder.svg?height=40&width=40", initial: "ع" },
-    { id: 2, name: "فاطمة الحربي", role: "UX/UI Designer", isPro: false, xp: 2069, avatar: "/placeholder.svg?height=40&width=40", initial: "ف" },
-    { id: 3, name: "يوسف العتيبي", role: "Graphic Designer", isPro: false, xp: 1629, avatar: "", initial: "ي" },
-    { id: 4, name: "أمل الشمري", role: "UX/UI Designer", isPro: false, xp: 1618, avatar: "/placeholder.svg?height=40&width=40", initial: "أ" },
-    { id: 5, name: "عبدالرحمن السالمي", role: "Project Manager", isPro: true, xp: 1508, avatar: "/placeholder.svg?height=40&width=40", initial: "ع" },
-    { id: 6, name: "ريم العبدالله", role: "UX/UI Designer", isPro: false, xp: 1150, avatar: "/placeholder.svg?height=40&width=40", initial: "ر" },
-    { id: 7, name: "بدر القحطاني", role: "Developer", isPro: false, xp: 903, avatar: "/placeholder.svg?height=40&width=40", initial: "ب" },
-    { id: 8, name: "خالد التميمي", role: "", isPro: false, xp: 765, avatar: "", initial: "خ" },
-    { id: 9, name: "جميلة الفهيد", role: "", isPro: false, xp: 756, avatar: "", initial: "ج" },
-    { id: 10, name: "مروان العريفي", role: "Marketing Specialist", isPro: true, xp: 1520, avatar: "/placeholder.svg?height=40&width=40", initial: "م" },
-    { id: 11, name: "هند الكندي", role: "HR Manager", isPro: false, xp: 1465, avatar: "/placeholder.svg?height=40&width=40", initial: "ه" },
-    { id: 12, name: "فيصل الزهراني", role: "Product Manager", isPro: true, xp: 1398, avatar: "/placeholder.svg?height=40&width=40", initial: "ف" },
-    { id: 13, name: "نور الكيلاني", role: "UX/UI Designer", isPro: false, xp: 1253, avatar: "/placeholder.svg?height=40&width=40", initial: "ن" },
-    { id: 14, name: "ليلى البراك", role: "Backend Developer", isPro: true, xp: 1324, avatar: "/placeholder.svg?height=40&width=40", initial: "ل" },
-    { id: 15, name: "حسين اليامي", role: "Frontend Developer", isPro: false, xp: 1187, avatar: "/placeholder.svg?height=40&width=40", initial: "ح" },
-    { id: 16, name: "شهد المطيري", role: "", isPro: true, xp: 1124, avatar: "/placeholder.svg?height=40&width=40", initial: "ش" },
-    { id: 17, name: "سعيد النعيمي", role: "System Analyst", isPro: false, xp: 1082, avatar: "/placeholder.svg?height=40&width=40", initial: "س" },
-    { id: 18, name: "نجود العبدلي", role: "Content Writer", isPro: false, xp: 1010, avatar: "", initial: "ن" },
-    { id: 19, name: "ياسر البلوشي", role: "", isPro: true, xp: 980, avatar: "/placeholder.svg?height=40&width=40", initial: "ي" },
-    { id: 20, name: "سارة الغانم", role: "UI Developer", isPro: false, xp: 950, avatar: "", initial: "س" },
-    { id: 21, name: "مريم الجفالي", role: "Data Scientist", isPro: true, xp: 935, avatar: "/placeholder.svg?height=40&width=40", initial: "م" },
-    { id: 22, name: "رائد العساف", role: "Full-Stack Developer", isPro: false, xp: 912, avatar: "", initial: "ر" },
-    { id: 23, name: "عائشة الحارثي", role: "UI Developer", isPro: false, xp: 893, avatar: "/placeholder.svg?height=40&width=40", initial: "ع" },
-    { id: 24, name: "زيد السعدي", role: "Data Analyst", isPro: true, xp: 870, avatar: "/placeholder.svg?height=40&width=40", initial: "ز" },
-    { id: 25, name: "منى الماجد", role: "", isPro: false, xp: 854, avatar: "", initial: "م" },
-    { id: 26, name: "تركي الهاشمي", role: "Developer", isPro: true, xp: 830, avatar: "/placeholder.svg?height=40&width=40", initial: "ت" },
-    { id: 27, name: "لبنى الجبري", role: "Marketing Manager", isPro: false, xp: 825, avatar: "/placeholder.svg?height=40&width=40", initial: "ل" },
-    { id: 28, name: "وائل الحميدي", role: "UX Designer", isPro: true, xp: 813, avatar: "/placeholder.svg?height=40&width=40", initial: "و" },
-    { id: 29, name: "نجوى العبدالله", role: "Project Manager", isPro: false, xp: 799, avatar: "", initial: "ن" },
-    { id: 30, name: "زيد القاضي", role: "Product Designer", isPro: true, xp: 785, avatar: "/placeholder.svg?height=40&width=40", initial: "ز" }
-  ]
-}
+import { leagueData } from "@/data/app/leaderboard/league-data";
 
 const LeagueIcon = ({ icon: Icon, color, isActive, isLocked, isLast }: {icon: LucideIcon, color: string, isActive: boolean, isLocked: boolean, isLast: boolean}) => {
   const baseClasses = "size-16"

@@ -1,36 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PostCard } from "../blog/post-card";
-
-const featuredPosts = [
-  {
-    id: 1,
-    title: "دليل شامل للمنهج السوري الجديد للصف التاسع",
-    description:
-      "تعرف على التغييرات الرئيسية في المنهج الدراسي للصف التاسع وكيفية الاستعداد لها.",
-    date: "٧ شباط ٢٠٢٤",
-    image: "/img.png",
-    category: "المناهج الدراسية",
-  },
-  {
-    id: 2,
-    title: "دورة مجانية: أساسيات البرمجة للمبتدئين",
-    description:
-      "انضم إلى دورتنا المجانية عبر الإنترنت لتعلم أساسيات البرمجة باستخدام لغة Python.",
-    date: "٤ شباط ٢٠٢٤",
-    image: "/img.png",
-    category: "الدورات التدريبية",
-  },
-  {
-    id: 3,
-    title: "كيفية التحضير لامتحانات الشهادة الثانوية",
-    description:
-      "نصائح وإرشادات للطلاب حول كيفية الاستعداد بفعالية لامتحانات الشهادة الثانوية.",
-    date: "٣١ كانون الثاني ٢٠٢٤",
-    image: "/img.png",
-    category: "الموارد التعليمية",
-  },
-];
+import { featuredPosts } from "@/data/marketing/blog/posts";
 
 export function Posts() {
   return (

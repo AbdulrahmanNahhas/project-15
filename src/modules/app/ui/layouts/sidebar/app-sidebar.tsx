@@ -2,19 +2,6 @@
 
 import * as React from "react";
 
-import {
-  IconBook,
-  IconAward,
-  // IconFileText,
-  IconFlag,
-  IconRouteSquare,
-  IconChartLine,
-  IconMicrophone,
-  IconUsers,
-  IconInbox,
-  // IconBookFilled,
-  IconBook2
-} from '@tabler/icons-react';
 import { NavMain } from "@/modules/app/ui/layouts/sidebar/nav-main";
 import { NavUser } from "@/modules/app/ui/layouts/sidebar/nav-user";
 import {
@@ -28,147 +15,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { NavGroup } from "@/modules/app/ui/layouts/sidebar/nav-group";
-import { IconHome, IconHomeFilled, IconSchool } from '@tabler/icons-react';
-
-// This is sample data.
-const data = {
-  user: {
-    name: "عبدالرحمن كنان محمد لبيب النحاس",
-    email: "nahhas909@gmail.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
-  navMain: [
-    // {
-    //   title: "Search",
-    //   url: "#",
-    //   icon: Search,
-    // },
-    // {
-    //   title: "روبوتنا الذكي",
-    //   url: "#", 
-    //   icon: Sparkles,
-    //   isActive: true,
-    // },
-    {
-      title: "لوحة التحكم",
-      url: "/home",
-      icon: IconHome,
-      activeIcon: IconHomeFilled,
-    },
-    {
-      title: "الأخبار",
-      url: "#",
-      icon: IconInbox,
-    },
-  ],
-  navSecondary: [
-    {
-      title: "التعلم",
-      url: "/learn",
-      items: [
-        {
-          name: "المنهاج الدراسي",
-          url: "/learn",
-          icon: IconSchool,
-        },
-        {
-          name: "الدورات",
-          url: "/courses",
-          icon: IconBook2,
-          activeIcon: IconBook2,
-        },
-        {
-          name: "المسارات",
-          url: "/paths",
-          icon: IconRouteSquare,
-        },
-        {
-          name: "المكتبة الرقمية",
-          url: "/books",
-          icon: IconBook,
-        },
-        {
-          name: "الندوات",
-          url: "#",
-          icon: IconMicrophone,
-        }
-      ],
-    },
-    {
-      title: "التفاعلات",
-      url: "#",
-      items: [
-        {
-          name: "المجتمع",
-          url: "#",
-          icon: IconUsers,
-        },
-        // {
-        //   name: "المتصدرون",
-        //   url: "/leaderboard",
-        //   icon: Trophy,
-        // },
-        {
-          name: "المسابقات",
-          url: "#",
-          icon: IconFlag,
-        },
-      ],
-    },
-    {
-      title: "الإحصائيات",
-      url: "#",
-      items: [
-        {
-          name: "التقدم",
-          url: "#",
-          icon: IconChartLine,
-        },
-        {
-          name: "الإنجازات",
-          url: "#",
-          icon: IconAward,
-        },
-        // {
-        //   name: "التحليل",
-        //   url: "#",
-        //   icon: PieChart,
-        // },
-        // {
-        //   name: "الأداء",
-        //   url: "#",
-        //   icon: Sliders,
-        // },
-      ],
-    },
-    // {
-    //   title: "الأدوات",
-    //   url: "#",
-    //   items: [
-    //     {
-    //       name: "إدارة المحتوى",
-    //       url: "/test",
-    //       icon: EditIcon,
-    //     },
-    //     {
-    //       name: "الأدوات التعليمية",
-    //       url: "/test",
-    //       icon: IconBook2,
-    //     },
-    //     {
-    //       name: "الموارد",
-    //       url: "/test",
-    //       icon: Folders,
-    //     },
-    //     {
-    //       name: "التقارير",
-    //       url: "/test",
-    //       icon: IconFileText,
-    //     },
-    //   ],
-    // },
-  ],
-};
+import { navigationData } from "@/data/app/sidebar/navigation";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -193,13 +40,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenuButton>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        {data.navSecondary.map((item) => (
+        <NavMain items={navigationData.navMain} />
+        {navigationData.navSecondary.map((item) => (
           <NavGroup key={item.title} items={item.items} title={item.title} />
         ))}
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={navigationData.user} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

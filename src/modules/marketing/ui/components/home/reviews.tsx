@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import Marquee from "@/components/marquee";
+import Marquee from "@/components/common/marquee";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 // import Image from "next/image";
 

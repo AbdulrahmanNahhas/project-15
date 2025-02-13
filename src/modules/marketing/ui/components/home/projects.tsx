@@ -13,51 +13,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
-
-interface Project {
-  id: number
-  title: string
-  description: string
-  image: string
-}
-const projects: Project[] = [
-  {
-    id: 1,
-    title: "الحالات الإنسانية الطارئة",
-    description: "تبرع من أجلهم !",
-    image: "/placeholder.svg?height=400&width=600",
-  },
-  {
-    id: 2,
-    title: "كن معهم 2",
-    description: "حملة مخصصة لمساعدة ذوي الاحتياجات الخاصة",
-    image: "/placeholder.svg?height=400&width=600",
-  },
-  {
-    id: 3,
-    title: "سعادة قلب",
-    description: "حملة لإدخال الفرح والسرور على قلوب الأطفال",
-    image: "/placeholder.svg?height=400&width=600",
-  },
-  {
-    id: 4,
-    title: "مشروع بيت المونة",
-    description: "مشروع لتشغيل النساء السوريات وتحقيق التنمية الاقتصادية لهم",
-    image: "/placeholder.svg?height=400&width=600",
-  },
-  {
-    id: 5,
-    title: "سعادة قلب",
-    description: "حملة لإدخال الفرح والسرور على قلوب الأطفال",
-    image: "/placeholder.svg?height=400&width=600",
-  },
-  {
-    id: 6,
-    title: "مشروع بيت المونة",
-    description: "مشروع لتشغيل النساء السوريات وتحقيق التنمية الاقتصادية لهم",
-    image: "/placeholder.svg?height=400&width=600",
-  },
-]
+import { Project, projects } from "@/data/marketing/home/projects";
 
 export function Projects() {
   const [api, setApi] = React.useState<CarouselApi>()
@@ -100,7 +56,7 @@ export function Projects() {
         setApi={setApi}
       >
         <CarouselContent>
-          {projects.map((project) => (
+          {projects.map((project: Project) => (
             <CarouselItem key={project.id} className="pb-2 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
               <Card className="overflow-hidden shadow-none no-select">
                 <div className="relative aspect-[4/3]">
