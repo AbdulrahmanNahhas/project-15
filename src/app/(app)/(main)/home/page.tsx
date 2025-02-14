@@ -129,7 +129,7 @@ const ProfileComponent = () => {
       <CardContent className="p-4 sm:p-6">
         <div className="flex items-center space-x-4 space-x-reverse">
           <Avatar className="h-16 w-16">
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarImage src="/profile.png" alt="@shadcn" />
             <AvatarFallback>عب</AvatarFallback>
           </Avatar>
           <div>

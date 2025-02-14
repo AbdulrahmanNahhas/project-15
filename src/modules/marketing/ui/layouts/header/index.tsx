@@ -229,7 +229,7 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
         {/* Login & Mobile Menu */}
         <div className="flex items-center gap-4">
           <Button className={"rounded-full hidden xs:block"} asChild>
-            <Link href="/sign-in">
+            <Link href="/login">
               تسجيل الدخول
             </Link>
           </Button>
@@ -306,7 +306,7 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
                 </div>
               </nav>
               <Button size={"lg"} className='h-12' asChild>
-                <Link href="/sign-in">
+                <Link href="/login">
                   تسجيل الدخول
                 </Link>
               </Button>

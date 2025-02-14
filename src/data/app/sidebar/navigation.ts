@@ -17,7 +17,7 @@ export const navigationData = {
   user: {
     name: "عبدالرحمن كنان محمد لبيب النحاس",
     email: "nahhas909@gmail.com",
-    avatar: "/avatars/shadcn.jpg",
+    avatar: "/profile.png",
   },
   navMain: [
     // {

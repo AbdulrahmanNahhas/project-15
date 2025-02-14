@@ -5,7 +5,7 @@ import { useState, useTransition, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams } from 'next/navigation'
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 // Form validation
 import * as z from "zod";
@@ -34,17 +34,14 @@ import { IconHelp } from "@tabler/icons-react";
 
 // Schemas
 import { LoginSchema } from "@/modules/auth/schemas";
+import { login } from "@/modules/auth/actions/login";
 
-/**
- * SignInPage Component
- * Handles user authentication through email/password login
- */
-const SignInPageContent = () => {
+const LoginPageContent = () => {
  // State management
  const [error, setError] = useState<string | undefined>("");
  const [success, setSuccess] = useState<string | undefined>("");
  const [isPending, startTransition] = useTransition();
- // const router = useRouter();
+ const router = useRouter();
  
  // Get URL search params for messages
  const searchParams = useSearchParams()
@@ -71,23 +68,22 @@ const SignInPageContent = () => {
 
    startTransition(() => {
      console.log(values);
-     // Commented out login logic for future implementation
-     // login(values)
-     //   .then((data) => {
-     //     if (data.error) {
-     //       setError(data.error)
-     //       console.log(`${data.error}`);
-     //     }
+     login(values)
+       .then((data) => {
+         if (data.error) {
+           setError(data.error)
+           console.log(`${data.error}`);
+         }
 
-     //     if (data.success) {
-     //       setSuccess(data.success);
-     //       return router.push("/home")
-     //     }
-     //   })
-     //   .catch((error) => {
-     //     setError("حدث خطأ ما.");
-     //     console.log(error);
-     //   });
+         if (data.success) {
+           setSuccess(data.success);
+           return router.push("/home")
+         }
+       })
+       .catch((error) => {
+         setError("حدث خطأ ما.");
+         console.log(error);
+       });
    });
  };
 
@@ -197,7 +193,7 @@ const SignInPageContent = () => {
        {/* Sign Up Link */}
        <div className="flex items-center justify-center">
          <Link
-           href="/sign-up"
+           href="/register"
            className="text-xs text-muted-foreground hover:underline hover:opacity-75 font-light"
          >
            ليس لديك حساب؟ إنشاء حساب
@@ -206,12 +202,12 @@ const SignInPageContent = () => {
      </div>
    </div>
 );};
-const SignInPage = () => {
+const LoginPage = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <SignInPageContent />
+      <LoginPageContent />
     </Suspense>
   );
 };
 
-export default SignInPage;
+export default LoginPage;

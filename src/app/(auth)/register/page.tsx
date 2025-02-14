@@ -3,7 +3,7 @@
 // React and Next.js imports
 import { useState, useTransition } from "react";
 import Link from "next/link";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 // Form validation
 import * as z from "zod";
@@ -37,19 +37,19 @@ import { Social } from "@/modules/auth/components/social";
 import { cn } from "@/lib/utils";
 import { RegisterSchema } from "@/modules/auth/schemas";
 import Image from "next/image";
-// import { register } from "./actions";
-// import { loginRoute } from "@/routes";
+import { register } from "@/modules/auth/actions";
+import { LOGIN_ROUTE } from "@/routes";
 
 /**
- * SignUpPage Component
+ * RegisterPage Component
  * Handles user registration with email/password and social providers
  */
-const SignUpPage = () => {
+const RegisterPage = () => {
   // State management
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
-  // const router = useRouter();
+  const router = useRouter();
 
   // Initialize form with Zod schema
   const form = useForm<z.infer<typeof RegisterSchema>>({
@@ -72,23 +72,22 @@ const SignUpPage = () => {
     setSuccess("");
 
     startTransition(() => {
-      console.log(values);
-      // register(values)
-      //   .then((data) => {
-      //     if (data?.error) {
-      //       setError(data.error);
-      //       console.log(`${data.error}`);
-      //     }
+      register(values)
+        .then((data) => {
+          if (data?.error) {
+            setError(data.error);
+            console.log(`${data.error}`);
+          }
 
-      //     if (data?.success) {
-      //       setSuccess(data.success);
-      //       return router.push(`${loginRoute}/?message=${data.success}`);
-      //     }
-      //   })
-      //   .catch((error) => {
-      //     setError("حدث خطأ ما.");
-      //     console.log(error);
-      //   });
+          if (data?.success) {
+            setSuccess(data.success);
+            return router.push(`${LOGIN_ROUTE}/?message=${data.success}`);
+          }
+        })
+        .catch((error) => {
+          setError("حدث خطأ ما.");
+          console.log(error);
+        });
     });
   };
 
@@ -273,7 +272,7 @@ const SignUpPage = () => {
         {/* Sign In Link */}
         <div className="flex mt-4 items-center justify-center">
           <Link
-            href="/sign-in"
+            href="/login"
             className="text-xs text-muted-foreground hover:underline hover:opacity-75 font-light"
           >
             لديك حساب بالفعل؟ تسجيل الدخول
@@ -284,4 +283,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default RegisterPage;

@@ -34,7 +34,7 @@ export function CTA() {
                 className={"bg-white text-foreground hover:bg-white/90 scale-100 hover:scale-105 transition-all !duration-300"}
                 asChild
               >
-              <Link href="/sign-in">
+              <Link href="/login">
                 تسجيل الدخول
               </Link>
               </Button>

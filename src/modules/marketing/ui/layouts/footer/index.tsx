@@ -45,7 +45,7 @@ const Footer = () => {
             قم بتمكين أعمالك باستخدام أدوات الذكاء الاصطناعي لدينا.
           </p>
           <Button className="mt-8">
-            <Link href="/sign-in">
+            <Link href="/login">
               تسجيل الدخول
             </Link>
           </Button>

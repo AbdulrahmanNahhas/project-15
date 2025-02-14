@@ -26,6 +26,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
+import SignOutButton from "@/modules/auth/components/logout"
 
 export function NavUser({
   user,
@@ -87,10 +88,13 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="text-destructive hover:!text-destructive hover:!bg-destructive/10">
+              <SignOutButton asChild>
+            <DropdownMenuItem className="text-destructive hover:!text-destructive hover:!bg-destructive/10 w-full text-start justify-start items-center">
+                
               <LogOut />
               تسجيل الخروج
             </DropdownMenuItem>
+              </SignOutButton>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>
