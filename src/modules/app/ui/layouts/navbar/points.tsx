@@ -4,7 +4,7 @@ import * as React from "react"
 import { Hexagon, X } from "lucide-react"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger, DrawerClose } from "@/components/ui/drawer"
-import { Button, buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 interface PointsProps {
@@ -57,7 +57,7 @@ export function Points({
     </div>
   )
   
-  const PointsTrigger = ({className}: {className?: string}) => (
+  const PointsTrigger = () => (
     <>
       <Hexagon className="!size-5 text-primary fill-primary" />
       <Hexagon className="!size-2.5 text-background group-hover:fill-accent group-hover:text-accent fill-background absolute top-[9px] right-[13px]" />

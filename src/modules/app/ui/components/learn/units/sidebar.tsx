@@ -11,6 +11,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 import { unitsSidebar } from "@/data/app/study/untis";
+import config from "@/data/config";
 import { IconChevronRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -33,7 +34,7 @@ export function UnitsSidebar() {
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
                   <span className="font-semibold">المنصة السورية</span>
-                  <span className="text-start text-xs">v{data.version}</span>
+                  <span className="text-start text-xs">v{config.version}</span>
                 </div>
               </a>
             </SidebarMenuButton>

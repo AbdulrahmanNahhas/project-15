@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/common/marquee";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import Image from "next/image";
 // import Image from "next/image";
 
 const reviews = [
@@ -211,7 +212,7 @@ const ReviewCard = ({
     >
       <CardHeader className="flex flex-row justify-between p-0 gap-2">
         <div  className="flex flex-row items-center p-0 gap-2">
-        {/* <Image className="rounded-full h-10 w-10" width="50" height="50" alt="" src={"https://i.imgur.com/pnsLqpq.png"} /> */}
+        <Image className="rounded-full h-10 w-10" width="50" height="50" alt="" src={img} />
         <div className="flex flex-col">
           <span className="text-sm font-medium dark:text-white">
             {name}

@@ -10,7 +10,7 @@ import { LOGIN_ROUTE } from "@/routes";
 export const register = async (values: z.infer<typeof RegisterSchema>) => {
   const supabase = await createClient();
   
-  const { data, error } = await supabase.auth.signUp({
+  const { error } = await supabase.auth.signUp({
     email: values.email,
     password: values.password,
     options: {

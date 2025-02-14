@@ -12,7 +12,7 @@ import * as z from "zod";
 export async function login(values: z.infer<typeof LoginSchema>) {
   const supabase = await createClient()
 
-  let { data, error } = await supabase.auth.signInWithPassword({
+  const { error } = await supabase.auth.signInWithPassword({
     email: values.email,
     password: values.password
   })

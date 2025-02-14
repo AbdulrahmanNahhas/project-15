@@ -8,6 +8,7 @@ import EarnBadge from "@/modules/app/ui/components/user/earn-badge";
 import { ImagePlus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/supabase/server";
+import Image from "next/image";
 
 export default async function ProfilePage({
   params,
@@ -42,7 +43,7 @@ export default async function ProfilePage({
             "h-64 md:h-72"
           )}
         >
-            <img src={data.cover_image_url} alt="Cover Image" className="w-full h-full object-cover object-top hover:opacity-80 duration-300" width={1000} height={600} />
+            <Image src={data.cover_image_url} alt="Cover Image" className="w-full h-full object-cover object-top hover:opacity-80 duration-300" width={1000} height={600} unoptimized />
           </div>
         ) :(
           
