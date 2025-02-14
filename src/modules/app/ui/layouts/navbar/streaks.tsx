@@ -4,7 +4,8 @@ import * as React from "react"
 import { Zap, X } from "lucide-react"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger, DrawerClose } from "@/components/ui/drawer"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 // واجهة خصائص التتابع - Streak Props Interface
 interface StreaksProps {
@@ -57,29 +58,33 @@ export function Streaks({ value = 0, className }: StreaksProps) {
     </div>
   )
 
+  const StreakTrigger = () => (
+    <>
+      <Zap className="size-10 fill-amber-500 text-amber-500" />
+      <span>{value}</span>
+    </>
+  )
+
   // عرض سطح المكتب - Desktop View
   const DesktopView = () => (
+    <div className="hidden md:flex">
     <Popover>
-      <PopoverTrigger asChild>
-        <Button variant="ghost" className="hidden md:flex gap-2 text-lg px-2">
-          <Zap className="size-10 fill-amber-500 text-amber-500" />
-          <span>{value}</span>
-        </Button>
+      <PopoverTrigger className={cn("group flex !gap-1 text-lg relative !px-2 !py-2 !h-7", buttonVariants({variant: "ghost"}))}>
+        <StreakTrigger />
       </PopoverTrigger>
-      <PopoverContent className="w-auto p-0" align="end">
+      <PopoverContent className="w-auto p-0" align="center" side="bottom" alignOffset={0} sideOffset={10}>
         <StreakContent />
       </PopoverContent>
     </Popover>
+    </div>
   )
 
   // عرض الجوال - Mobile View
   const MobileView = () => (
+    <div className="md:hidden">
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerTrigger asChild>
-        <Button variant="ghost" size="sm" className="md:hidden flex gap-2">
-          <Zap />
-          <span>{value}</span>
-        </Button>
+      <DrawerTrigger className={cn("group flex gap-2 text-lg relative !px-2 !py-1 !h-7", buttonVariants({variant: "ghost"}))}>
+        <StreakTrigger />
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="border-b text-center">
@@ -93,6 +98,7 @@ export function Streaks({ value = 0, className }: StreaksProps) {
         </div>
       </DrawerContent>
     </Drawer>
+    </div>
   )
 
   return (

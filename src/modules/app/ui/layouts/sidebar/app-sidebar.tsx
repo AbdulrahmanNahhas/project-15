@@ -1,9 +1,8 @@
 "use client";
-
 import * as React from "react";
 
 import { NavMain } from "@/modules/app/ui/layouts/sidebar/nav-main";
-import { NavUser } from "@/modules/app/ui/layouts/sidebar/nav-user";
+// import { NavUser } from "@/modules/app/ui/layouts/sidebar/nav-user";
 import {
   Sidebar,
   SidebarContent,
@@ -16,13 +15,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { NavGroup } from "@/modules/app/ui/layouts/sidebar/nav-group";
 import { navigationData } from "@/data/app/sidebar/navigation";
+import { UserButton } from "@/modules/auth/components/nav-user";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" className="sidebar" {...props}>
       <SidebarHeader className="border-b-0 lg:p-2">
         <SidebarMenuButton size="lg" asChild>
-          <Link href="#">
+          <Link href="/home">
             <div className="flex aspect-square size-8 items-center justify-center rounded-lg text-sidebar-primary-foreground">
               <Image
                 className="h-8 w-auto"
@@ -46,7 +46,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         ))}
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={navigationData.user} />
+        <UserButton />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

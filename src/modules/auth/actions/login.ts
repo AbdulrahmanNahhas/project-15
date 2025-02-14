@@ -48,9 +48,14 @@ export async function loginWithSocial(provider: Provider) {
   })
 
   if (error) {
-    console.log("ERR - [ACTIONS / LOGIN]: ");
-    console.log(error);
-    redirect('/login?message=فشل تسجيل الدخول')
+    console.error("ERR - [ACTIONS / LOGIN]: ", error);
+    
+    // Handle specific database error
+    if (error.message?.includes('Database error saving new user')) {
+      return redirect('/login?message=حدث خطأ في حفظ بيانات المستخدم. الرجاء المحاولة مرة أخرى')
+    }
+
+    return redirect('/login?message=فشل تسجيل الدخول')
   }
 
   return redirect(data.url)

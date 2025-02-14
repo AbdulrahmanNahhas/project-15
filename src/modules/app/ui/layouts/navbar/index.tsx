@@ -41,7 +41,7 @@ export const SidebarNavbar = () => {
       </div>
 
       <div className="flex items-center gap-2">
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-0.5">
           <Points
             value={886}
             todayPoints={13}

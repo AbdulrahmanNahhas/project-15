@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server'
 import { DEFAULT_LOGIN_REDIRECT, LOGIN_ROUTE, privateRoutes, authRoutes } from './routes';
 
 export async function middleware(request: NextRequest) {
-  console.log('Middleware starting for path:', request.nextUrl.pathname);
+  // console.log('Middleware starting for path:', request.nextUrl.pathname);
   
   try {
     // Create client and get session

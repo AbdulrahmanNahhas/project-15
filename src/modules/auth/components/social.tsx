@@ -1,28 +1,28 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-// import { loginWithSocial } from "@/app/(auth)/login/actions";
+import { loginWithSocial } from "@/modules/auth/actions/login";
 import { cn } from "@/lib/utils";
+import { Provider } from "@supabase/supabase-js";
 
 export const Social = ({ className }: { className?: string }) => {
-  // const searchParams = useSearchParams();
-  // const callbackUrl = searchParams.get("callbackUrl");
-  // const router = useRouter()
-
-  // const onClick = async (provider: Provider) => {
-  //   return await loginWithSocial(provider)
-  //   console.log("hello");
-
-  //   // return router.push(callbackUrl || DEFAULT_LOGIN_REDIRECT);
-  // };
+  const onClick = async (provider: Provider) => {
+    return await loginWithSocial(provider);
+  };
 
   return (
-    <div className={cn("flex flex-col items-center max-w-[600px] mx-auto gap-y-2", className)}>
+    <div
+      className={cn(
+        "flex flex-col items-center max-w-[600px] mx-auto gap-y-2",
+        className
+      )}
+    >
       <Button
+        disabled
         size="lg"
         className="w-full gap-1 shadow-none"
         variant="outline"
-        // onClick={() => onClick("google")}
+        onClick={() => onClick("google")}
       >
         <svg
           stroke="currentColor"
@@ -65,29 +65,13 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
       <div className="flex items-center w-full gap-x-2">
         <Button
           size="lg"
-          className="flex-1 gap-1 px-0 shadow-none"
+          className="flex-1 gap-2 px-0 shadow-none"
           variant="outline"
           // onClick={() => onClick("google")}
+          disabled
         >
           <svg
             className="!h-5 !w-5"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlSpace="preserve"
-            width="209"
-            height="256"
-            viewBox="0 0 814 1000"
-          >
-            <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76.5 0-103.7 40.8-165.9 40.8s-105.6-57-155.5-127C46.7 790.7 0 663 0 541.8c0-194.4 126.4-297.5 250.8-297.5 66.1 0 121.2 43.4 162.7 43.4 39.5 0 101.1-46 176.3-46 28.5 0 130.9 2.6 198.3 99.2zm-234-181.5c31.1-36.9 53.1-88.1 53.1-139.3 0-7.1-.6-14.3-1.9-20.1-50.6 1.9-110.8 33.7-147.1 75.8-28.5 32.4-55.1 83.6-55.1 135.5 0 7.8 1.3 15.6 1.9 18.1 3.2.6 8.4 1.3 13.6 1.3 45.4 0 102.5-30.4 135.5-71.3z" />
-          </svg>
-          ابل
-        </Button>
-        <Button
-          size="lg"
-          className="flex-1 gap-1 px-0 shadow-none"
-          variant="outline"
-          // onClick={() => onClick("google")}
-        >
-          <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 36 36"
             fill="url(#a)"
@@ -109,12 +93,32 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
           فيسبوك
         </Button>
         <Button
-          size="lg"
-          className="flex-1 gap-1 px-0 shadow-none"
+          className="gap-2 px-0 shadow-none w-12"
           variant="outline"
+          size="lg"
           // onClick={() => onClick("google")}
+          disabled
         >
           <svg
+            className="!h-5 !w-5"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlSpace="preserve"
+            width="209"
+            height="256"
+            viewBox="0 0 814 1000"
+          >
+            <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76.5 0-103.7 40.8-165.9 40.8s-105.6-57-155.5-127C46.7 790.7 0 663 0 541.8c0-194.4 126.4-297.5 250.8-297.5 66.1 0 121.2 43.4 162.7 43.4 39.5 0 101.1-46 176.3-46 28.5 0 130.9 2.6 198.3 99.2zm-234-181.5c31.1-36.9 53.1-88.1 53.1-139.3 0-7.1-.6-14.3-1.9-20.1-50.6 1.9-110.8 33.7-147.1 75.8-28.5 32.4-55.1 83.6-55.1 135.5 0 7.8 1.3 15.6 1.9 18.1 3.2.6 8.4 1.3 13.6 1.3 45.4 0 102.5-30.4 135.5-71.3z" />
+          </svg>
+        </Button>
+        <Button
+          className="gap-2 px-0 shadow-none w-12"
+          variant="outline"
+          size="lg"
+          // onClick={() => onClick("google")}
+          disabled
+        >
+          <svg
+            className="!h-4 !w-4"
             xmlns="http://www.w3.org/2000/svg"
             width="1200"
             height="1227"
@@ -126,7 +130,26 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
               d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
             />
           </svg>
-          اكس
+        </Button>
+        <Button
+          size="lg"
+          className="flex-1 gap-2 px-0 shadow-none"
+          variant="outline"
+          // onClick={() => onClick("google")}
+          disabled
+        >
+          Github
+          <svg
+            className="!h-5 !w-5"
+            viewBox="0 0 256 250"
+            width="256"
+            height="250"
+            fill="#24292f"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid"
+          >
+            <path d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Zm-80.06 182.34c-.282.636-1.283.827-2.194.39-.929-.417-1.45-1.284-1.15-1.922.276-.655 1.279-.838 2.205-.399.93.418 1.46 1.293 1.139 1.931Zm6.296 5.618c-.61.566-1.804.303-2.614-.591-.837-.892-.994-2.086-.375-2.66.63-.566 1.787-.301 2.626.591.838.903 1 2.088.363 2.66Zm4.32 7.188c-.785.545-2.067.034-2.86-1.104-.784-1.138-.784-2.503.017-3.05.795-.547 2.058-.055 2.861 1.075.782 1.157.782 2.522-.019 3.08Zm7.304 8.325c-.701.774-2.196.566-3.29-.49-1.119-1.032-1.43-2.496-.726-3.27.71-.776 2.213-.558 3.315.49 1.11 1.03 1.45 2.505.701 3.27Zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033-1.448-.439-2.395-1.613-2.103-2.626.301-1.01 1.747-1.484 3.207-1.028 1.446.436 2.396 1.602 2.095 2.622Zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95-1.53.034-2.769-.82-2.786-1.86 0-1.065 1.202-1.932 2.733-1.958 1.522-.03 2.768.818 2.768 1.868Zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37-1.485.271-2.861-.365-3.05-1.386-.184-1.056.893-2.114 2.376-2.387 1.514-.263 2.868.356 3.061 1.403Z" />
+          </svg>
         </Button>
       </div>
     </div>

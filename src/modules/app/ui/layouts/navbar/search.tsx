@@ -32,19 +32,19 @@ function SearchCommand() {
   return (
     <>
       <button
-        className="inline-flex h-9 w-full md:w-[280px] mx-3 rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground shadow-none shadow-black/5 transition-shadow placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/20"
+        className="inline-flex h-9 w-9 xs:w-full lg:w-[280px] mr-2 xs:mx-3 rounded-full xs:rounded-lg xs:border border-input hover:bg-accent xs:hover:bg-accent/50 bg-background px-2 xs:px-3 py-2 text-sm text-foreground shadow-none shadow-black/5 transition-shadow placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/20"
         onClick={() => setOpen(true)}
       >
-        <span className="flex grow items-center">
+        <span className="flex grow items-center w-full justify-center xs:justify-start">
           <Search
-            className="-ms-1 me-3 text-muted-foreground/80"
+            className="xs:-ms-1 xs:me-3 text-foreground xs:text-muted-foreground/80"
             size={16}
             strokeWidth={2}
             aria-hidden="true"
           />
-          <span className="font-normal text-muted-foreground/70">ابحث عن ما تريد</span>
+          <span className="font-normal text-muted-foreground/70 hidden xs:block ml-1">ابحث عن ما تريد</span>
         </span>
-        <kbd className="-ms-1 me-12 inline-flex h-5 max-h-full items-center rounded border border-border bg-background px-1 font-[inherit] text-[0.625rem] font-medium text-muted-foreground/70 ltr">
+        <kbd className="-ms-1 md:me-5 lg:me-12 hidden md:inline-flex h-5 max-h-full items-center rounded border border-border bg-background px-1 font-[inherit] text-[0.625rem] font-medium text-muted-foreground/70 ltr">
           ⌘K
         </kbd>
       </button>
