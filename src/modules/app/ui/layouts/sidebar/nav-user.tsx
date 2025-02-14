@@ -2,7 +2,7 @@
 
 import { ChevronsUpDown, LogOut, Settings2Icon, UserIcon } from "lucide-react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@ui//avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,13 +10,13 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@ui//dropdown-menu";
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "@/components/ui/sidebar";
+} from "@ui//sidebar";
 import SignOutButton from "@/modules/auth/components/logout";
 import Link from "next/link";
 import { UserData } from "@/modules/auth/hooks/use-user";

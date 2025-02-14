@@ -12,10 +12,10 @@ import {
   IconCheck,
   IconHomeFilled
 } from "@tabler/icons-react"
-import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@ui//card"
+import { Button } from "@ui//button"
 import {cn} from "@/lib/utils"
-import {Progress} from "@/components/ui/progress"
+import {Progress} from "@ui//progress"
 import { LessonItem, lessons } from '@/data/app/study/lessosn'
 
 // Component for rendering lesson buttons

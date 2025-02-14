@@ -2,20 +2,20 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight, CheckIcon, Loader } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { Button } from "@ui//button";
 import {
   IconBook2,
   IconBooks,
   IconCalculator,
   IconChevronDown,
 } from "@tabler/icons-react";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@ui//badge";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@ui//accordion";
 import { AlgebraUnits, Unit, Lesson } from "@/data/app/study/untis";
 
 // Component for the subject header section

@@ -8,15 +8,15 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from "@ui//sidebar"
 // import {NavUser} from "@/components/layout/nav-user";
 import Image from "next/image";
 import Link from "next/link";
 import {ChevronLeft, ChevronRight, FileText, Play, Zap} from "lucide-react";
-import {Button} from "@/components/ui/button";
+import {Button} from "@ui//button";
 import {cn} from "@/lib/utils";
 import React from "react";
-import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
+import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@ui//tooltip";
 import { lessonSidebar } from "@/data/app/study/lessosn";
 
 export function LessonSidebar() {

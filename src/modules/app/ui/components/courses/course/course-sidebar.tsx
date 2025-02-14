@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Calendar, Globe, Smartphone, Clock4, Award } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@ui//button'
 
 const CourseSidebar = ({lastUpdate}: {lastUpdate: string}) => {
   return (        <div className="space-y-6 h-fit sticky top-20">

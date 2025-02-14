@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@ui//button";
 import {
   Sidebar,
   SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel,
@@ -9,7 +9,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from "@ui//sidebar"
 import { unitsSidebar } from "@/data/app/study/untis";
 import config from "@/data/config";
 import { IconChevronRight } from "@tabler/icons-react";

@@ -5,10 +5,10 @@ import {
   Card,
   CardContent,
   CardHeader,
-} from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import { Separator } from "@/components/ui/separator";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+} from "@ui//card";
+import { Progress } from "@ui//progress";
+import { Separator } from "@ui//separator";
+import { Avatar, AvatarFallback, AvatarImage } from "@ui//avatar";
 import Link from "next/link";
 import { IconAwardFilled, IconBook2, IconCheckbox } from "@tabler/icons-react";
 

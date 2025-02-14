@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@ui//button";
 import { signOut } from "@/modules/auth/actions";
 
 const SignOutButton = ({className, children, asChild}: {className?: string, children?: React.ReactNode, asChild?: boolean}) => {

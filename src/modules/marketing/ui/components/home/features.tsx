@@ -6,7 +6,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@ui//card";
 import Link from "next/link";
 import Image from "next/image";
 import { features, Feature } from "@/data/marketing/home/features";

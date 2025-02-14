@@ -1,9 +1,9 @@
 import React from 'react'
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Progress } from "@/components/ui/progress"
+import { Card } from "@ui//card"
+import { Badge } from "@ui//badge"
+import { Progress } from "@ui//progress"
 import { BadgeCheck, CheckIcon } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@ui//button"
 import { cn } from '@/lib/utils'
 
 const EarnBadge = ({ cover, avatar }: { cover: boolean, avatar: boolean }) => {

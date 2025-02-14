@@ -10,7 +10,7 @@ import {
   SidebarHeader,
   SidebarMenuButton,
   SidebarRail,
-} from "@/components/ui/sidebar";
+} from "@ui//sidebar";
 import Image from "next/image";
 import Link from "next/link";
 import { NavGroup } from "@/modules/app/ui/layouts/sidebar/nav-group";

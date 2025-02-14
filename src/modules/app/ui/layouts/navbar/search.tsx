@@ -12,7 +12,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/components/ui/command";
+} from "@ui//command";
 
 function SearchCommand() {
   const [open, setOpen] = React.useState(false);

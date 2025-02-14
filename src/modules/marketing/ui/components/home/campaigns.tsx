@@ -1,17 +1,17 @@
 "use client"
 
 import Image from "next/image"
-import { type CarouselApi } from "@/components/ui/carousel"
+import { type CarouselApi } from "@ui//carousel"
 import React from "react";
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@ui//button"
+import { Card, CardContent } from "@ui//card"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from "@ui//carousel"
 import Autoplay from "embla-carousel-autoplay";
 import { Campaign, campaigns } from "@/data/marketing/home/campaigns";
 

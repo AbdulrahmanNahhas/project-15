@@ -13,8 +13,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 // UI Components
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "@ui//input";
+import { Button } from "@ui//button";
 import {
   Form,
   FormControl,
@@ -22,7 +22,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "@ui//form";
 
 // Custom Components
 import FormError from "@/modules/auth/components/form-error";

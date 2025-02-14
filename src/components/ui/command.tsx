@@ -10,7 +10,7 @@ import {
   DialogContent,
   DialogDescription,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "@ui//dialog";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
 const Command = React.forwardRef<

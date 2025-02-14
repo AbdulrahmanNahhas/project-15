@@ -1,8 +1,8 @@
 "use client"
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@ui//avatar"
 import {Clock3,Lock,ArrowUp,type LucideIcon} from "lucide-react"
-import {Card, CardContent} from "@/components/ui/card";
+import {Card, CardContent} from "@ui//card";
 import {cn} from "@/lib/utils";
 import "./style.css";
 import { leagueData } from "@/data/app/leaderboard/league-data";

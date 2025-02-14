@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@ui//button"
 import { categories, featuredPosts, tablePosts } from "@/data/marketing/blog/posts";
 import { PostCard } from "@/modules/marketing/ui/components/blog/post-card"
 import { PostsTable } from "@/modules/marketing/ui/components/blog/posts-table"

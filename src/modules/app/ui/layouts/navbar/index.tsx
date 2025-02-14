@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { SidebarTrigger } from "@/components/ui/sidebar";
+import { Button } from "@ui//button";
+import { SidebarTrigger } from "@ui//sidebar";
 import { SearchCommand } from "./search";
 import { useScroll } from "motion/react";
 import { cn } from "@/lib/utils";

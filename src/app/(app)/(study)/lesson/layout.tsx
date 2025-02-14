@@ -1,4 +1,4 @@
-import {SidebarInset, SidebarProvider, SidebarTrigger} from "@/components/ui/sidebar"
+import {SidebarInset, SidebarProvider, SidebarTrigger} from "@ui//sidebar"
 import {LessonSidebar} from "../../../../modules/app/ui/components/learn/lesson/sidebar";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {

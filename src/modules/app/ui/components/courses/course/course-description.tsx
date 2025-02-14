@@ -1,7 +1,7 @@
 import React from 'react'
 import { CheckCircle2, BadgeCheck } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
+import { Badge } from '@ui//badge'
+import { Avatar, AvatarImage, AvatarFallback } from '@ui//avatar'
 
 interface Expert {
   name: string

@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@ui//button";
 import { loginWithSocial } from "@/modules/auth/actions/login";
 import { cn } from "@/lib/utils";
 import { Provider } from "@supabase/supabase-js";

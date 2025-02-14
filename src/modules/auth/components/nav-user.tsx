@@ -3,7 +3,7 @@
 import { NavUser } from "@/modules/app/ui/layouts/sidebar/nav-user"
 import { useUser } from '@/modules/auth/hooks/use-user'
 import SignOutButton from "./logout"
-import { buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@ui//button"
 import { cn } from "@/lib/utils"
 
 export function UserButton() {

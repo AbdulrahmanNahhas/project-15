@@ -2,9 +2,9 @@
 
 import * as React from "react"
 import { Zap, X } from "lucide-react"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger, DrawerClose } from "@/components/ui/drawer"
-import { buttonVariants } from "@/components/ui/button"
+import { Popover, PopoverContent, PopoverTrigger } from "@ui//popover"
+import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger, DrawerClose } from "@ui//drawer"
+import { buttonVariants } from "@ui//button"
 import { cn } from "@/lib/utils"
 
 // واجهة خصائص التتابع - Streak Props Interface

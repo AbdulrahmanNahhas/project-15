@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@ui//card";
 import Link from "next/link";
 import { subjects } from "@/data/app/study/subjects";
 export default function Learn () {

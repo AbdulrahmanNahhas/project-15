@@ -10,7 +10,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem
-} from "@/components/ui/sidebar"
+} from "@ui//sidebar"
 import Link from "next/link";
 import { TablerIcon } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";

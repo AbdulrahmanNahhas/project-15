@@ -1,8 +1,8 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@ui//avatar";
+import { Button } from "@ui//button";
+import { Card } from "@ui//card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@ui//tabs";
+import { Badge } from "@ui//badge";
 import { IconFlame, IconRosetteDiscountCheckFilled } from "@tabler/icons-react";
 import EarnBadge from "@/modules/app/ui/components/user/earn-badge";
 import { ImagePlus } from "lucide-react";

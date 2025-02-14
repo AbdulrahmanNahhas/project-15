@@ -1,6 +1,6 @@
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Badge } from "@ui//badge"
+import { Card, CardContent } from "@ui//card"
+import { Tabs, TabsList, TabsTrigger } from "@ui//tabs"
 import Link from "next/link"
 import { courses } from "@/data/app/courses/courses"
 
