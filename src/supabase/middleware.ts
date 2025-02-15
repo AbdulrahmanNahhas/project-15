@@ -3,7 +3,7 @@ import { type NextRequest, NextResponse } from "next/server";
 
 // This middleware creates a Supabase client specifically for handling server-side authentication in Next.js middleware
 // It manages cookie-based session handling between the client and server
-export const createClient = async (request: NextRequest) => {
+export const supabaseMiddleware = async (request: NextRequest) => {
   // Create an initial response to modify with auth cookies
   let response = NextResponse.next({
     request: {
@@ -46,8 +46,8 @@ export const createClient = async (request: NextRequest) => {
 
   // Get the user's session
   const {
-    data: { session },
-  } = await supabase.auth.getSession();
+    data: { user },
+  } = await supabase.auth.getUser();
 
-  return { response, session };
+  return { response, user };
 };

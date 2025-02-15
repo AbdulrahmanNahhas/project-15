@@ -2,7 +2,6 @@
 import * as React from "react";
 
 import { NavMain } from "@/modules/app/ui/layouts/sidebar/nav-main";
-// import { NavUser } from "@/modules/app/ui/layouts/sidebar/nav-user";
 import {
   Sidebar,
   SidebarContent,
@@ -15,7 +14,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { NavGroup } from "@/modules/app/ui/layouts/sidebar/nav-group";
 import { navigationData } from "@/data/app/sidebar/navigation";
-import { UserButton } from "@/modules/auth/components/nav-user";
+import { NavUser } from "./nav-user";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -46,7 +45,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         ))}
       </SidebarContent>
       <SidebarFooter>
-        <UserButton />
+        <NavUser />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

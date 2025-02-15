@@ -1,20 +1,32 @@
-import { createClient } from '@/supabase/middleware';
+import { supabaseMiddleware } from '@/supabase/middleware';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server'
 import { DEFAULT_LOGIN_REDIRECT, LOGIN_ROUTE, privateRoutes, authRoutes } from './routes';
+import { getUser } from './lib/auth';
 
 export async function middleware(request: NextRequest) {
-  // console.log('Middleware starting for path:', request.nextUrl.pathname);
-  
   try {
     // Create client and get session
-    const { response, session } = await createClient(request);
+    const { response, user: session } = await supabaseMiddleware(request);
+    const userData = await getUser();
 
-    // Protected routes
-    if (privateRoutes.includes(request.nextUrl.pathname)) {
-      if (!session) {
+    // Unauthenticated users
+    if (!session) {
+      // Redirect unauthenticated users from private routes
+      if (privateRoutes.includes(request.nextUrl.pathname)) {
         return NextResponse.redirect(new URL(LOGIN_ROUTE, request.url));
       }
+      return response;
+    }
+
+    // Redirect to onboarding if not completed
+    if (!userData?.onboarding_completed && request.nextUrl.pathname !== "/onboarding") {
+      return NextResponse.redirect(new URL("/onboarding", request.url));
+    }
+
+    // Prevent access to onboarding if already completed
+    if (userData?.onboarding_completed && request.nextUrl.pathname === "/onboarding") {
+      return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, request.url));
     }
 
     // Auth routes (login, register) - redirect to dashboard if already logged in

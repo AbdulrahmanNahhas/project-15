@@ -1,11 +1,22 @@
-import { createClient } from '@/supabase/server'
+'use client'
+
+import { useUser } from '@/components/context/auth-context'
 import { redirect } from 'next/navigation'
+import { LOGIN_ROUTE } from '@/routes';
+import Loading from '@/components/common/loading';
 
-const MyProject = async () => {
-  const supabase = await createClient()
-  const { data: { session } } = await supabase.auth.getSession()
+const UserMe = () => {
+  const {user, isLoading} = useUser(); // No API calls, gets data from context
 
-  return redirect(`/user/${session?.user.user_metadata.username}`)
+  if (isLoading) {
+    return <Loading />
+  }
+
+  if (!user) {
+    return redirect(LOGIN_ROUTE)
+  }
+
+  return redirect(`/user/${user?.username}`)
 }
 
-export default MyProject
+export default UserMe

@@ -19,27 +19,24 @@ import {
 } from "@ui//sidebar";
 import SignOutButton from "@/modules/auth/components/logout";
 import Link from "next/link";
-import { UserData } from "@/modules/auth/hooks/use-user";
+import { useUser } from "@/components/context/auth-context";
 import { useRouter } from "next/navigation";
 import { LOGIN_ROUTE } from "@/routes";
 
-interface NavUserProps {
-  user: UserData | null;
-  loading: boolean;
-}
+export function NavUser() {
+  const { user, isLoading } = useUser();
 
-export function NavUser({ user, loading }: NavUserProps) {
   const { isMobile } = useSidebar();
   const router = useRouter();
 
   // Handle no user (not authenticated)
-  if (!user && !loading) {
+  if (!user && !isLoading) {
     router.push(LOGIN_ROUTE);
     return null;
   }
 
   const renderUserContent = () => {
-    if (loading) {
+    if (isLoading) {
       return (
         <div className="flex items-center gap-3 p-2 animate-pulse ml-auto">
           <div className="w-8 h-8 rounded-lg bg-gray-200 dark:bg-gray-700" />

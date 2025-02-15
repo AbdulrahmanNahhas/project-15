@@ -5,6 +5,7 @@
  */
 export const privateRoutes: string[] = [
   "/home",
+  "/onboarding",
 ];
 
 /**

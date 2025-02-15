@@ -1,13 +1,9 @@
-interface Layout {
-  children: React.ReactNode
+interface LayoutProps {
+  children: React.ReactNode;
 }
 
-const Layout = ({children}: Layout) => {
-  return (
-    <>
-    {children}
-    </>
-  )
-}
+const Layout = ({ children }: LayoutProps) => {
+  return <>{children}</>;
+};
 
-export default Layout
+export default Layout;
