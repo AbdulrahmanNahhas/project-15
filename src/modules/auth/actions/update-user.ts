@@ -3,7 +3,6 @@
 import { FormData } from "@/data/app/onboarding/types";
 import { getUser } from "@/lib/auth";
 import { createClient } from "@/supabase/server";
-import { revalidatePath } from "next/cache";
 
 // {
 //   gender: string;
@@ -21,6 +20,8 @@ export async function updateUser(values: FormData) {
   if (!user) {
     return { status: "error", message: "User not found" };
   }
+
+  console.log("Update User: ", values);
 
   const { error } = await supabase
     .from("users")

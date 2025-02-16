@@ -24,7 +24,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
   React.useEffect(() => {
     setOpenMobile(false);
-  }, [pathname]);
+  }, [pathname, setOpenMobile]);
 
   return (
     <Sidebar collapsible="icon" className="sidebar" {...props}>
