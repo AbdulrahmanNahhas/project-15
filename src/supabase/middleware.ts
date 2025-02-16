@@ -46,8 +46,8 @@ export const supabaseMiddleware = async (request: NextRequest) => {
 
   // Get the user's session
   const {
-    data: { user },
-  } = await supabase.auth.getUser();
+    data: { session },
+  } = await supabase.auth.getSession();
 
-  return { response, user };
+  return { response, session };
 };

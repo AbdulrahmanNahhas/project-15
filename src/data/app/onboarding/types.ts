@@ -32,17 +32,24 @@ const basicInfoSchema = z.object({
 // User Details
 export const userTypes = [
   { value: "k12", label: "طالب مدرسي", image: "/onboarding/students/school.png", color: "#FCA6CF" },
-  { value: "break", label: "طالب منقطع", image: "/onboarding/students/student.png", color: "#533CB3" },
+  { value: "self-taught", label: "طالب منقطع", image: "/onboarding/students/student.png", color: "#533CB3" },
   { value: "university", label: "طالب جامعي", image: "/onboarding/students/university.png", color: "#F8A300" },
   { value: "educator", label: "مُعلِّم", image: "/onboarding/students/teacher.png", color: "#006947" },
   // { value: "other", label: "أخرى", icon: HelpCircle },
 ] as const;
 
 export const grades = [
+  { value: "7", label: "السابع" },
+  { value: "8", label: "الثامن" },
   { value: "9", label: "التاسع" },
-  { value: "10", label: "العاشر" },
-  { value: "11", label: "الحادي عشر" },
-  { value: "12", label: "الثاني عشر" },
+  { value: "10", label: "الأول الثانوي" },
+  { value: "11", label: "الثاني الثانوي" },
+  { value: "12", label: "الثالث الثانوي" },
+] as const;
+
+export const certificates = [
+  { value: "9", label: "شهادة التعليم الأساسي" },
+  { value: "12", label: "شهادة الثانوية العامة (البكالوريا)" },
 ] as const;
 
 export const roles = [
@@ -53,14 +60,15 @@ export const roles = [
 
 const userDetailsSchema = z.object({
   userType: z.enum(userTypes.map((u) => u.value) as [string, ...string[]]),
-  grade: z.enum(["6", "7", "8", "9", "10", "11", "12"]).optional(),
+  grade: z.enum(grades.map((g) => g.value) as [string, ...string[]]),
+  certificate: z.enum(certificates.map((c) => c.value) as [string, ...string[]]),
   role: z.enum(roles.map((r) => r.value) as [string, ...string[]]),
 })
 
 const accountConfigSchema = z.object({
-  imageUrl: z.string().url("Invalid image URL"),
-  coverImageUrl: z.string().url("Invalid cover image URL"),
-  bio: z.string().min(10, "Bio must be at least 10 characters"),
+  imageUrl: z.string().url().optional(),
+  coverImageUrl: z.string().url().optional(),
+  bio: z.string().optional(),
 })
 
 export const formSchema = basicInfoSchema.merge(userDetailsSchema).merge(accountConfigSchema)

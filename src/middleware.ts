@@ -7,7 +7,7 @@ import { getUser } from './lib/auth';
 export async function middleware(request: NextRequest) {
   try {
     // Create client and get session
-    const { response, user: session } = await supabaseMiddleware(request);
+    const { response, session } = await supabaseMiddleware(request);
     const userData = await getUser();
 
     // Unauthenticated users

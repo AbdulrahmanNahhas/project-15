@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Kufi_Arabic } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/components/context/auth-context";
+import { Toaster } from "sonner";
 
 const notoKufiArabic = Noto_Kufi_Arabic({
   variable: "--font-kufi",
@@ -26,6 +27,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={`${notoKufiArabic.variable}`}>
         <AuthProvider>
+          <Toaster />
           {children}
         </AuthProvider>
       </body>

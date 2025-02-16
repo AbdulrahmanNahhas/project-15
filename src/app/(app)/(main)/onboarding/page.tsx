@@ -10,10 +10,14 @@ import { BasicInfoStep } from "@/modules/app/ui/components/onboarding/basic-info
 import { UserDetailsStep } from "@/modules/app/ui/components/onboarding/user-details-step"
 import { AccountConfigStep } from "@/modules/app/ui/components/onboarding/account-config-step"
 import { FormData, formSchema } from "@/data/app/onboarding/types"
+import { updateUser } from "@/modules/auth/actions/update-user"
+import { toast } from "sonner"
+import { useRouter } from "next/navigation"
 
 export default function OnboardingPage() {
   const [activeStep, setActiveStep] = useState(0)
   const [stepData, setStepData] = useState<Partial<FormData>>({})
+  const router = useRouter()
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -22,6 +26,7 @@ export default function OnboardingPage() {
       muhafazah: undefined,
       userType: undefined,
       grade: undefined,
+      certificate: undefined,
       role: undefined,
       imageUrl: undefined,
       coverImageUrl: undefined,
@@ -30,9 +35,16 @@ export default function OnboardingPage() {
     },
   })
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FormData) => {
     console.log("Form submitted with data:", data)
     setStepData(data)
+    const response = await updateUser(data);
+    if (response.status === "success") {
+      toast.success(response.message)
+      router.push("/home")
+    } else {
+      toast.error(response.message)
+    }
   }
 
   const nextStep = async () => {
@@ -44,8 +56,11 @@ export default function OnboardingPage() {
         isValid = await form.trigger(["gender", "muhafazah"])
         break
       case 1:
-        isValid = await form.trigger(["userType", "grade", "role"])
+        isValid = await form.trigger(["userType", "grade", "certificate", "role"])
         break
+      // case 2:
+      //   isValid = await form.trigger(["imageUrl", "coverImageUrl", "bio"])
+      //   break
       default:
         isValid = true
     }
@@ -93,7 +108,7 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="container mx-auto mt-8 flex flex-col h-full">
+    <div className="h-screen w-screen fixed top-0 right-0 left-0 bottom-0 px-4 pt-10 flex flex-col overflow-y-scroll z-50 bg-background">
       <Stepper value={activeStep} className="mb-10 w-full flex justify-center items-center">
         {steps.map((step, index) => (
           <StepperItem key={step.title} step={index}>
@@ -120,7 +135,7 @@ export default function OnboardingPage() {
               السابق
             </Button>
             {activeStep < 2 ? (
-              <Button size="lg" type="button" onClick={nextStep} className="w-32 h-12 text-xl">
+              <Button size="lg" type="button" onClick={nextStep} className="w-32 h-12 text-xl" >
                 التالي
               </Button>
             ) : (
