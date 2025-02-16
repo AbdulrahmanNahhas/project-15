@@ -9,14 +9,23 @@ import {
   SidebarHeader,
   SidebarMenuButton,
   SidebarRail,
+  useSidebar,
 } from "@ui//sidebar";
 import Image from "next/image";
 import Link from "next/link";
 import { NavGroup } from "@/modules/app/ui/layouts/sidebar/nav-group";
 import { navigationData } from "@/data/app/sidebar/navigation";
 import { NavUser } from "./nav-user";
+import { usePathname } from "next/navigation";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { setOpenMobile } = useSidebar();
+  const pathname = usePathname();
+
+  React.useEffect(() => {
+    setOpenMobile(false);
+  }, [pathname]);
+
   return (
     <Sidebar collapsible="icon" className="sidebar" {...props}>
       <SidebarHeader className="border-b-0 lg:p-2">

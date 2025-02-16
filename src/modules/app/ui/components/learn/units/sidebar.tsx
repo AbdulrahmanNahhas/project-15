@@ -15,6 +15,7 @@ import config from "@/data/config";
 import { IconChevronRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
+import { NavUser } from "@/modules/app/ui/layouts/sidebar/nav-user";
 
 export function UnitsSidebar() {
   return (
@@ -70,7 +71,7 @@ export function UnitsSidebar() {
           </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        {/* <NavUser user={data.user} /> */}
+        <NavUser />
       </SidebarFooter>
       <SidebarRail className={"!hidden md:!block hover:after:bg-primary"} />
     </Sidebar>

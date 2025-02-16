@@ -9,7 +9,6 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@ui//sidebar"
-// import {NavUser} from "@/components/layout/nav-user";
 import Image from "next/image";
 import Link from "next/link";
 import {ChevronLeft, ChevronRight, FileText, Play, Zap} from "lucide-react";
@@ -18,6 +17,7 @@ import {cn} from "@/lib/utils";
 import React from "react";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@ui//tooltip";
 import { lessonSidebar } from "@/data/app/study/lessosn";
+import { NavUser } from "@/modules/app/ui/layouts/sidebar/nav-user";
 
 export function LessonSidebar() {
   const items = [...lessonSidebar.learn, ...lessonSidebar.practice].sort((a, b) => a.index - b.index);
@@ -91,7 +91,7 @@ export function LessonSidebar() {
         </TooltipProvider>
       </SidebarContent>
       <SidebarFooter>
-        {/* <NavUser user={data.user}/> */}
+      <NavUser />
       </SidebarFooter>
       <SidebarRail className={"!hidden md:!block hover:after:bg-primary"}/>
     </Sidebar>

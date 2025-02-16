@@ -44,8 +44,13 @@ export function NavGroup({
             <SidebarMenuButton
               tooltip={item.name}
               isActive={isActive}
-              asChild disabled={item.url === "#"}
-              className={item.url === "#" ? "opacity-50 cursor-not-allowed" : ""}
+              disabled={item.url === "#"}
+              className={cn(
+                "!h-10 !text-base md:!h-8 md:!text-sm",
+                isActive && "!text-primary !bg-primary/10",
+                item.url === "#" && "opacity-50 cursor-not-allowed"
+              )}
+              asChild
             >
               <Link href={item.url}>
                 {isActive && item.activeIcon && <item.activeIcon className={cn(item.activeClassName)} />}

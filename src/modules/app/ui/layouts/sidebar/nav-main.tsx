@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import { TablerIcon } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export function NavMain({
   items,
@@ -36,11 +37,17 @@ export function NavMain({
 
         return (
           <SidebarMenuItem key={index}>
-            <SidebarMenuButton
-              tooltip={item.title}
-              asChild
-              isActive={isActive}
-            >
+          <SidebarMenuButton
+            tooltip={item.title}
+            isActive={isActive}
+            disabled={item.url === "#"}
+            className={cn(
+              "!h-10 !text-base md:!h-8 md:!text-sm",
+              isActive && "!text-primary !bg-primary/10",
+              item.url === "#" && "opacity-50 cursor-not-allowed"
+            )}
+            asChild
+          >
               <Link href={item.url}>
                 {isActive && item.activeIcon && <item.activeIcon />}
                 {(item.icon && !isActive) && <item.icon />}
