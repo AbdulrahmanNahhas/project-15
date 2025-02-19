@@ -12,7 +12,10 @@
     "next-env.d.ts": true,
     "README.md": true,
     "eslint.config.mjs": true,
-    "package-lock.json": true
+    "package-lock.json": true,
+    ".next": true,
+    "tsconfig.json": true,
+    "bun.lock": true
   },
   "hide-files.files": [
     "node_modules",
@@ -21,6 +24,9 @@
     "next-env.d.ts",
     "README.md",
     "eslint.config.mjs",
-    "package-lock.json"
+    "package-lock.json",
+    ".next",
+    "tsconfig.json",
+    "bun.lock"
   ]
 }

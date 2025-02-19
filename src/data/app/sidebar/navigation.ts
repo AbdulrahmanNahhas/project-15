@@ -12,7 +12,8 @@ import {
   IconBook2,
   IconHome,
   IconHomeFilled,
-  IconSchool
+  IconSchool,
+  IconReportAnalytics
 } from '@tabler/icons-react'
 
 export const navigationData = {
@@ -153,3 +154,29 @@ export const navigationData = {
     // },
   ],
 };
+
+export const bottomNavigationData = [
+  {
+    title: "لوحة التحكم",
+    url: "/home",
+    icon: IconHome,
+    activeIcon: IconHomeFilled,
+  },
+  {
+    title: "التقدم",
+    url: "#",
+    icon: IconReportAnalytics,
+    // activeIcon: IconChartLine,
+  },
+  {
+    title: "المنهاج الدراسي",
+    url: "/learn",
+    icon: IconSchool,
+  },
+  {
+    title: "الدورات",
+    url: "/courses",
+    icon: IconBook2,
+    activeIcon: IconBook2,
+  },
+]

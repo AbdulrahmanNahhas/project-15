@@ -8,11 +8,6 @@ export default {
 			"./src/modules/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-  	container: {
-  		screens: {
-  			xl: '1152px'
-  		}
-  	},
   	extend: {
   		screens: {
   			xs: '540px'

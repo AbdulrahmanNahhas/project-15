@@ -22,8 +22,10 @@ import Link from "next/link";
 import { useUser } from "@/components/context/auth-context";
 import { useRouter } from "next/navigation";
 import { LOGIN_ROUTE } from "@/routes";
+import { IconUserFilled } from "@tabler/icons-react";
+import { cn } from "@/lib/utils";
 
-export function NavUser() {
+export function NavUser({ texts = true }: { texts?: boolean }) {
   const { user, isLoading } = useUser();
 
   const { isMobile } = useSidebar();
@@ -55,11 +57,10 @@ export function NavUser() {
         <Avatar className="size-10 rounded-lg">
           <AvatarImage src={user.avatar_url} alt={user.username} />
           <AvatarFallback className="rounded-lg">
-            {user.first_name?.[0]}
-            {user.last_name?.[0]}
+            <IconUserFilled />
           </AvatarFallback>
         </Avatar>
-        <div className="grid flex-1 text-right text-sm leading-snug">
+        <div className={cn("grid flex-1 text-right text-sm leading-snug", !texts&&"hidden")}>
           <span className="truncate font-semibold">
             {user.first_name} {user.last_name}
           </span>
@@ -78,10 +79,10 @@ export function NavUser() {
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+              className={cn("data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground", !texts && "aspect-square !px-0 flex items-center justify-center !ring-0")}
             >
               {renderUserContent()}
-              <ChevronsUpDown className="ml-auto size-4" />
+              <ChevronsUpDown className={cn("ml-auto size-4", !texts&&"hidden")} />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent

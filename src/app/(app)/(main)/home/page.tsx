@@ -11,21 +11,22 @@ import { Separator } from "@ui//separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@ui//avatar";
 import Link from "next/link";
 import { IconAwardFilled, IconBook2, IconCheckbox } from "@tabler/icons-react";
+import { ActivityCard } from "@/modules/app/ui/components/home/activity-card";
 
 export default function Dashboard() {
   return (
     <div className="min-h-screen bg-transparent container mx-auto" dir="rtl">
-      <div className="flex flex-col lg:flex-row gap-6 p-4 sm:p-6">
+      <div className="flex flex-col lg:flex-row gap-4">
         {/* Main Content */}
         <div className="flex-1 space-y-6">
           {/* Card 1*/}
-          <Card className="shadow-none">
+          {/* <Card className="shadow-none">
             <CardHeader className="flex !items-start justify-between flex-row">
               <h2 className="text-lg sm:text-xl font-bold">الصفحات</h2>
-              {/* <Button variant={"outline"} size={"sm"} className="!mt-0">
+              <Button variant={"outline"} size={"sm"} className="!mt-0">
                 <ExternalLink />
                 Link
-              </Button> */}
+              </Button>
             </CardHeader>
             <CardContent className="flex flex-wrap gap-2">
               <Link href="/home">
@@ -35,8 +36,7 @@ export default function Dashboard() {
                   </CardContent>
                 </Card>
               </Link>
-              
-              {/* Learning Section */}
+              Learning Section
               <Link href="/learn">
                 <Card className="shadow-none hover:bg-accent/50 transition-all duration-300">
                   <CardContent className="p-4 flex items-center gap-2">
@@ -66,7 +66,7 @@ export default function Dashboard() {
                 </Card>
               </Link>
 
-              {/* Interactions Section */}
+              Interactions Section
               <Link href="#">
                 <Card className="shadow-none hover:bg-accent/50 transition-all duration-300">
                   <CardContent className="p-4 flex items-center gap-2">
@@ -82,7 +82,7 @@ export default function Dashboard() {
                 </Card>
               </Link>
 
-              {/* Statistics Section */}
+              Statistics Section
               <Link href="#">
                 <Card className="shadow-none hover:bg-accent/50 transition-all duration-300">
                   <CardContent className="p-4 flex items-center gap-2">
@@ -98,25 +98,14 @@ export default function Dashboard() {
                 </Card>
               </Link>
             </CardContent>
-          </Card>
-
-          {/* Card 2
-          <Card className="shadow-none">
-            <CardHeader className="flex !items-start justify-between flex-row">
-              <h2 className="text-lg sm:text-xl font-bold"> Card Title</h2>
-              <Button variant={"outline"} size={"sm"} className="!mt-0">
-                <ExternalLink />
-                Link
-              </Button>
-            </CardHeader>
-            <CardContent>Card</CardContent>
           </Card> */}
+          {/* Card 2*/}
         </div>
 
         {/* Sidebar */}
-        <div className="lg:w-[30%] min-w-[340px] space-y-6">
+        <div className="lg:w-[30%] min-w-[340px] space-y-4">
           <ProfileComponent />
-          {/* <StreakComponent /> */}
+          <ActivityCard />
         </div>
       </div>
     </div>
@@ -125,7 +114,7 @@ export default function Dashboard() {
 
 const ProfileComponent = () => {
   return (
-    <Card className="shadow-sm">
+    <Card className="shadow-none rounded-3xl bg-accent/25 hover:bg-accent/0">
       <CardContent className="p-4 sm:p-6">
         <div className="flex items-center space-x-4 space-x-reverse">
           <Avatar className="h-16 w-16">
@@ -176,70 +165,3 @@ const ProfileComponent = () => {
     </Card>
   );
 };
-
-// const StreakComponent = () => {
-//   return (
-//     <div className="flex !pt-2 flex-col gap-4">
-//       <div className={"flex justify-between items-center"}>
-//         <div className={"flex items-center justify-start gap-1"}>
-//           <Zap fill={"current"} className={"h-10 w-auto opacity-75"} />
-//           <span className={"text-5xl font-bold"}>145</span>
-//           <div className={"flex flex-col gap-1 mr-1"}>
-//             <span className={"text-base"}>المداومة اليومية</span>
-//             <div
-//               className={
-//                 "flex gap-1 text-xs items-center text-muted-foreground"
-//               }
-//             >
-//               <Progress value={10} />
-//               0/100
-//             </div>
-//           </div>
-//         </div>
-//         <Button variant={"ghost"} size={"icon"}>
-//           <InfoIcon />
-//         </Button>
-//       </div>
-//       <Card className="rounded-lg border shadow-none">
-//         <CardContent className="flex items-center justify-between p-4">
-//           <div className="flex gap-0">
-//             {["س", "أ", "اث", "ث", "أر"].map((day, index) => (
-//               <div
-//                 key={index}
-//                 className={cn(
-//                   "flex flex-col items-center hover:bg-accent/25 p-2.5 gap-2 rounded-[10px] cursor-default",
-//                   index === 0 && "bg-accent/80 hover:bg-accent/70"
-//                 )}
-//               >
-//                 <Zap
-//                   className={`h-8 w-8 fill-current ${
-//                     index === 0 ? "text-primary" : "text-gray-200"
-//                   }`}
-//                 />
-//                 <span
-//                   className={`text-sm ${
-//                     index === 0 ? "font-bold" : "text-gray-500"
-//                   }`}
-//                 >
-//                   {day}
-//                 </span>
-//               </div>
-//             ))}
-//           </div>
-//           <Separator
-//             orientation={"vertical"}
-//             className={"w-[2px] h-[50px] !bg-border"}
-//           />
-//           <div className="flex flex-col items-center justify-between h-full gap-2">
-//             <Snowflake className="h-7 w-auto text-primary" />
-//             <Snowflake className="h-7 w-auto text-primary" />
-//           </div>
-//         </CardContent>
-//         <CardFooter className="flex items-center justify-start text-sm text-muted-foreground pb-4">
-//           <Zap className="ml-2 h-4 w-4 text-primary fill-current" />
-//           <span>أفضل مداومة لديك هي 24 يوم</span>
-//         </CardFooter>
-//       </Card>
-//     </div>
-//   );
-// };
