@@ -1,5 +1,5 @@
-import React from 'react'
-import Link from "next/link"
+import React from "react";
+import Link from "next/link";
 import {
   IconInfoCircle,
   IconBolt,
@@ -10,44 +10,62 @@ import {
   IconSparkles,
   IconChevronLeft,
   IconCheck,
-  IconHomeFilled
-} from "@tabler/icons-react"
-import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@ui//card"
-import { Button } from "@ui//button"
-import {cn} from "@/lib/utils"
-import {Progress} from "@ui//progress"
-import { LessonItem, lessons } from '@/data/app/study/lessosn'
+  IconHomeFilled,
+} from "@tabler/icons-react";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@ui//card";
+import { Button } from "@ui//button";
+import { cn } from "@/lib/utils";
+import { Progress } from "@ui//progress";
+import { LessonItem, lessons } from "@/data/app/study/lessosn";
 
 // Component for rendering lesson buttons
-const LessonButton = ({ item, type = "learn" }: { item: LessonItem["learn"][0] | LessonItem["practice"][0]; type?: "learn" | "practice" }) => {
+const LessonButton = ({
+  item,
+  type = "learn",
+}: {
+  item: LessonItem["learn"][0] | LessonItem["practice"][0];
+  type?: "learn" | "practice";
+}) => {
   // Determine icon based on lesson type
-  const Icon = type === "learn" ? 
-    ('type' in item && item.type === "video" ? IconPlayerPlay : IconFileText) : 
-    IconBolt
+  const Icon =
+    type === "learn"
+      ? "type" in item && item.type === "video"
+        ? IconPlayerPlay
+        : IconFileText
+      : IconBolt;
 
   return (
-    <Button 
-      variant="outline" 
+    <Button
+      variant="outline"
       className={cn(
         "group w-full justify-start p-4 h-auto shadow-none hover:shadow-inne flex gap-3",
         item.status && "hover:bg-green-100/30"
       )}
+      asChild
     >
-      {item.status ? (
-        <IconCheck className="!size-5 bg-green-600 rounded-sm p-0.5 text-white stroke-[3]" />
-      ) : (
-        <Icon className={cn("!size-6", item.status && "text-green-600")} />
-      )}
-      {item.title}
+      <Link href={"/lesson/1"}>
+        {item.status ? (
+          <IconCheck className="!size-5 bg-green-600 rounded-sm p-0.5 text-white stroke-[3]" />
+        ) : (
+          <Icon className={cn("!size-6", item.status && "text-green-600")} />
+        )}
+        {item.title}
+      </Link>
     </Button>
-  )
-}
+  );
+};
 
 // Component for breadcrumb navigation
 const Breadcrumb = () => (
   <nav className="flex items-center space-x-2 text-sm">
     <Link href="/public" className="text-muted-foreground ml-2">
-      <IconHomeFilled className="h-4 w-4"/>
+      <IconHomeFilled className="h-4 w-4" />
     </Link>
     <span className="text-muted-foreground">•</span>
     <Link href="/" className="text-muted-foreground hover:text-primary/90">
@@ -62,13 +80,15 @@ const Breadcrumb = () => (
       الوحدة الأولى
     </Link>
   </nav>
-)
+);
 
 // Component for unit header
 const UnitHeader = () => (
   <div className="space-y-4">
     <div className="flex items-center justify-between">
-      <h1 className="text-3xl font-bold">الوحدة 1: المعادلات والمتباينات الخطية</h1>
+      <h1 className="text-3xl font-bold">
+        الوحدة 1: المعادلات والمتباينات الخطية
+      </h1>
       <Button variant="ghost" size="icon" className="text-primary">
         <IconInfoCircle className="h-4 w-4" />
       </Button>
@@ -77,18 +97,28 @@ const UnitHeader = () => (
       <span className="text-base font-normal">نسبة إتقان الوحدة: 75%</span>
     </div>
   </div>
-)
+);
 
 // Component for lesson card
-const LessonCard = ({ lesson, index }: { lesson: LessonItem; index: number }) => (
+const LessonCard = ({
+  lesson,
+  index,
+}: {
+  lesson: LessonItem;
+  index: number;
+}) => (
   <Card className="shadow-none bg-card relative z-10 mx-auto">
     <CardHeader className="text-lg mx-auto mb-4 text-center border-b bg-accent/50">
-      <CardTitle>الدرس {index + 1}: {lesson.title}</CardTitle>
+      <CardTitle>
+        الدرس {index + 1}: {lesson.title}
+      </CardTitle>
     </CardHeader>
     <CardContent>
       <div className="flex flex-col md:flex-row gap-4">
         <div className="flex-1">
-          <h3 className="text-base text-muted-foreground font-normal mb-3">تعلم</h3>
+          <h3 className="text-base text-muted-foreground font-normal mb-3">
+            تعلم
+          </h3>
           <div className="space-y-2">
             {lesson.learn.map((item, i) => (
               <LessonButton key={i} item={item} type="learn" />
@@ -96,7 +126,9 @@ const LessonCard = ({ lesson, index }: { lesson: LessonItem; index: number }) =>
           </div>
         </div>
         <div className="flex-1">
-          <h3 className="text-base text-muted-foreground font-normal mb-3">تدرب</h3>
+          <h3 className="text-base text-muted-foreground font-normal mb-3">
+            تدرب
+          </h3>
           <div className="space-y-2">
             {lesson.practice.map((item, i) => (
               <LessonButton key={i} item={item} type="practice" />
@@ -106,7 +138,7 @@ const LessonCard = ({ lesson, index }: { lesson: LessonItem; index: number }) =>
       </div>
     </CardContent>
   </Card>
-)
+);
 
 // Component for quiz card
 const QuizCard = () => (
@@ -135,15 +167,15 @@ const QuizCard = () => (
         هل أنت مستعد لتحدي عقلك؟ دعنا نرى ما لديك!
       </p>
       <Button className="w-full md:w-auto mr-auto bg-primary hover:bg-primary/90 text-primary-foreground text-xl py-6 transition-all duration-300 ease-in-out group-hover:pr-6 group-hover:pl-4 flex flex-row-reverse justify-between items-center">
-        <IconChevronLeft className="w-6 h-6 transition-all duration-300 ease-in-out translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"/>
+        <IconChevronLeft className="w-6 h-6 transition-all duration-300 ease-in-out translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100" />
         <span className="flex-grow text-right">ابدأ مغامرة الاختبار</span>
         <div className="flex items-center space-x-2 space-x-reverse">
-          <IconBolt className="size-8 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 group-hover:rotate-12"/>
+          <IconBolt className="size-8 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 group-hover:rotate-12" />
         </div>
       </Button>
     </CardFooter>
   </Card>
-)
+);
 
 // Main page component
 const UnitPage = () => {
@@ -157,8 +189,8 @@ const UnitPage = () => {
 
       {/* Lessons section */}
       <div className="space-y-12 relative pt-0">
-        <div className='w-4 !h-full bg-accent border-2 absolute top-0 left-1/2 -translate-x-1/2  z-0 border-t-0' />
-        
+        <div className="w-4 !h-full bg-accent border-2 absolute top-0 left-1/2 -translate-x-1/2  z-0 border-t-0" />
+
         {/* Render lesson cards */}
         {lessons.map((lesson: LessonItem, index: number) => (
           <LessonCard key={index} lesson={lesson} index={index} />
@@ -168,7 +200,7 @@ const UnitPage = () => {
         <QuizCard />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default UnitPage
+export default UnitPage;

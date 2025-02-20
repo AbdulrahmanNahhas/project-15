@@ -20,12 +20,12 @@ export async function middleware(request: NextRequest) {
     }
 
     // Redirect to onboarding if not completed
-    if (!userData?.onboarding_completed && request.nextUrl.pathname !== "/onboarding") {
+    if (!userData?.is_onboarded && request.nextUrl.pathname !== "/onboarding") {
       return NextResponse.redirect(new URL("/onboarding", request.url));
     }
 
     // Prevent access to onboarding if already completed
-    if (userData?.onboarding_completed && request.nextUrl.pathname === "/onboarding") {
+    if (userData?.is_onboarded && request.nextUrl.pathname === "/onboarding") {
       return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, request.url));
     }
 

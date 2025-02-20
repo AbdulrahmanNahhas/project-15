@@ -8,7 +8,7 @@ import EarnBadge from "@/modules/app/ui/components/user/earn-badge";
 import { ImagePlus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/supabase/server";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default async function ProfilePage({
   params,
@@ -19,9 +19,9 @@ export default async function ProfilePage({
   const supabase = await createClient();
 
   const { data, error } = await supabase
-    .from('users')
+    .from("users")
     .select()
-    .eq('username', username)
+    .eq("username", username)
     .single();
 
   if (error) {
@@ -36,7 +36,7 @@ export default async function ProfilePage({
     <div className="container mx-auto p-0 md:p-4 space-y-6">
       <div className="space-y-4">
         {/* Cover Image */}
-        {data.cover_image_url ?(
+        {/* {data.cover_image_url ?(
         <div
           className={cn(
             "flex overflow-hidden cursor-pointer flex-col items-center justify-center gap-4 rounded-lg border-2 border-dashed border-muted-foreground/25 bg-muted/50 transition-colors hover:bg-muted",
@@ -45,38 +45,46 @@ export default async function ProfilePage({
         >
             <Image src={data.cover_image_url} alt="Cover Image" className="w-full h-full object-cover object-top hover:opacity-80 duration-300" width={1000} height={600} unoptimized />
           </div>
-        ) :(
-          
-        <div
-          className={cn(
-            "flex h-64 cursor-pointer flex-col items-center justify-center gap-4 rounded-lg border-2 border-dashed border-muted-foreground/25 bg-muted/50 transition-colors hover:bg-muted"
-            // isDragging && "border-primary/50 bg-primary/5",
-          )}
-        >
-          <div className="rounded-full bg-background p-3 shadow-sm">
-            <ImagePlus className="h-6 w-6 text-muted-foreground" />
-          </div>
-          <div className="text-center">
-            <p className="text-sm font-medium">Click to select</p>
-            <p className="text-xs text-muted-foreground">
-              or drag and drop file here
-            </p>
-          </div>
+        ) :( */}
+          <div
+            className={cn(
+              "flex h-64 cursor-pointer flex-col items-center justify-center gap-4 rounded-lg border-2 border-dashed border-muted-foreground/25 bg-muted/50 transition-colors hover:bg-muted"
+              // isDragging && "border-primary/50 bg-primary/5",
+            )}
+          >
+            <div className="rounded-full bg-background p-3 shadow-sm">
+              <ImagePlus className="h-6 w-6 text-muted-foreground" />
+            </div>
+            <div className="text-center">
+              <p className="text-sm font-medium">Click to select</p>
+              <p className="text-xs text-muted-foreground">
+                or drag and drop file here
+              </p>
+            </div>
         </div>
-      )}
-      {/* Profile Info */}
+        {/* )} */}
+        {/* Profile Info */}
         <div className="flex flex-col md:flex-row justify-between items-center !mb-10">
           <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center justify-center md:justify-start">
             <Avatar className="size-36 -mt-24 md:mt-0 md:size-24 lg:size-36 lg:-mt-16 mr-4 border-4 border-background rounded-3xl">
-              <AvatarImage src={data.avatar_url} className="object-cover" alt="الصورة الشخصية" />
+              <AvatarImage
+                src={data.avatar}
+                className="object-cover"
+                alt="الصورة الشخصية"
+              />
               <AvatarFallback>AN</AvatarFallback>
             </Avatar>
             <div className="space-y-2">
               <h1 className="text-2xl font-semibold flex items-center justify-center md:justify-start gap-1">
                 {data.first_name} {data.last_name}
-                <IconRosetteDiscountCheckFilled className={cn("fill-pink-500 text-primary-foreground", (!data.cover_image_url || !data.avatar_url) && "hidden")} />
+                <IconRosetteDiscountCheckFilled
+                  className={cn(
+                    "fill-pink-500 text-primary-foreground",
+                    // (!data.cover_image_url || !data.avatar) && "hidden"
+                  )}
+                />
               </h1>
-              
+
               <div className="flex gap-4 text-sm text-muted-foreground">
                 <span>الصف التاسع</span>
                 <span>محافظة حمص</span>
@@ -93,7 +101,7 @@ export default async function ProfilePage({
         </div>
 
         {/* تقدم التحقق */}
-        <EarnBadge cover={!!data.cover_image_url} avatar={!!data.avatar_url} />
+        <EarnBadge cover={!!data.cover_image_url} avatar={!!data.avatar} />
       </div>
 
       {/* المحتوى الرئيسي */}

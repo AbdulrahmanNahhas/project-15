@@ -10,7 +10,7 @@ interface MarqueeProps {
   key?: string;
 }
 
-export default function Marquee({className, reverse, pauseOnHover = false, children, vertical = false, repeat = 4, ...props}: MarqueeProps) {
+export default function Marquee({className, reverse, pauseOnHover = false, children, vertical = false, repeat = 2, ...props}: MarqueeProps) {
   return (<div
       {...props}
       className={cn("group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]", {

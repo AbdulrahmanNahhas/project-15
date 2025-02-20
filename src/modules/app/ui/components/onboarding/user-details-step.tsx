@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   FormField,
   FormItem,
@@ -13,19 +13,62 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { cn } from "@/lib/utils";
 import { UseFormReturn } from "react-hook-form";
 import {
-  certificates,
   FormData,
-  grades,
-  roles,
   userTypes,
+  Certificate,
+  Grade,
+  roles,
 } from "@/data/app/onboarding/types";
 import Image from "next/image";
+import { createClient } from "@/supabase/client";
 
 export function UserDetailsStep({ form }: { form: UseFormReturn<FormData> }) {
   const userType = form.watch("userType");
   const showGradeSelection = userType === "k12";
   const showCertificateSelection = userType === "self-taught";
   const disabledTypes = ["university", "educator"];
+
+  const [grades, setGrades] = useState<Grade[]>([]);
+  const [certificates, setCertificates] = useState<Certificate[]>([]);
+  const [loading, setLoading] = useState(true);
+  const supabase= createClient()
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+
+      const { data: gradesData, error: gradesError } = await supabase
+        .from("grades")
+        .select("id, title, certificate_title, track")
+        .order("level", { ascending: true });
+
+      if (gradesError) {
+        console.error("Error fetching data:", gradesError);
+        setLoading(false);
+        return;
+      }
+
+      setGrades(gradesData.map((g) => ({
+        value: String(g.id),
+        label: g.title,
+        track: g.track
+      })));
+
+      setCertificates(
+        gradesData
+          .filter((g) => g.certificate_title) // Only include items with a certificate title
+          .map((g) => ({
+            value: String(g.id),
+            label: g.certificate_title,
+            track: g.track
+          }))
+      );
+  
+      setLoading(false);
+    };
+  
+    fetchData();
+  }, [supabase]);
 
   useEffect(() => {
     const subscription = form.watch((_, { name, type }) => {
@@ -35,6 +78,8 @@ export function UserDetailsStep({ form }: { form: UseFormReturn<FormData> }) {
     });
     return () => subscription.unsubscribe();
   }, [form]);
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div className="space-y-8">
@@ -113,11 +158,7 @@ export function UserDetailsStep({ form }: { form: UseFormReturn<FormData> }) {
                 <RadioGroup
                   onValueChange={(value) => {
                     field.onChange(value);
-                    if (value === "12" && form.getValues("certificate") === "9") {
-                      form.setValue("certificate", "12", { shouldValidate: false });
-                    } else {
-                      form.setValue("certificate", "9", { shouldValidate: false });
-                    }
+                    form.setValue("certificate", value, { shouldValidate: false });
                   }}
                   value={field.value || undefined}
                   className="flex flex-wrap gap-2"
@@ -133,7 +174,9 @@ export function UserDetailsStep({ form }: { form: UseFormReturn<FormData> }) {
                         id={`grade-${grade.value}`}
                         className="after:absolute after:inset-0 shadow-none border-foreground border-2 size-5 duration-200"
                       />
-                      <p className="text-lg font-medium">الصف {grade.label}</p>
+                      <p className="text-lg font-medium">الصف {grade.label}
+                      {grade.track && (` (${grade.track})`)}
+                      </p>
                     </label>
                   ))}
                 </RadioGroup>
@@ -158,14 +201,10 @@ export function UserDetailsStep({ form }: { form: UseFormReturn<FormData> }) {
                 <RadioGroup
                   onValueChange={(value) => {
                     field.onChange(value);
-                    if (value === "12") {
-                      form.setValue("grade", "12", { shouldValidate: false });
-                    } else {
-                      form.setValue("grade", "9", { shouldValidate: false });
-                    }
+                    form.setValue("grade", value, { shouldValidate: false });
                   }}
                   value={field.value || undefined}
-                  className="flex flex-wrap gap-2"
+                  className="flex flex-col gap-2"
                 >
                   {certificates.map((certificate) => (
                     <label
@@ -178,7 +217,7 @@ export function UserDetailsStep({ form }: { form: UseFormReturn<FormData> }) {
                         id={`certificate-${certificate.value}`}
                         className="after:absolute after:inset-0 shadow-none border-foreground border-2 size-5 duration-200"
                       />
-                      <p className="text-lg font-medium">{certificate.label}</p>
+                      <p className="text-lg font-medium">{certificate.label} {certificate.track && (`- ${certificate.track}`)}</p>
                     </label>
                   ))}
                 </RadioGroup>

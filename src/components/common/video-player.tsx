@@ -13,7 +13,7 @@ const VideoPlayer = ({ url, className }: {url: string, className?: string}) => {
     <div className="aspect-video w-full max-w-4xl !rounded-3xl overflow-hidden">
       <Suspense fallback={<div>Loading...</div>}>
         <ReactPlayer
-          className={cn(className, "!rounded-3xl overflow-hidden")}
+          className={cn(className, "md:!rounded-3xl overflow-hidden")}
           url={url}
           width="100%"
           height="100%"

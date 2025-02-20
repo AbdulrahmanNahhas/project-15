@@ -1,4 +1,4 @@
-import {UnitsLayout} from "@/modules/app/ui/components/learn/units/layout";
+import {UnitsLayout} from "@/modules/app/subjects/components/units/layout";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (

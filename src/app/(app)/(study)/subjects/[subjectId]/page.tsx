@@ -166,7 +166,7 @@ const Subject = () => {
                     الوحدة {mainIndex + 1}
                   </span>
                   <Link
-                    href={"/learn/1/1"}
+                    href={"/subjects/1/1"}
                     className={
                       "group text-start font-bold text-xl flex items-center justify-between hover:underline"
                     }

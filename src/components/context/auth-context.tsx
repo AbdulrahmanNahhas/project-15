@@ -11,8 +11,8 @@ export interface UserData {
   first_name: string;
   last_name: string;
   email: string;
-  avatar_url: string;
-  onboarding_completed: boolean;
+  avatar: string;
+  is_onboarded: boolean;
   role: string;
 }
 

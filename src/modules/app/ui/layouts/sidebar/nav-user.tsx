@@ -20,8 +20,6 @@ import {
 import SignOutButton from "@/modules/auth/components/logout";
 import Link from "next/link";
 import { useUser } from "@/components/context/auth-context";
-import { useRouter } from "next/navigation";
-import { LOGIN_ROUTE } from "@/routes";
 import { IconUserFilled } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 
@@ -29,11 +27,9 @@ export function NavUser({ texts = true }: { texts?: boolean }) {
   const { user, isLoading } = useUser();
 
   const { isMobile } = useSidebar();
-  const router = useRouter();
 
   // Handle no user (not authenticated)
   if (!user && !isLoading) {
-    router.push(LOGIN_ROUTE);
     return null;
   }
 
@@ -55,7 +51,7 @@ export function NavUser({ texts = true }: { texts?: boolean }) {
     return (
       <>
         <Avatar className="size-10 rounded-lg">
-          <AvatarImage src={user.avatar_url} alt={user.username} />
+          <AvatarImage src={user.avatar} alt={user.username} />
           <AvatarFallback className="rounded-lg">
             <IconUserFilled />
           </AvatarFallback>

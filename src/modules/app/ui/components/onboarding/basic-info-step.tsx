@@ -49,12 +49,12 @@ export function BasicInfoStep({ form }: { form: UseFormReturn<FormData> }) {
                       "relative flex cursor-pointer flex-row justify-center items-center gap-2 p-4 text-center",
                       "rounded-lg border-2 border-input duration-300 transition-all",
                       "has-[[data-state=checked]]:bg-primary/25",
-                      value === "male"
+                      value === "ذكر"
                         ? "has-[[data-state=checked]]:bg-blue-500/15"
                         : "has-[[data-state=checked]]:bg-pink-500/15",
-                      value === "male"
-                        ? "has-[[data-state=checked]]:border-blue-500"
-                        : "has-[[data-state=checked]]:border-pink-500"
+                      value === "أنثى"
+                        ? "has-[[data-state=checked]]:border-pink-500"
+                        : "has-[[data-state=checked]]:border-blue-500"
                     )}
                   >
                     <RadioGroupItem
@@ -65,7 +65,7 @@ export function BasicInfoStep({ form }: { form: UseFormReturn<FormData> }) {
                     <Icon
                       className={cn(
                         "size-10 mb-2",
-                        value === "male" ? "text-blue-500" : "text-pink-500"
+                        value === "ذكر" ? "text-blue-500" : "text-pink-500"
                       )}
                     />
                     <span className="text-xl font-medium">{label}</span>
@@ -92,18 +92,18 @@ export function BasicInfoStep({ form }: { form: UseFormReturn<FormData> }) {
               value={field.value || undefined}
               className="flex flex-wrap gap-2"
             >
-              {muhafazahat.map(({ value, label }) => (
+              {muhafazahat.map((muhafazah) => (
                 <label
-                  key={value}
-                  htmlFor={value}
+                  key={muhafazah}
+                  htmlFor={muhafazah}
                   className="relative flex items-center gap-3 rounded-lg py-2.5 px-4 border-2 border-input has-[[data-state=checked]]:border-border has-[[data-state=checked]]:bg-accent flex-1 whitespace-nowrap duration-300 transition-all"
                 >
                   <RadioGroupItem
-                    id={value}
-                    value={value}
+                    id={muhafazah}
+                    value={muhafazah}
                     className="after:absolute after:inset-0 shadow-none border-foreground border-2 size-5 duration-200"
                   />
-                  <span className="text-xl font-medium">{label}</span>
+                  <span className="text-xl font-medium">{muhafazah}</span>
                 </label>
               ))}
             </RadioGroup>

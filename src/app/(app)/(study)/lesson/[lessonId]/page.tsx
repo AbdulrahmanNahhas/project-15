@@ -1,12 +1,12 @@
 "use client"
 
 import VideoPlayer from "@/components/common/video-player";
-import CommentsSection from "../../../../../modules/app/ui/components/learn/lesson/comments";
+import CommentsSection from "../../../../../modules/app/subjects/components/lesson/comments";
 
 const Page = () => {
   return (
     <div className={"w-full pb-6"}>
-      <VideoPlayer url='https://www.youtube.com/watch?v=OmJ-4B-mS-Y&pp=ygUWVGhlIE1hcCBvZiBNYXRoZW1hdGljcw%3D%3D' />
+      <VideoPlayer url='https://www.youtube.com/watch?v=WiSQlBcgcyI&list=PLi9uy_md4LMsZtdlckeYsrlF_my3h-qjn' />
       <CommentsSection />
     </div>
   )

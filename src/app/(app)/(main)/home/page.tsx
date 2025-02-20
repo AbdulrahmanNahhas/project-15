@@ -4,12 +4,10 @@ import React from "react";
 import {
   Card,
   CardContent,
-  CardHeader,
 } from "@ui//card";
 import { Progress } from "@ui//progress";
 import { Separator } from "@ui//separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@ui//avatar";
-import Link from "next/link";
 import { IconAwardFilled, IconBook2, IconCheckbox } from "@tabler/icons-react";
 import { ActivityCard } from "@/modules/app/ui/components/home/activity-card";
 
@@ -37,7 +35,7 @@ export default function Dashboard() {
                 </Card>
               </Link>
               Learning Section
-              <Link href="/learn">
+              <Link href="/subjects">
                 <Card className="shadow-none hover:bg-accent/50 transition-all duration-300">
                   <CardContent className="p-4 flex items-center gap-2">
                     الدروس

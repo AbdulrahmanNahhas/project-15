@@ -24,7 +24,7 @@ export function UnitsSidebar() {
         <SidebarMenu>
           <SidebarMenuItem className="flex items-center justify-between gap-1">
                 <Button variant={"ghost"} size={"icon"} asChild>
-                  <Link href="/learn">
+                  <Link href="/subjects">
                     <IconChevronRight className="size-8" />
                   </Link>
                 </Button>
@@ -45,7 +45,7 @@ export function UnitsSidebar() {
       <SidebarContent className={"!gap-0"}>
           <SidebarGroup>
             <SidebarGroupLabel asChild>
-              <Link href={"/learn/1"} className="hover:underline">
+              <Link href={"/subjects/1"} className="hover:underline">
                 الرياضيات
               </Link>
 
@@ -60,7 +60,7 @@ export function UnitsSidebar() {
                           {index+1}
                         </span>
                       </span>
-                      <a href={"/learn/1/1"} className={"h-auto text-start"}>
+                      <a href={"/subjects/1/1"} className={"h-auto text-start"}>
                         {unit.title}
                       </a>
                     </SidebarMenuButton>

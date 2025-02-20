@@ -1,5 +1,5 @@
 import {SidebarInset, SidebarProvider, SidebarTrigger} from "@ui//sidebar"
-import {UnitsSidebar} from "@/modules/app/ui/components/learn/units/sidebar";
+import {UnitsSidebar} from "@/modules/app/subjects/components/units/sidebar";
 
 function UnitsLayout({ children }: { children: React.ReactNode }) {
   return (

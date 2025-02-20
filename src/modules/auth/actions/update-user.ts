@@ -4,14 +4,15 @@ import { FormData } from "@/data/app/onboarding/types";
 import { getUser } from "@/lib/auth";
 import { createClient } from "@/supabase/server";
 
-// {
-//   gender: string;
-//   muhafazah: string;
-//   userType: string;
-//   grade: string;
-//   certificate: string;
-//   role: string;
-// }
+// bio: undefined
+// certificate: "004d16c0-3978-4c44-898e-b630da63c190"
+// coverImageUrl: undefined
+// gender: "ذكر"
+// grade: "004d16c0-3978-4c44-898e-b630da63c190"
+// imageUrl: undefined
+// muhafazah: "إدلب"
+// role: "learner"
+// userType: "k12"
 
 export async function updateUser(values: FormData) {
   const supabase = await createClient();
@@ -26,7 +27,10 @@ export async function updateUser(values: FormData) {
   const { error } = await supabase
     .from("users")
     .update({
-      onboarding_completed: true,
+      is_onboarded: true,
+      grade_id: values.grade,
+      gender: values.gender,
+      muhafazah: values.muhafazah,
     })
     .eq("id", user.id);
 

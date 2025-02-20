@@ -13,6 +13,7 @@ import { FormData, formSchema } from "@/data/app/onboarding/types"
 import { updateUser } from "@/modules/auth/actions/update-user"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
+// import SignOutButton from "@/modules/auth/components/logout"
 
 export default function OnboardingPage() {
   const [activeStep, setActiveStep] = useState(0)

@@ -45,8 +45,8 @@ const Mobile = () => {
   const pathname = usePathname();
 
   return (
-    <div className="md:hidden">
-      <header className="container !mx-auto h-16 py-2 flex items-center justify-between mb-3 px-3 md:hidden">
+    <div className="md:hidden !shadow-md">
+      <header className="container !mx-auto h-16 py-2 flex items-center justify-between px-3 md:hidden">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-x-2">
           <Image

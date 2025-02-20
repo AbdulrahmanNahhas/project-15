@@ -49,11 +49,11 @@ export const navigationData = {
   navSecondary: [
     {
       title: "التعلم",
-      url: "/learn",
+      url: "/subjects",
       items: [
         {
           name: "المنهاج الدراسي",
-          url: "/learn",
+          url: "/subjects",
           icon: IconSchool,
         },
         {
@@ -170,7 +170,7 @@ export const bottomNavigationData = [
   },
   {
     title: "المنهاج الدراسي",
-    url: "/learn",
+    url: "/subjects",
     icon: IconSchool,
   },
   {

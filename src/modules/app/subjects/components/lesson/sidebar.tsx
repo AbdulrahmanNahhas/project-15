@@ -44,7 +44,7 @@ export function LessonSidebar() {
         <TooltipProvider delayDuration={100}>
           <SidebarGroup>
             <SidebarGroupLabel asChild>
-              <Link href={"/learn/1"} className="hover:underline text-center mx-auto mb-1 h-auto">
+              <Link href={"/subjects/1"} className="hover:underline text-center mx-auto mb-1 h-auto">
                 الرياضيات
               </Link>
             </SidebarGroupLabel>
