@@ -8,7 +8,6 @@ import EarnBadge from "@/modules/app/ui/components/user/earn-badge";
 import { ImagePlus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/supabase/server";
-// import Image from "next/image";
 
 export default async function ProfilePage({
   params,
@@ -52,7 +51,7 @@ export default async function ProfilePage({
               // isDragging && "border-primary/50 bg-primary/5",
             )}
           >
-            <div className="rounded-full bg-background p-3 shadow-sm">
+            <div className="rounded-full bg-background p-3 shadow-xs">
               <ImagePlus className="h-6 w-6 text-muted-foreground" />
             </div>
             <div className="text-center">
@@ -64,7 +63,7 @@ export default async function ProfilePage({
         </div>
         {/* )} */}
         {/* Profile Info */}
-        <div className="flex flex-col md:flex-row justify-between items-center !mb-10">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-10!">
           <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center justify-center md:justify-start">
             <Avatar className="size-36 -mt-24 md:mt-0 md:size-24 lg:size-36 lg:-mt-16 mr-4 border-4 border-background rounded-3xl">
               <AvatarImage
@@ -72,7 +71,7 @@ export default async function ProfilePage({
                 className="object-cover"
                 alt="الصورة الشخصية"
               />
-              <AvatarFallback>AN</AvatarFallback>
+              <AvatarFallback className="rounded-none text-xl font-bold">AN</AvatarFallback>
             </Avatar>
             <div className="space-y-2">
               <h1 className="text-2xl font-semibold flex items-center justify-center md:justify-start gap-1">

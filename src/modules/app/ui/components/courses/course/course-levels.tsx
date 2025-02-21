@@ -30,8 +30,8 @@ const CourseLevels = ({ levels }: CourseLevelsProps) => {
     <Accordion type="single" defaultValue={`level-${levels[0].id}`} collapsible>
       {levels.map((level) => (
         <AccordionItem key={level.id} value={`level-${level.id}`} className="pb-8">
-          <div className="!w-full flex flex-col items-start justify-start gap-2">
-            <AccordionTrigger className="flex flex-row items-center gap-2 justify-between !w-full !max-w-none pb-0">
+          <div className="w-full! flex flex-col items-start justify-start gap-2">
+            <AccordionTrigger className="flex flex-row items-center gap-2 justify-between w-full! max-w-none! pb-0">
               <div className="flex flex-col items-start ">
                 <span className="text-sm text-muted-foreground">
                   المستوى {level.id}{" "}

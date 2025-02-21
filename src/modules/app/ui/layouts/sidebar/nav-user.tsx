@@ -75,21 +75,21 @@ export function NavUser({ texts = true }: { texts?: boolean }) {
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className={cn("data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground", !texts && "aspect-square !px-0 flex items-center justify-center !ring-0")}
+              className={cn("data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground", !texts && "aspect-square px-0! flex items-center justify-center ring-0!")}
             >
               {renderUserContent()}
               <ChevronsUpDown className={cn("ml-auto size-4", !texts&&"hidden")} />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            className="!w-44 rounded-lg"
+            className="w-44! rounded-lg"
             side={isMobile ? "bottom" : "right"}
             align="end"
             sideOffset={4}
           >
             <DropdownMenuGroup>
               <DropdownMenuItem asChild>
-                <Link href="/user/me">
+                <Link href={`/user/${user?.username}`}>
                   <UserIcon className="mr-2" />
                   الملف الشخصي
                 </Link>
@@ -101,7 +101,7 @@ export function NavUser({ texts = true }: { texts?: boolean }) {
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <SignOutButton asChild>
-              <DropdownMenuItem className="text-destructive hover:!text-destructive hover:!bg-destructive/10 w-full text-start justify-start items-center !outline-none !stroke-none duration-200 shadow-none h-8 !py-0 !px-1 !border-0 !ring-0">
+              <DropdownMenuItem className="text-destructive hover:text-destructive! hover:bg-destructive/10! w-full text-start justify-start items-center outline-hidden! stroke-none! duration-200 shadow-none h-8 py-0! px-1! border-0! ring-0!">
                 <LogOut className="mr-2" />
                 تسجيل الخروج
               </DropdownMenuItem>

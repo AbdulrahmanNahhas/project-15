@@ -14,12 +14,12 @@ export const Hero = () => {
             className="w-1.5 h-1.5 rounded-full bg-primary flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           </div>
         </div>
-        <span className="inline-flex items-center justify-center gap-2 text-sm text-primary !font-normal">
+        <span className="inline-flex items-center justify-center gap-2 text-sm text-primary font-normal!">
           إنطلاق المنصة السورية
         </span>
       </div>
       <h1
-        className="text-3xl sm:text-5xl font-semibold lg:text-6xl xl:text-7xl bg-gradient-to-br from-foreground to-foreground/60 bg-clip-text text-transparent py-2 md:py-0 lg:!leading-snug racking-[-0.0125em] mt-6 font-heading">
+        className="text-3xl sm:text-5xl font-semibold lg:text-6xl xl:text-7xl bg-linear-to-br from-foreground to-foreground/60 bg-clip-text text-transparent py-2 md:py-0 lg:leading-snug! racking-[-0.0125em] mt-6 font-heading">
         تعلم، تقدم، وحقق أحلامك!
       </h1>
       <div>

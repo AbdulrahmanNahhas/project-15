@@ -26,7 +26,7 @@ export const Social = ({ className }: { className?: string }) => {
       >
         <svg
           stroke="currentColor"
-          className="!h-6 !w-6"
+          className="h-6! w-6!"
           fill="currentColor"
           strokeWidth="0"
           version="1.1"
@@ -71,7 +71,7 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
           disabled
         >
           <svg
-            className="!h-5 !w-5"
+            className="h-5! w-5!"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 36 36"
             fill="url(#a)"
@@ -100,7 +100,7 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
           disabled
         >
           <svg
-            className="!h-5 !w-5"
+            className="h-5! w-5!"
             xmlns="http://www.w3.org/2000/svg"
             xmlSpace="preserve"
             width="209"
@@ -118,7 +118,7 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
           disabled
         >
           <svg
-            className="!h-4 !w-4"
+            className="h-4! w-4!"
             xmlns="http://www.w3.org/2000/svg"
             width="1200"
             height="1227"
@@ -140,7 +140,7 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
         >
           Github
           <svg
-            className="!h-5 !w-5"
+            className="h-5! w-5!"
             viewBox="0 0 256 250"
             width="256"
             height="250"

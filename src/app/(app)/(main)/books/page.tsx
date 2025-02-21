@@ -28,14 +28,14 @@ const BookCard = ({ book }: { book: Book }) => {
         style={{
           borderRadius: "12px", 
         }}
-        className="bg-card rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-md border flex flex-col"
+        className="bg-card rounded-lg shadow-xs overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-md border flex flex-col"
       >
-        <div className="relative h-72 m-3 mb-2 !w-[calc(100%-24px)] flex items-center justify-center">
+        <div className="relative h-72 m-3 mb-2 w-[calc(100%-24px)]! flex items-center justify-center">
           <Image
             src={book.imageUrl || "/placeholder.svg"}
             alt={book.title}
             fill
-            className="rounded-2xl !h-full !w-auto object-cover mx-auto"
+            className="rounded-2xl h-full! w-auto! object-cover mx-auto"
           />
           <div className="absolute -top-1 -right-2 bg-background/50 backdrop-blur-xl px-3 py-1 rounded-full">
             <span className="text-sm text-primary">{book.downloads.toLocaleString()} تحميل</span>
@@ -64,11 +64,11 @@ const BookCard = ({ book }: { book: Book }) => {
           }}
           className="pointer-events-auto relative flex h-auto flex-col overflow-hidden border bg-background w-[458px]"
         >
-          <div className="relative w-full mx-auto sm:w-[240px] h-[300px] flex-shrink-0 justify-center items-center mt-4">
+          <div className="relative w-full mx-auto sm:w-[240px] h-[300px] shrink-0 justify-center items-center mt-4">
             <MorphingDialogImage
               src={book.imageUrl}
               alt={book.title}
-              className="absolute inset-0 h-full w-auto !mx-auto rounded-2xl shadow-inner"
+              className="absolute inset-0 h-full w-auto mx-auto! rounded-2xl shadow-inner"
             />
           </div>
           <div className="flex-1 p-6">

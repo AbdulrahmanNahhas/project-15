@@ -59,7 +59,7 @@ export function Campaigns() {
           {campaigns.map((campaign: Campaign) => (
             <CarouselItem key={campaign.id} className="pb-2 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
               <Card className="overflow-hidden shadow-none no-select">
-                <div className="relative aspect-[4/3]">
+                <div className="relative aspect-4/3">
                   <Image
                     // src={campaign.image}
                     src={"/img.png"}
@@ -78,8 +78,8 @@ export function Campaigns() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="flex !absolute translate-x-0 translate-y-0 !top-[-59px] !right-[calc(100%-146px)]"/>
-        <CarouselNext className="flex !absolute translate-x-0 translate-y-0 !top-[-59px] !right-[calc(100%-110px)]"/>
+        <CarouselPrevious className="flex absolute! translate-x-0 translate-y-0 top-[-59px]! right-[calc(100%-146px)]!"/>
+        <CarouselNext className="flex absolute! translate-x-0 translate-y-0 top-[-59px]! right-[calc(100%-110px)]!"/>
       </Carousel>
       {/* <div className="py-2 text-center text-sm text-muted-foreground mt-2">
         الشريحة {current} من {count}

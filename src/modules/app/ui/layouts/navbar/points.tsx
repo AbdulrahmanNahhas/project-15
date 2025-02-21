@@ -59,8 +59,8 @@ export function Points({
   
   const PointsTrigger = () => (
     <>
-      <Hexagon className="!size-5 text-primary fill-primary" />
-      <Hexagon className="!size-2.5 text-background group-hover:fill-accent group-hover:text-accent fill-background absolute top-[9px] right-[13px]" />
+      <Hexagon className="size-5! text-primary fill-primary" />
+      <Hexagon className="size-2.5! text-background group-hover:fill-accent group-hover:text-accent fill-background absolute top-[9px] right-[13px]" />
       <span>{value}</span>
     </>
   )
@@ -68,7 +68,7 @@ export function Points({
   const DesktopView = () => (
     <div className="hidden md:block">
       <Popover>
-        <PopoverTrigger className={cn("flex gap-1 text-lg relative !px-2 !py-1 !h-7 group", buttonVariants({variant: "ghost"}))}>
+        <PopoverTrigger className={cn("flex gap-1 text-lg relative px-2! py-1! h-7! group", buttonVariants({variant: "ghost"}))}>
           <PointsTrigger/>
         </PopoverTrigger>
         <PopoverContent className="w-auto p-6" align="center" side="bottom" alignOffset={0} sideOffset={10}>
@@ -82,7 +82,7 @@ export function Points({
   const MobileView = () => (
     <div className="md:hidden">
       <Drawer open={open} onOpenChange={setOpen}>
-        <DrawerTrigger className={cn("group flex gap-2 text-lg relative !px-2 !py-1 !h-7", buttonVariants({variant: "ghost"}))}>
+        <DrawerTrigger className={cn("group flex gap-2 text-lg relative px-2! py-1! h-7!", buttonVariants({variant: "ghost"}))}>
           <PointsTrigger/>
         </DrawerTrigger>
         <DrawerContent>

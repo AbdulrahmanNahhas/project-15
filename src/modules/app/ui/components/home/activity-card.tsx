@@ -84,7 +84,7 @@ export function ActivityCard() {
         {metrics.map((metric) => (
           <div
             key={metric.label}
-            className="relative group flex flex-col items-center before:absolute before:hover:bg-accent/50 before:hover:border before:-top-1.5 before:-right-3 before:h-[108%] before:w-[130%] before:rounded-xl"
+            className="relative group flex flex-col items-center before:absolute hover:before:bg-accent/50 hover:before:border before:-top-1.5 before:-right-3 before:h-[108%] before:w-[130%] before:rounded-xl"
           >
             <div className="relative w-20 h-20">
               <div className={cn(
@@ -125,7 +125,7 @@ export function ActivityCard() {
 
       {/* الأهداف الاسبوعية */}
       <div className="mt-8 space-y-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="h-px bg-linear-to-r from-transparent via-border to-transparent" />
 
         <div className="space-y-4">
           <div className="flex items-center justify-between">
@@ -174,12 +174,12 @@ export function ActivityCard() {
             ))}
           </div>
         </div>
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="h-px bg-linear-to-r from-transparent via-border to-transparent" />
 
         <div className="pt-0">
           <Button
             variant={"link"}
-            className="text-foreground !h-6 !p-0"
+            className="text-foreground h-6! p-0!"
             asChild
           >
             <Link href={"/statistics"}>

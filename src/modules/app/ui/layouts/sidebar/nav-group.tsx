@@ -46,8 +46,8 @@ export function NavGroup({
               isActive={isActive}
               disabled={item.url === "#"}
               className={cn(
-                "!h-10 !text-base md:!h-8 md:!text-sm",
-                isActive && "!text-primary !bg-primary/10",
+                "h-10! text-base! md:h-8! md:text-sm!",
+                isActive && "text-primary! bg-primary/10!",
                 item.url === "#" && "opacity-50 cursor-not-allowed"
               )}
               asChild

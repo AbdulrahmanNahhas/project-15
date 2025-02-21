@@ -35,7 +35,7 @@ const Footer = () => {
   return (
     <footer className="py-10 relative container mx-auto max-w-6xl px-6 flex flex-col gap-10 mt-auto">
       <div className="relative flex flex-col lg:flex-row justify-between overflow-hidden gap-8 md:gap-16">
-        <div className="flex flex-col items-start !max-w-[14rem]">
+        <div className="flex flex-col items-start max-w-[14rem]!">
           <div className="flex items-center gap-2">
             <span className="text-xl font-semibold">
               المنصة السورية

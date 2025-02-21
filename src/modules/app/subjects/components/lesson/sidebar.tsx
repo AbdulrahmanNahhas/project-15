@@ -40,7 +40,7 @@ export function LessonSidebar() {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent className={"!gap-0"}>
+      <SidebarContent className={"gap-0!"}>
         <TooltipProvider delayDuration={100}>
           <SidebarGroup>
             <SidebarGroupLabel asChild>
@@ -51,13 +51,13 @@ export function LessonSidebar() {
             <SidebarGroupContent>
               <div className={"mb-4 text-sm font-semibold text-center flex items-center"}>
                 <Button variant={"ghost"} size={"icon"} className={"aspect-square"}>
-                <ChevronRight className={"font-bold !size-5"}/>
+                <ChevronRight className={"font-bold size-5!"}/>
                 </Button>
                 <h1 className={"px-1"}>
                   المسائل اللفظية في المعادلات الخطية: متقدم
                 </h1>
                 <Button variant={"ghost"} size={"icon"} className={"aspect-square"}>
-                <ChevronLeft className={"font-bold !size-5"}/>
+                <ChevronLeft className={"font-bold size-5!"}/>
                 </Button>
               </div>
               <SidebarMenu>
@@ -65,7 +65,7 @@ export function LessonSidebar() {
                   <SidebarMenuItem key={idx}>
                       <Tooltip>
 
-                    <SidebarMenuButton className={"h-auto !py-3 px-3 text-base"}>
+                    <SidebarMenuButton className={"h-auto py-3! px-3 text-base"}>
                     {item.type === "video" ? (
                       <Play className={cn("size-5 fill-current")} />
                     ) : item.type === "article" ? (
@@ -93,7 +93,7 @@ export function LessonSidebar() {
       <SidebarFooter>
       <NavUser />
       </SidebarFooter>
-      <SidebarRail className={"!hidden md:!block hover:after:bg-primary"}/>
+      <SidebarRail className={"hidden! md:block! hover:after:bg-primary"}/>
     </Sidebar>
   )
 }

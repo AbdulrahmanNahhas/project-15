@@ -48,13 +48,13 @@ export function BasicInfoStep({ form }: { form: UseFormReturn<FormData> }) {
                     className={cn(
                       "relative flex cursor-pointer flex-row justify-center items-center gap-2 p-4 text-center",
                       "rounded-lg border-2 border-input duration-300 transition-all",
-                      "has-[[data-state=checked]]:bg-primary/25",
+                      "has-data-[state=checked]:bg-primary/25",
                       value === "ذكر"
-                        ? "has-[[data-state=checked]]:bg-blue-500/15"
-                        : "has-[[data-state=checked]]:bg-pink-500/15",
+                        ? "has-data-[state=checked]:bg-blue-500/15"
+                        : "has-data-[state=checked]:bg-pink-500/15",
                       value === "أنثى"
-                        ? "has-[[data-state=checked]]:border-pink-500"
-                        : "has-[[data-state=checked]]:border-blue-500"
+                        ? "has-data-[state=checked]:border-pink-500"
+                        : "has-data-[state=checked]:border-blue-500"
                     )}
                   >
                     <RadioGroupItem
@@ -96,7 +96,7 @@ export function BasicInfoStep({ form }: { form: UseFormReturn<FormData> }) {
                 <label
                   key={muhafazah}
                   htmlFor={muhafazah}
-                  className="relative flex items-center gap-3 rounded-lg py-2.5 px-4 border-2 border-input has-[[data-state=checked]]:border-border has-[[data-state=checked]]:bg-accent flex-1 whitespace-nowrap duration-300 transition-all"
+                  className="relative flex items-center gap-3 rounded-lg py-2.5 px-4 border-2 border-input has-data-[state=checked]:border-border has-data-[state=checked]:bg-accent flex-1 whitespace-nowrap duration-300 transition-all"
                 >
                   <RadioGroupItem
                     id={muhafazah}

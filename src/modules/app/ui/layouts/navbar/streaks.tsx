@@ -69,7 +69,7 @@ export function Streaks({ value = 0, className }: StreaksProps) {
   const DesktopView = () => (
     <div className="hidden md:flex">
     <Popover>
-      <PopoverTrigger className={cn("group flex !gap-1 text-lg relative !px-2 !py-2 !h-7", buttonVariants({variant: "ghost"}))}>
+      <PopoverTrigger className={cn("group flex gap-1! text-lg relative px-2! py-2! h-7!", buttonVariants({variant: "ghost"}))}>
         <StreakTrigger />
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="center" side="bottom" alignOffset={0} sideOffset={10}>
@@ -83,7 +83,7 @@ export function Streaks({ value = 0, className }: StreaksProps) {
   const MobileView = () => (
     <div className="md:hidden">
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerTrigger className={cn("group flex gap-2 text-lg relative !px-2 !py-1 !h-7", buttonVariants({variant: "ghost"}))}>
+      <DrawerTrigger className={cn("group flex gap-2 text-lg relative px-2! py-1! h-7!", buttonVariants({variant: "ghost"}))}>
         <StreakTrigger />
       </DrawerTrigger>
       <DrawerContent>

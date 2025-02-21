@@ -126,7 +126,7 @@ const RegisterPage = () => {
                           disabled={isPending}
                           placeholder="اسمك الأول"
                           type="text"
-                          className="h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none !outline-none !ring-0"
+                          className="h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none outline-hidden! ring-0!"
                         />
                       </FormControl>
                       <FormMessage />
@@ -147,7 +147,7 @@ const RegisterPage = () => {
                           disabled={isPending}
                           placeholder="اسمك الاخير"
                           type="text"
-                          className="h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none !outline-none !ring-0"
+                          className="h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none outline-hidden! ring-0!"
                         />
                       </FormControl>
                       <FormMessage />
@@ -164,7 +164,7 @@ const RegisterPage = () => {
                   <FormItem>
                     <FormLabel>أسم الحساب</FormLabel>
                     <Popover>
-                      <PopoverTrigger className={cn(buttonVariants({variant: "outline", size: "icon"}), "!p-1 w-6 h-6 text-xs shadow-none mr-1")}>؟</PopoverTrigger>
+                      <PopoverTrigger className={cn(buttonVariants({variant: "outline", size: "icon"}), "p-1! w-6 h-6 text-xs shadow-none mr-1")}>؟</PopoverTrigger>
                       <PopoverContent className="space-y-2">
                         <h4 className="font-medium leading-none">الشروط</h4>
                         <FormDescription>
@@ -201,7 +201,7 @@ const RegisterPage = () => {
                           placeholder="Username"
                           type="text"
                           lang="eng"
-                          className="h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none !outline-none !ring-0 pl-10"
+                          className="h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none outline-hidden! ring-0! pl-10"
                         />
                       </div>
                     </FormControl>
@@ -224,7 +224,7 @@ const RegisterPage = () => {
                         disabled={isPending}
                         placeholder="بريدك الإلكتروني"
                         type="email"
-                        className="placeholder:text-end h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none !outline-none !ring-0"
+                        className="placeholder:text-end h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none outline-hidden! ring-0!"
                       />
                     </FormControl>
                     <FormMessage />
@@ -246,7 +246,7 @@ const RegisterPage = () => {
                         disabled={isPending}
                         placeholder="كلمة المرور الخاصة بك"
                         type="password"
-                        className="placeholder:text-end h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none !outline-none !ring-0"
+                        className="placeholder:text-end h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none outline-hidden! ring-0!"
                       />
                     </FormControl>
                     <FormMessage />

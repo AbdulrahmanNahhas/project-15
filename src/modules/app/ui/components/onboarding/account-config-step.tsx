@@ -27,7 +27,7 @@ export function AccountConfigStep({ form }: { form: UseFormReturn<FormData> }) {
           <FormItem className="space-y-4">
             <FormLabel className="text-xl">الصورة الشخصية</FormLabel>
             <div className="flex items-center gap-4">
-              <Avatar className="size-24 !rounded-sm border-2 border-border">
+              <Avatar className="size-24 rounded-sm! border-2 border-border">
                 <AvatarImage src={field.value || ""} />
                 <AvatarFallback className="rounded-none text-3xl font-semibold">A</AvatarFallback>
               </Avatar>

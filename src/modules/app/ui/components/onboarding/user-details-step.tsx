@@ -108,7 +108,7 @@ export function UserDetailsStep({ form }: { form: UseFormReturn<FormData> }) {
                     <label
                       htmlFor={option.value}
                       className={cn(
-                        "flex cursor-pointer flex-col h-full items-center justify-center rounded-lg !border-2 border-border p-5",
+                        "flex cursor-pointer flex-col h-full items-center justify-center rounded-lg border-2! border-border p-5",
                         "text-center transition-all",
                         "hover:bg-accent/25 hover:text-accent-foreground",
                         "peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/10",
@@ -167,7 +167,7 @@ export function UserDetailsStep({ form }: { form: UseFormReturn<FormData> }) {
                     <label
                       htmlFor={`grade-${grade.value}`}
                       key={grade.value}
-                      className="relative flex items-center gap-3 rounded-lg py-2.5 px-4 border-2 border-input has-[[data-state=checked]]:border-border has-[[data-state=checked]]:bg-accent flex-1 whitespace-nowrap duration-300 transition-all"
+                      className="relative flex items-center gap-3 rounded-lg py-2.5 px-4 border-2 border-input has-data-[state=checked]:border-border has-data-[state=checked]:bg-accent flex-1 whitespace-nowrap duration-300 transition-all"
                     >
                       <RadioGroupItem
                         value={grade.value}
@@ -210,7 +210,7 @@ export function UserDetailsStep({ form }: { form: UseFormReturn<FormData> }) {
                     <label
                       htmlFor={`certificate-${certificate.value}`}
                       key={certificate.value}
-                      className="relative flex items-center gap-3 rounded-lg py-2.5 px-4 border-2 border-input has-[[data-state=checked]]:border-border has-[[data-state=checked]]:bg-accent flex-1 whitespace-nowrap duration-300 transition-all"
+                      className="relative flex items-center gap-3 rounded-lg py-2.5 px-4 border-2 border-input has-data-[state=checked]:border-border has-data-[state=checked]:bg-accent flex-1 whitespace-nowrap duration-300 transition-all"
                     >
                       <RadioGroupItem
                         value={certificate.value}
@@ -249,7 +249,7 @@ export function UserDetailsStep({ form }: { form: UseFormReturn<FormData> }) {
                   <label
                     htmlFor={`role-${role.value}`}
                     key={role.value}
-                    className="relative flex items-center gap-3 rounded-lg py-2.5 px-4 border-2 border-input has-[[data-state=checked]]:border-border has-[[data-state=checked]]:bg-accent flex-1 whitespace-nowrap duration-300 transition-all"
+                    className="relative flex items-center gap-3 rounded-lg py-2.5 px-4 border-2 border-input has-data-[state=checked]:border-border has-data-[state=checked]:bg-accent flex-1 whitespace-nowrap duration-300 transition-all"
                   >
                     <RadioGroupItem
                       value={role.value}

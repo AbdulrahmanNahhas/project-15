@@ -131,7 +131,7 @@ export default function OnboardingPage() {
             {activeStep === 2 && <AccountConfigStep form={form} />}
           </div>
 
-          <div className="flex items-center justify-between border border-b-0 py-3 px-3 rounded-t-2xl md:border-b md:p-6 !mt-auto sm:mt-0">
+          <div className="flex items-center justify-between border border-b-0 py-3 px-3 rounded-t-2xl md:border-b md:p-6 mt-auto! sm:mt-0">
             <Button size="lg" type="button" onClick={prevStep} disabled={activeStep === 0} variant="outline" className="w-32 h-12 text-xl">
               السابق
             </Button>

@@ -83,7 +83,7 @@ const ListItem = ({ className, title, children, href }: ListItemProps) => {
       <Link
         href={href}
         className={cn(
-          "select-none flex items-start gap-2 space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+          "select-none flex items-start gap-2 space-y-1 rounded-md p-3 no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
           className
         )}
       >
@@ -119,23 +119,19 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
         '--tw-enter-opacity': 'initial',
         '--tw-enter-scale': 'initial',
         '--tw-enter-rotate': 'initial',
-        '--tw-enter-translate-x': '-50%',
-        '--tw-enter-translate-y': '0',
+        '--tw-enter-translate-x': '0',
+        '--tw-enter-translate-y': '-100%',
       } as React.CSSProperties}
       className={
         cn(
-          "fixed top-0 left-1/2 -translate-x-1/2 lg:fixed lg:-top-12 lg:translate-y-14 z-50 lg:container w-full border-b md:border-none lg:px-2 md:!shadow-none !max-w-6xl",
+          "fixed top-0 left-1/2 -translate-x-1/2 lg:fixed lg:-top-12 lg:translate-y-14 z-50 lg:container w-full border-b md:border-none lg:px-2 shadow-sm lg:!shadow-none !max-w-6xl!",
           banner && "top-6 lg:top-6",
           className
         )
       }
-      initial={{ boxShadow: "none" }}
-      animate={{
-        boxShadow: isScrolled ? "0 0 4px 1px rgba(0,0,0,0.2)" : "none"
-      }}
       transition={{ duration: 0.3 }}
     >
-      <div className={cn("flex items-center justify-between w-full lg:rounded-full py-3 px-4 bg-background/80 backdrop-blur md:container mx-auto", isScrolled && "lg:shadow-md", banner && "top-12")}>
+      <div className={cn("flex items-center justify-between w-full lg:rounded-full py-3 px-4 bg-background/80 backdrop-blur-sm lg:container mx-auto", isScrolled && "lg:shadow-md", banner && "top-12")}>
         {/* Logo */}
         <Link href="/" className="flex items-center gap-x-2">
           <Image className="h-8 w-auto" alt={"Logo"} src={"/logo.png"} width={50} height={50} />
@@ -146,7 +142,7 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList className={"flex items-center justify-center gap-0"}>
             {/* Home */}
-            <NavigationMenuItem className={"!m-0"}>
+            <NavigationMenuItem className={"m-0!"}>
               <Link href="/" legacyBehavior passHref>
                 <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent rounded-full")}>
                   الرئيسية
@@ -155,14 +151,14 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
             </NavigationMenuItem>
 
             {/* About Us */}
-            <NavigationMenuItem className={"!m-0"}>
+            <NavigationMenuItem className={"m-0!"}>
               <NavigationMenuTrigger className={"bg-transparent gap-1 rounded-full"}>من نحن</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
                       <a
-                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none hover:shadow-md duration-300"
+                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-hidden hover:shadow-md duration-300"
                         href="/about"
                       >
                         <div className="mb-1 mt-4 text-lg font-semibold">
@@ -184,7 +180,7 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
             </NavigationMenuItem>
 
             {/* Community */}
-            <NavigationMenuItem className={"!m-0"}>
+            <NavigationMenuItem className={"m-0!"}>
               <NavigationMenuTrigger className={"bg-transparent gap-1 rounded-full"}>المجتمع</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[380px]">
@@ -202,7 +198,7 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
             </NavigationMenuItem>
 
             {/* Services */}
-            <NavigationMenuItem className={"!m-0"}>
+            <NavigationMenuItem className={"m-0!"}>
               <NavigationMenuTrigger className={"bg-transparent gap-1 rounded-full"}>الخدمات</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
@@ -216,7 +212,7 @@ const Navbar = ({ className, banner=false }: NavbarProps) => {
             </NavigationMenuItem>
 
             {/* Blog */}
-            <NavigationMenuItem className={"!m-0"}>
+            <NavigationMenuItem className={"m-0!"}>
               <Link href="/blog" legacyBehavior passHref>
                 <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent rounded-full")}>
                   المدونة

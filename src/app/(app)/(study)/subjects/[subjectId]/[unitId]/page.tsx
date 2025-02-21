@@ -51,9 +51,9 @@ const LessonButton = ({
     >
       <Link href={"/lesson/1"}>
         {item.status ? (
-          <IconCheck className="!size-5 bg-green-600 rounded-sm p-0.5 text-white stroke-[3]" />
+          <IconCheck className="size-5! bg-green-600 rounded-sm p-0.5 text-white stroke-3" />
         ) : (
-          <Icon className={cn("!size-6", item.status && "text-green-600")} />
+          <Icon className={cn("size-6!", item.status && "text-green-600")} />
         )}
         {item.title}
       </Link>
@@ -168,7 +168,7 @@ const QuizCard = () => (
       </p>
       <Button className="w-full md:w-auto mr-auto bg-primary hover:bg-primary/90 text-primary-foreground text-xl py-6 transition-all duration-300 ease-in-out group-hover:pr-6 group-hover:pl-4 flex flex-row-reverse justify-between items-center">
         <IconChevronLeft className="w-6 h-6 transition-all duration-300 ease-in-out translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100" />
-        <span className="flex-grow text-right">ابدأ مغامرة الاختبار</span>
+        <span className="grow text-right">ابدأ مغامرة الاختبار</span>
         <div className="flex items-center space-x-2 space-x-reverse">
           <IconBolt className="size-8 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 group-hover:rotate-12" />
         </div>
@@ -189,7 +189,7 @@ const UnitPage = () => {
 
       {/* Lessons section */}
       <div className="space-y-12 relative pt-0">
-        <div className="w-4 !h-full bg-accent border-2 absolute top-0 left-1/2 -translate-x-1/2  z-0 border-t-0" />
+        <div className="w-4 h-full! bg-accent border-2 absolute top-0 left-1/2 -translate-x-1/2  z-0 border-t-0" />
 
         {/* Render lesson cards */}
         {lessons.map((lesson: LessonItem, index: number) => (

@@ -25,7 +25,7 @@ const CardLayout = ({feature}: {feature: Feature}) => {
           <div className="flex gap-2 items-center justify-center pt-2">
             <Link
               href="#"
-              className="inline-flex items-center justify-center gap-1 bg-black text-white px-2 flex-1 py-3 rounded-xl transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+              className="inline-flex items-center justify-center gap-1 bg-black text-white px-2 flex-1 py-3 rounded-xl transition-transform hover:scale-105 focus:outline-hidden focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
             >
               <svg
                 className="w-8 h-8"
@@ -45,7 +45,7 @@ const CardLayout = ({feature}: {feature: Feature}) => {
 
             <Link
               href="#"
-              className="inline-flex items-center justify-center gap-1 bg-black text-white px-2 flex-1 py-3 rounded-xl transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+              className="inline-flex items-center justify-center gap-1 bg-black text-white px-2 flex-1 py-3 rounded-xl transition-transform hover:scale-105 focus:outline-hidden focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
             >
               <svg
                 className="w-8 h-8"

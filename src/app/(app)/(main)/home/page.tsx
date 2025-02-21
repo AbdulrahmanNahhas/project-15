@@ -19,9 +19,9 @@ export default function Dashboard() {
         <div className="flex-1 space-y-6">
           {/* Card 1*/}
           {/* <Card className="shadow-none">
-            <CardHeader className="flex !items-start justify-between flex-row">
+            <CardHeader className="flex items-start! justify-between flex-row">
               <h2 className="text-lg sm:text-xl font-bold">الصفحات</h2>
-              <Button variant={"outline"} size={"sm"} className="!mt-0">
+              <Button variant={"outline"} size={"sm"} className="mt-0!">
                 <ExternalLink />
                 Link
               </Button>

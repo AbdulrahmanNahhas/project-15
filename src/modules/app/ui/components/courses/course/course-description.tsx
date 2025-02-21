@@ -48,7 +48,7 @@ const CourseDescription = ({
 
       <div className="flex flex-col gap-8 lg:w-96">
         {/* Contributing Experts */}
-        <div className="bg-background p-4 rounded-lg shadow-sm border">
+        <div className="bg-background p-4 rounded-lg shadow-xs border">
           <h2 className="text-2xl font-bold mb-4 px-3 pt-2">الخبراء المساهمون</h2>
           <div className="space-y-0">
             {experts.map((expert, index) => (
@@ -69,7 +69,7 @@ const CourseDescription = ({
           </div>
         </div>
         {/* Topics */}
-        <div className="bg-white p-6 rounded-lg shadow-sm border">
+        <div className="bg-white p-6 rounded-lg shadow-xs border">
           <h2 className="text-2xl font-bold mb-6">المواضيع</h2>
           <div className="flex flex-wrap gap-2">
             {topics.map((topic, index) => (

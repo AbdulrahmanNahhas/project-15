@@ -171,9 +171,9 @@ export default function CommentsSection() {
         <div className="flex items-center space-x-2">
           <h4 className="font-semibold">{comment.user.name}</h4>
           {comment.user.isTeacher && (
-            <Badge variant="secondary" className={"!mr-1 !ml-0 px-1"}>معلم</Badge>
+            <Badge variant="secondary" className={"mr-1! ml-0! px-1"}>معلم</Badge>
           )}
-          <span className="text-sm text-gray-500 !mr-2">{comment.timestamp}</span>
+          <span className="text-sm text-gray-500 mr-2!">{comment.timestamp}</span>
         </div>
         <p className="mt-1 text-gray-600">{comment.content}</p>
         <div className="mt-2 flex items-center gap-1">

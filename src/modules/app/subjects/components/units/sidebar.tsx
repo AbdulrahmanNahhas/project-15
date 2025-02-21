@@ -42,7 +42,7 @@ export function UnitsSidebar() {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent className={"!gap-0"}>
+      <SidebarContent className={"gap-0!"}>
           <SidebarGroup>
             <SidebarGroupLabel asChild>
               <Link href={"/subjects/1"} className="hover:underline">
@@ -55,7 +55,7 @@ export function UnitsSidebar() {
                 {unitsSidebar.map((unit, index) => (
                   <SidebarMenuItem key={unit.title}>
                     <SidebarMenuButton className={"h-auto"}>
-                      <span className={"font-normal text-foreground w-6 flex items-center justify-center !text-center text-lg relative left-0.5 bottom-1"}>
+                      <span className={"font-normal text-foreground w-6 flex items-center justify-center text-center! text-lg relative left-0.5 bottom-1"}>
                         <span className={"size-5"}>
                           {index+1}
                         </span>
@@ -73,7 +73,7 @@ export function UnitsSidebar() {
       <SidebarFooter>
         <NavUser />
       </SidebarFooter>
-      <SidebarRail className={"!hidden md:!block hover:after:bg-primary"} />
+      <SidebarRail className={"hidden! md:block! hover:after:bg-primary"} />
     </Sidebar>
   )
 }

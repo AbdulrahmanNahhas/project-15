@@ -13,7 +13,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       <LessonSidebar />
       <SidebarInset className={"w-full items-center justify-center"}>
         <div className={"flex items-center gap-2 p-3 font-bold justify-start mx-auto w-full max-w-4xl mb-2"}>
-          <SidebarTrigger className={"!size-9"} />
+          <SidebarTrigger className={"size-9!"} />
           <h1 className={"text-xl"}>الدرس الأول: عنوان الدرس</h1>
         </div>
         <main className={"max-w-4xl flex items-start justify-center mx-auto w-full"}>

@@ -35,7 +35,7 @@ export function PostsTable({ posts }: PostsTableProps) {
       </TableHeader>
       <TableBody>
         {posts.map((post) => (
-          <TableRow key={post.id} className="group cursor-pointer h-16 border-dotted border-y-2 !border-b-2">
+          <TableRow key={post.id} className="group cursor-pointer h-16 border-dotted border-y-2 border-b-2!">
             <TableCell className="font-medium group-hover:text-primary transition-colors text-right">
               {post.title}
             </TableCell>

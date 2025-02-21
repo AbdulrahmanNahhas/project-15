@@ -92,7 +92,7 @@ const LoginPageContent = () => {
      {/* Auth Card Container */}
      <div className="w-full max-w-md auth-card-shadow sm:shadow-xl px-8 py-10 rounded-xl bg-background sm:border duration-500 space-y-3">
        {/* Logo Header */}
-       <div className="text-3xl font-semibold flex items-center gap-1 mx-auto flex-col !mb-5">
+       <div className="text-3xl font-semibold flex items-center gap-1 mx-auto flex-col mb-5!">
          <Image 
            className="h-12 w-auto" 
            alt={"Logo"} 
@@ -106,7 +106,7 @@ const LoginPageContent = () => {
        {/* Social Login - Currently Disabled */}
        <Social />
 
-       <div className="flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border !mt-6">
+       <div className="flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border mt-6!">
          <span className="text-xs text-muted-foreground">أو</span>
        </div>
 
@@ -138,7 +138,7 @@ const LoginPageContent = () => {
                        disabled={isPending}
                        placeholder="بريدك الإلكتروني"
                        type="email"
-                       className="rounded-[0.5rem] placeholder:text-end h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none !outline-none !ring-0"
+                       className="rounded-[0.5rem] placeholder:text-end h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none outline-hidden! ring-0!"
                      />
                    </FormControl>
                    <FormMessage />
@@ -160,7 +160,7 @@ const LoginPageContent = () => {
                        disabled={isPending}
                        placeholder="كلمة المرور الخاصة بك"
                        type="password"
-                       className="rounded-[0.5rem] placeholder:text-end h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none !outline-none !ring-0"
+                       className="rounded-[0.5rem] placeholder:text-end h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none outline-hidden! ring-0!"
                      />
                    </FormControl>
                    <FormMessage />

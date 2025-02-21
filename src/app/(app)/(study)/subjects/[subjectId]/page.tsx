@@ -44,7 +44,7 @@ const SubjectHeader = ({
 
       <div className="flex flex-wrap gap-6 text-sm mb-6">
         <div className="flex items-center gap-2 absolute top-6 left-6">
-          <Badge variant="secondary" className="!text-base p-2">
+          <Badge variant="secondary" className="text-base! p-2">
             ثالث ثانوي
           </Badge>
         </div>
@@ -117,10 +117,10 @@ const LessonItem = ({
         {isActive ? (
           <ArrowRight className={"p-1 text-primary"} />
         ) : lesson.completed ? (
-          <CheckIcon className={"!stroke-[3] p-1"} />
+          <CheckIcon className={"stroke-3! p-1"} />
         ) : (
           <Loader
-            className={"animate-spin p-1 text-muted-foreground !duration-1000"}
+            className={"animate-spin p-1 text-muted-foreground duration-1000!"}
           />
         )}
       </span>

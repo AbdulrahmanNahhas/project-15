@@ -12,7 +12,7 @@ export interface Post {
 export function PostCard({ post }: { post: Post }) {
   return (
     <div className="group cursor-pointer">
-      <div className="relative aspect-[4/3] mb-4 rounded-lg overflow-hidden bg-gray-100">
+      <div className="relative aspect-4/3 mb-4 rounded-lg overflow-hidden bg-gray-100">
         <Image
           src={post.image || "/placeholder.svg"}
           alt={post.title}

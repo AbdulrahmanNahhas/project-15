@@ -45,8 +45,8 @@ const Mobile = () => {
   const pathname = usePathname();
 
   return (
-    <div className="md:hidden !shadow-md">
-      <header className="container !mx-auto h-16 py-2 flex items-center justify-between px-3 md:hidden">
+    <div className="md:hidden shadow-md!">
+      <header className="container mx-auto! h-16 py-2 flex items-center justify-between px-3 md:hidden">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-x-2">
           <Image
@@ -85,18 +85,18 @@ const Mobile = () => {
               {item.activeIcon && isActive && (
                 <item.activeIcon
                   className={cn(
-                    "!text-xs !size-7",
+                    "text-xs! size-7!",
                     isActive &&
-                      "[&>path]:!shadow-xl [&>path]:!shadow-foreground text-primary"
+                      "[&>path]:shadow-xl! [&>path]:shadow-foreground! text-primary"
                   )}
                 />
               )}
               {(!item.activeIcon || !isActive) && item.icon && (
               <item.icon
                 className={cn(
-                  "!text-xs !size-7",
+                  "text-xs! size-7!",
                   isActive &&
-                    "[&>path]:!shadow-xl [&>path]:!shadow-foreground text-primary"
+                    "[&>path]:shadow-xl! [&>path]:shadow-foreground! text-primary"
                 )}
               />
               )}
@@ -109,9 +109,9 @@ const Mobile = () => {
         <Button
           onClick={toggleSidebar}
           variant={"ghost"}
-          className="flex flex-col items-center text-muted-foreground gap-0 !w-fit flex-1 !h-full rounded-none !p-0 max-h-none min-w-0 hover:bg-transparent"
+          className="flex flex-col items-center text-muted-foreground gap-0 w-fit! flex-1 h-full! rounded-none p-0! max-h-none min-w-0 hover:bg-transparent"
         >
-          <IconDotsCircleHorizontal className={"!text-xs !size-7"} />
+          <IconDotsCircleHorizontal className={"text-xs! size-7!"} />
           <span className="text-[10px] text-wrap text-center">المزيد</span>
         </Button>
         {/* <SidebarTrigger className="-ml-1 h-9 w-9 rounded-full" /> */}
@@ -142,7 +142,7 @@ const Desktop = ({ isScrolled }: { isScrolled: boolean }) => (
         <Streaks value={0} />
       </div>
 
-      <Button className="md:w-32 bg-gradient-to-b from-yellow-500 to-yellow-600 text-white shadow transition-all duration-200 hover:scale-105 hover:from-yellow-400 hover:to-yellow-500 active:scale-95">
+      <Button className="md:w-32 bg-linear-to-b from-yellow-500 to-yellow-600 text-white shadow-sm transition-all duration-200 hover:scale-105 hover:from-yellow-400 hover:to-yellow-500 active:scale-95">
         ادعم المشروع
       </Button>
     </div>

@@ -32,7 +32,7 @@ function SearchCommand() {
   return (
     <>
       <button
-        className="inline-flex h-9 w-9 xs:w-full lg:w-[280px] mr-2 xs:mx-3 rounded-full xs:rounded-lg xs:border border-input hover:bg-accent xs:hover:bg-accent/50 bg-background px-2 xs:px-3 py-2 text-sm text-foreground shadow-none shadow-black/5 transition-shadow placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/20"
+        className="inline-flex h-9 w-9 xs:w-full lg:w-[280px] mr-2 xs:mx-3 rounded-full xs:rounded-lg xs:border border-input hover:bg-accent xs:hover:bg-accent/50 bg-background px-2 xs:px-3 py-2 text-sm text-foreground shadow-none shadow-black/5 transition-shadow placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:outline-hidden focus-visible:ring-[3px] focus-visible:ring-ring/20"
         onClick={() => setOpen(true)}
       >
         <span className="flex grow items-center w-full justify-center xs:justify-start">
