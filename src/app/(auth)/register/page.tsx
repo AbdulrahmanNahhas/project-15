@@ -94,7 +94,7 @@ const RegisterPage = () => {
   return (
     <div className="flex items-center justify-center min-h-screen">
       {/* Auth Card Container */}
-      <div className="w-full max-w-[500px] md:w-[500px] auth-card-shadow md:shadow-xl px-8 py-10 rounded-xl bg-background sm:border sm:my-10 duration-500">
+      <div className="w-full max-w-[500px] md:w-[500px] auth-card-shadow px-8 pt-8 pb-6 rounded-3xl border-primary bg-primary/1 sm:border sm:my-10 duration-500">
         {/* Logo Header */}
         <div className="text-3xl font-semibold h-10 flex items-center gap-1 mb-8 mx-auto">
           <Image
@@ -109,16 +109,16 @@ const RegisterPage = () => {
 
         {/* Registration Form */}
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <div className="space-y-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
               {/* Name Fields Container */}
-              <div className="md:flex block items-center gap-4 w-full space-y-6 md:space-y-0">
+              <div className="flex flex-col md:flex-row items-center gap-4 !w-full">
                 {/* First Name Field */}
                 <FormField
                   control={form.control}
                   name="first_name"
                   render={({ field }) => (
-                    <FormItem className="flex-1">
+                    <FormItem className="md:flex-1 flex flex-col gap-0 w-full">
                       <FormLabel>الأسم</FormLabel>
                       <FormControl>
                         <Input
@@ -126,7 +126,7 @@ const RegisterPage = () => {
                           disabled={isPending}
                           placeholder="اسمك الأول"
                           type="text"
-                          className="h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none outline-hidden! ring-0!"
+                          className="rounded-full bg-accent/50 hover:bg-accent placeholder:text-start h-10 duration-300 hover:border-foreground shadow-none !outline-border !ring-border focus:border-border"
                         />
                       </FormControl>
                       <FormMessage />
@@ -139,7 +139,7 @@ const RegisterPage = () => {
                   control={form.control}
                   name="last_name"
                   render={({ field }) => (
-                    <FormItem className="flex-1">
+                    <FormItem className="md:flex-1 flex flex-col gap-0 w-full">
                       <FormLabel>أسم العائلة</FormLabel>
                       <FormControl>
                         <Input
@@ -147,7 +147,7 @@ const RegisterPage = () => {
                           disabled={isPending}
                           placeholder="اسمك الاخير"
                           type="text"
-                          className="h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none outline-hidden! ring-0!"
+                          className="rounded-full bg-accent/50 hover:bg-accent placeholder:text-start h-10 duration-300 hover:border-foreground shadow-none !outline-border !ring-border focus:border-border"
                         />
                       </FormControl>
                       <FormMessage />
@@ -164,8 +164,8 @@ const RegisterPage = () => {
                   <FormItem>
                     <FormLabel>أسم الحساب</FormLabel>
                     <Popover>
-                      <PopoverTrigger className={cn(buttonVariants({variant: "outline", size: "icon"}), "p-1! w-6 h-6 text-xs shadow-none mr-1")}>؟</PopoverTrigger>
-                      <PopoverContent className="space-y-2">
+                      <PopoverTrigger className={cn(buttonVariants({variant: "outline", size: "icon"}), "p-1! size-5 border-border/50 cursor-pointer text-xs shadow-none mr-1")}>؟</PopoverTrigger>
+                      <PopoverContent className="flex flex-col gap-2" alignOffset={-90} align="start">
                         <h4 className="font-medium leading-none">الشروط</h4>
                         <FormDescription>
                           - يجب أن يحتوي فقط على أحرف أنجليزية
@@ -178,9 +178,9 @@ const RegisterPage = () => {
                     </Popover>
 
                     <FormControl>
-                      <div className="relative overflow-hidden group">
+                      <div className="relative overflow-hidden group rounded-full bg-accent/50">
                         <svg
-                          className="absolute px-0 py-3 h-10 w-8 border left-0 top-0 text-black bg-accent rounded-l-md group-hover:border-foreground duration-300"
+                          className="absolute px-0 py-3 h-10 w-10 border left-0 top-0 text-black bg-accent rounded-l-full group-hover:border-foreground duration-300"
                           stroke="currentColor"
                           fill="none"
                           strokeWidth="2"
@@ -201,7 +201,7 @@ const RegisterPage = () => {
                           placeholder="Username"
                           type="text"
                           lang="eng"
-                          className="h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none outline-hidden! ring-0! pl-10"
+                          className="h-10 duration-300 pl-12 rounded-r-full hover:border-foreground shadow-none !outline-border !ring-border focus:border-border"
                         />
                       </div>
                     </FormControl>
@@ -215,16 +215,16 @@ const RegisterPage = () => {
                 control={form.control}
                 name="email"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="flex flex-col gap-1">
                     <FormLabel>البريد إلكتروني</FormLabel>
-                    <FormControl>
+                    <FormControl >
                       <Input
                         style={{ direction: "ltr" }}
                         {...field}
                         disabled={isPending}
-                        placeholder="بريدك الإلكتروني"
+                        placeholder="example@gmail.com"
                         type="email"
-                        className="placeholder:text-end h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none outline-hidden! ring-0!"
+                        className="rounded-full bg-accent/50 hover:bg-accent placeholder:text-start h-10 duration-300 hover:border-foreground shadow-none !outline-border !ring-border focus:border-border"
                       />
                     </FormControl>
                     <FormMessage />
@@ -237,7 +237,7 @@ const RegisterPage = () => {
                 control={form.control}
                 name="password"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="flex flex-col gap-1">
                     <FormLabel>كلمة المرور</FormLabel>
                     <FormControl>
                       <Input
@@ -246,7 +246,7 @@ const RegisterPage = () => {
                         disabled={isPending}
                         placeholder="كلمة المرور الخاصة بك"
                         type="password"
-                        className="placeholder:text-end h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none outline-hidden! ring-0!"
+                        className="placeholder:text-end rounded-full bg-accent/50 hover:bg-accent h-10 duration-300 hover:border-foreground shadow-none !outline-border !ring-border focus:border-border"
                       />
                     </FormControl>
                     <FormMessage />
@@ -260,7 +260,7 @@ const RegisterPage = () => {
             <FormSuccess message={success} />
 
             {/* Submit Button */}
-            <Button type="submit" className="w-full" disabled={isPending}>
+            <Button type="submit" className="w-full rounded-full" disabled={isPending}>
               إنشاء حساب جديد
             </Button>
           </form>

@@ -90,7 +90,7 @@ const LoginPageContent = () => {
  return (
    <div className="flex items-center justify-center min-h-screen">
      {/* Auth Card Container */}
-     <div className="w-full max-w-md auth-card-shadow sm:shadow-xl px-8 py-10 rounded-xl bg-background sm:border duration-500 space-y-3">
+     <div className="w-full max-w-md auth-card-shadow px-8 pt-8 pb-6 rounded-3xl border-primary bg-primary/1 sm:border sm:my-10 duration-500 space-y-4">
        {/* Logo Header */}
        <div className="text-3xl font-semibold flex items-center gap-1 mx-auto flex-col mb-5!">
          <Image 
@@ -103,16 +103,9 @@ const LoginPageContent = () => {
          <span className="text-xl font-semibold whitespace-nowrap">مرحبًا بعودتك</span>
        </div>
 
-       {/* Social Login - Currently Disabled */}
-       <Social />
-
-       <div className="flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border mt-6!">
-         <span className="text-xs text-muted-foreground">أو</span>
-       </div>
-
        {/* Login Form */}
        <Form {...form}>
-         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+         <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-2">
            {/* Form Status Messages */}
            <FormError message={error} />
            <FormSuccess message={success} />
@@ -123,7 +116,7 @@ const LoginPageContent = () => {
              </div>
            )}
 
-           <div className="space-y-4">
+           <div className="flex flex-col gap-2">
              {/* Email Field */}
              <FormField
                control={form.control}
@@ -131,14 +124,14 @@ const LoginPageContent = () => {
                render={({ field }) => (
                  <FormItem>
                    <FormLabel>البريد إلكتروني</FormLabel>
-                   <FormControl>
+                   <FormControl className="mt-1.5">
                      <Input
                        {...field}
                        style={{ direction: "ltr" }}
                        disabled={isPending}
-                       placeholder="بريدك الإلكتروني"
+                       placeholder="example@gmail.com"
                        type="email"
-                       className="rounded-[0.5rem] placeholder:text-end h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none outline-hidden! ring-0!"
+                       className="rounded-full bg-accent/50 hover:bg-accent placeholder:text-start h-10 duration-300 hover:border-foreground shadow-none !outline-border !ring-border focus:border-border"
                      />
                    </FormControl>
                    <FormMessage />
@@ -153,14 +146,14 @@ const LoginPageContent = () => {
                render={({ field }) => (
                  <FormItem>
                    <FormLabel>كلمة المرور</FormLabel>
-                   <FormControl>
+                   <FormControl className="mt-1.5">
                      <Input
                        {...field}
                        style={{ direction: "ltr" }}
                        disabled={isPending}
                        placeholder="كلمة المرور الخاصة بك"
                        type="password"
-                       className="rounded-[0.5rem] placeholder:text-end h-10 duration-300 hover:border-foreground focus:border-foreground shadow-none outline-hidden! ring-0!"
+                       className="rounded-full bg-accent/50 hover:bg-accent placeholder:text-end h-10 duration-300 hover:border-foreground shadow-none !outline-border !ring-border focus:border-border"
                      />
                    </FormControl>
                    <FormMessage />
@@ -182,7 +175,7 @@ const LoginPageContent = () => {
            {/* Submit Button */}
            <Button 
              type="submit" 
-             className={`w-full rounded-[0.5rem] h-10 border border-primary ${(!form.formState.isValid) ? 'opacity-50 cursor-not-allowed' : ''}`} 
+             className={`w-full rounded-full h-10 border border-primary ${(!form.formState.isValid) ? 'opacity-50 cursor-not-allowed' : ''}`} 
              disabled={isPending || (!form.formState.isValid)}
            >
              تسجيل الدخول
@@ -190,18 +183,22 @@ const LoginPageContent = () => {
          </form>
        </Form>
 
-       {/* Sign Up Link */}
-       <div className="flex items-center justify-center">
-         <Link
-           href="/register"
-           className="text-xs text-muted-foreground hover:underline hover:opacity-75 font-light"
-         >
-           ليس لديك حساب؟ إنشاء حساب
-         </Link>
+       <div className="flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border mt-4!">
+         <span className="text-xs text-muted-foreground">أو</span>
        </div>
+       <Social />
+
+       {/* Sign Up Link */}
+        <Link
+          href="/register"
+          className="flex items-center justify-center text-xs text-muted-foreground hover:underline hover:opacity-75 font-light"
+        >
+          ليس لديك حساب؟ إنشاء حساب
+        </Link>
      </div>
    </div>
 );};
+
 const LoginPage = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>

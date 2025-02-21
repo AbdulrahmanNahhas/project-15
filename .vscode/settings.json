@@ -8,7 +8,6 @@
     "**/Thumbs.db": true,
     "node_modules": true,
     ".vscode": true,
-    ".gitignore": true,
     "next-env.d.ts": true,
     "README.md": true,
     "eslint.config.mjs": true,
@@ -20,7 +19,6 @@
   "hide-files.files": [
     "node_modules",
     ".vscode",
-    ".gitignore",
     "next-env.d.ts",
     "README.md",
     "eslint.config.mjs",

@@ -224,17 +224,15 @@
 .\!ltr {
   direction: ltr !important;
 }
-@media (min-width: 768px) {
+@media (width >= 48rem /* 768px */) {
   .md\:ltr {
     direction: ltr !important;
   }
-}
-@media (min-width: 768px) {
   .md\:rtl {
     direction: rtl !important;
   }
 }
-@media (min-width: 1152px) {
+@media (width >= 72rem /* 1152px */) {
   .container {
     max-width: 1152px;
   }
@@ -250,11 +248,8 @@
 }
 
 /* Fix Shadows */
-.auth-card-shadow {
-  --tw-shadow: 0 0 80px -12px rgb(0 0 0 / 0.1) !important;
-  --tw-shadow-colored: 0 0 80px -12px var(--tw-shadow-color) !important;
-  --tw-shadow-color: hsl(var(--primary) / 0.5) !important;
-  --tw-shadow: var(--tw-shadow-colored) !important;
-
-  filter: drop-shadow(rgba(0, 0, 0, 0.05) 0px 1px 1px) imo !important;
+@media (width >= 40rem /* 640px */) {
+  .auth-card-shadow {
+    box-shadow: hsl(var(--primary) / 0.5) 0 0 15px 1px !important;
+  }
 }

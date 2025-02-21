@@ -20,7 +20,7 @@ export const Social = ({ className }: { className?: string }) => {
       <Button
         disabled
         size="lg"
-        className="w-full gap-1 shadow-none"
+        className="w-full gap-1 shadow-none rounded-full"
         variant="outline"
         onClick={() => onClick("google")}
       >
@@ -65,7 +65,7 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
       <div className="flex items-center w-full gap-x-2">
         <Button
           size="lg"
-          className="flex-1 gap-2 px-0 shadow-none"
+          className="flex-1 gap-2 px-0 shadow-none rounded-full"
           variant="outline"
           // onClick={() => onClick("google")}
           disabled
@@ -93,9 +93,9 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
           فيسبوك
         </Button>
         <Button
-          className="gap-2 px-0 shadow-none w-12"
+          className="gap-2 px-0 shadow-none rounded-full !w-10 !h-10"
           variant="outline"
-          size="lg"
+          size="icon"
           // onClick={() => onClick("google")}
           disabled
         >
@@ -111,9 +111,9 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
           </svg>
         </Button>
         <Button
-          className="gap-2 px-0 shadow-none w-12"
+          className="gap-2 px-0 shadow-none rounded-full !w-10 !h-10"
           variant="outline"
-          size="lg"
+          size="icon"
           // onClick={() => onClick("google")}
           disabled
         >
@@ -133,7 +133,7 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
         </Button>
         <Button
           size="lg"
-          className="flex-1 gap-2 px-0 shadow-none"
+          className="flex-1 gap-2 px-0 shadow-none rounded-full"
           variant="outline"
           // onClick={() => onClick("google")}
           disabled
