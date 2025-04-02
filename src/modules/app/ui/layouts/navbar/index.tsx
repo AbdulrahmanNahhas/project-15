@@ -92,13 +92,13 @@ const Mobile = () => {
                 />
               )}
               {(!item.activeIcon || !isActive) && item.icon && (
-              <item.icon
-                className={cn(
-                  "text-xs! size-7!",
-                  isActive &&
-                    "[&>path]:shadow-xl! [&>path]:shadow-foreground! text-primary"
-                )}
-              />
+                <item.icon
+                  className={cn(
+                    "text-xs! size-7!",
+                    isActive &&
+                      "[&>path]:shadow-xl! [&>path]:shadow-foreground! text-primary"
+                  )}
+                />
               )}
               <span className="text-[10px] text-wrap text-center">
                 {item.title}
@@ -123,28 +123,30 @@ const Mobile = () => {
 const Desktop = ({ isScrolled }: { isScrolled: boolean }) => (
   <header
     className={cn(
-      "z-50 sticky top-0 bg-background py-2 h-16 shrink-0 items-center justify-between px-4 transition-[width,height] ease-linear hidden md:flex",
+      "z-50 sticky top-0 bg-background py-2 h-16 shrink-0 px-4 transition-[width,height] ease-linear w-full flex items-center justify-center",
       isScrolled && "border-b"
     )}
   >
-    <div className="flex items-center gap-0">
-      <SidebarTrigger className="-ml-1 h-9 w-9 rounded-full" />
-      <SearchCommand />
-    </div>
-
-    <div className="flex items-center gap-2">
-      <div className="flex items-center gap-0.5">
-        <Points
-          value={886}
-          todayPoints={13}
-          weeklyPoints={[5, 8, 12, 3, 7, 10, 13]}
-        />
-        <Streaks value={0} />
+    <div className="container w-full hidden md:flex items-center justify-between mx-auto">
+      <div className="flex items-center gap-0">
+        <SidebarTrigger className="-ml-1 h-9 w-9 rounded-full" />
+        <SearchCommand />
       </div>
 
-      <Button className="md:w-32 bg-linear-to-b from-yellow-500 to-yellow-600 text-white shadow-sm transition-all duration-200 hover:scale-105 hover:from-yellow-400 hover:to-yellow-500 active:scale-95">
-        ادعم المشروع
-      </Button>
+      <div className="flex items-center gap-2">
+        <div className="flex items-center gap-0.5">
+          <Points
+            value={886}
+            todayPoints={13}
+            weeklyPoints={[5, 8, 12, 3, 7, 10, 13]}
+          />
+          <Streaks value={0} />
+        </div>
+
+        <Button className="md:w-32 bg-linear-to-b from-yellow-500 to-yellow-600 text-white shadow-sm transition-all duration-200 hover:scale-105 hover:from-yellow-400 hover:to-yellow-500 active:scale-95">
+          ادعم المشروع
+        </Button>
+      </div>
     </div>
   </header>
 );

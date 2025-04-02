@@ -94,7 +94,7 @@ const RegisterPage = () => {
   return (
     <div className="flex items-center justify-center min-h-screen">
       {/* Auth Card Container */}
-      <div className="w-full max-w-[500px] md:w-[500px] auth-card-shadow px-8 pt-8 pb-6 rounded-3xl border-primary bg-primary/1 sm:border sm:my-10 duration-500">
+      <div className="w-full max-w-[500px] md:w-[500px] auth-card-shadow px-8 pt-8 pb-6 rounded-3xl border-primary bg-background sm:border sm:my-10 duration-500">
         {/* Logo Header */}
         <div className="text-3xl font-semibold h-10 flex items-center gap-1 mb-8 mx-auto">
           <Image

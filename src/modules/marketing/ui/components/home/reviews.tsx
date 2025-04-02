@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import Marquee from "@/components/common/marquee";
+import {Marquee} from "@/components/common/marquee";
 import { Card, CardContent, CardHeader } from "@ui//card";
 import Image from "next/image";
 // import Image from "next/image";
@@ -235,7 +235,7 @@ export function Reviews() {
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:50s]">
+      <Marquee direction="right" pauseOnHover className="[--duration:50s]">
         {secondRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}

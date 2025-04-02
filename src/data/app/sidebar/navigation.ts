@@ -106,12 +106,12 @@ export const navigationData = {
       items: [
         {
           name: "التقدم",
-          url: "#",
+          url: "/analytics",
           icon: IconChartLine,
         },
         {
           name: "الإنجازات",
-          url: "#",
+          url: "/achievements",
           icon: IconAward,
         },
         // {

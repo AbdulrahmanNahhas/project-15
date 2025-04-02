@@ -1,98 +1,156 @@
-import { IconCalculator, IconRuler, IconAtom, IconFlask, IconGlobe, IconHistory, IconMoon, IconDeviceDesktop, IconStar, IconLanguage, IconWorld, IconBrush } from "@tabler/icons-react";
-import { JSX } from "react";
+import type { ReactNode } from "react"
+import {
+  CalculatorIcon,
+  RulerIcon,
+  AtomIcon,
+  FlaskConicalIcon,
+  GlobeIcon,
+  MoonIcon,
+  BrushIcon,
+  StarIcon,
+  HistoryIcon,
+} from "lucide-react"
 
-interface Subject {
-  id: number;
-  title: string;
-  description?: string;
-  icon: JSX.Element;
-  color: string;
+export interface Subject {
+  id: number
+  title: string
+  icon: ReactNode
+  color: string
+  unitsCount: number
+  lessonsCount: number
+  teacherName: string
+  nextLesson?: string
+  lastUpdate?: string
+  progress: number
+  group: string
+  examDate?: string
 }
 
 export const subjects: Subject[] = [
   {
     id: 1,
     title: "الجبر",
-    icon: <IconCalculator className=" size-16" />,
-    color: "#2A84EF", // Blue
-    description: "استكشف مفاهيم الجبر المتقدمة.",
+    icon: <CalculatorIcon className="size-full" />, 
+    color: "#2A84EF", 
+    unitsCount: 8,
+    lessonsCount: 24,
+    teacherName: "د. أحمد محمد",
+    nextLesson: "المعادلات التفاضلية",
+    lastUpdate: "أمس",
+    progress: 65,
+    group: "رياضيات",
+    examDate: "15 مايو",
   },
   {
     id: 2,
     title: "الهندسة",
-    icon: <IconRuler className=" size-16" />,
-    color: "#2A84EF", // Blue (same as Algebra)
-    description: "تعلم هندسة المستويات والمجسمات.",
+    icon: <RulerIcon className="size-full" />, 
+    color: "#2A84EF", 
+    unitsCount: 6,
+    lessonsCount: 18,
+    teacherName: "د. سارة علي",
+    nextLesson: "نظرية فيثاغورس",
+    lastUpdate: "3 أيام",
+    progress: 42,
+    group: "رياضيات",
+    examDate: "20 مايو",
   },
   {
     id: 3,
     title: "الفيزياء",
-    icon: <IconAtom className=" size-16" />,
-    color: "#7944E3", // Amber
-    description: "تعرف على المبادئ الأساسية للفيزياء.",
+    icon: <AtomIcon className="size-full" />, 
+    color: "#7944E3", 
+    unitsCount: 7,
+    lessonsCount: 21,
+    teacherName: "د. محمد خالد",
+    nextLesson: "قوانين نيوتن للحركة",
+    lastUpdate: "اليوم",
+    progress: 78,
+    group: "علوم",
+    examDate: "12 مايو",
   },
   {
     id: 4,
     title: "الكيمياء",
-    icon: <IconFlask className=" size-16" />,
-    color: "#7944E3", // Amber (same as Physics)
-    description: "تعرف على المبادئ الأساسية للكيمياء.",
+    icon: <FlaskConicalIcon className="size-full" />, 
+    color: "#7944E3", 
+    unitsCount: 5,
+    lessonsCount: 15,
+    teacherName: "د. فاطمة حسن",
+    nextLesson: "الجدول الدوري للعناصر",
+    lastUpdate: "أسبوع",
+    progress: 55,
+    group: "علوم",
+    examDate: "25 مايو",
   },
   {
     id: 5,
     title: "علم الأحياء والأرض",
-    icon: <IconWorld className=" size-16" />,
-    color: "#7944E3", // Green
-    description: "اكتشف عالم الأحياء وعلم الأرض.",
+    icon: <GlobeIcon className="size-full" />, 
+    color: "#7944E3", 
+    unitsCount: 9,
+    lessonsCount: 27,
+    teacherName: "د. نور الدين",
+    nextLesson: "النظام البيئي",
+    lastUpdate: "يومين",
+    progress: 90,
+    group: "علوم",
+    examDate: "18 مايو",
   },
   {
     id: 6,
     title: "التربية الاسلامية",
-    icon: <IconMoon className=" size-16" />,
-    color: "#1D4ED8", // Deep Blue
-    description: "تعلم القيم الدينية والمبادئ الإسلامية.",
+    icon: <MoonIcon className="size-full" />, 
+    color: "#1D4ED8", 
+    unitsCount: 4,
+    lessonsCount: 12,
+    teacherName: "د. عبد الله",
+    nextLesson: "السيرة النبوية",
+    lastUpdate: "5 أيام",
+    progress: 85,
+    group: "دراسات إسلامية",
+    examDate: "10 مايو",
   },
   {
     id: 7,
     title: "التربية الفنية",
-    icon: <IconBrush className=" size-16" />,
-    color: "#EC4899", // Pink
-    description: "تنمية المهارات الفنية والإبداعية.",
+    icon: <BrushIcon className="size-full" />, 
+    color: "#EC4899", 
+    unitsCount: 3,
+    lessonsCount: 9,
+    teacherName: "أ. ليلى كريم",
+    nextLesson: "الرسم بالألوان المائية",
+    lastUpdate: "أسبوعين",
+    progress: 70,
+    group: "فنون",
+    examDate: "غير محدد",
   },
   {
     id: 8,
     title: "الثورة السورية",
-    icon: <IconStar className=" size-16" />,
-    color: "#12B06F", // Cool Gray
-    description:
-      "تعلم عن حقائق الثورة السورية العظيمة التي بدأت عام 2011 وما زالت مستمرة إلى يومنا هذا.",
+    icon: <StarIcon className="size-full" />, 
+    color: "#12B06F", 
+    unitsCount: 6,
+    lessonsCount: 18,
+    teacherName: "د. عمر سليم",
+    nextLesson: "أحداث عام 2011",
+    lastUpdate: "3 أيام",
+    progress: 60,
+    group: "دراسات اجتماعية",
+    examDate: "22 مايو",
   },
   {
     id: 9,
-    title: "التاريخ",
-    icon: <IconHistory className=" size-16" />,
-    color: "#12B06F", // Warm Brown
-    description: "تعرف على تاريخ الأمة الإسلامية.",
+    title: "تاريخ",
+    icon: <HistoryIcon className="size-full" />, 
+    color: "#12B06F", 
+    unitsCount: 7,
+    lessonsCount: 21,
+    teacherName: "د. حسن علي",
+    nextLesson: "العصر العباسي",
+    lastUpdate: "أسبوع",
+    progress: 45,
+    group: "دراسات اجتماعية",
+    examDate: "30 مايو",
   },
-  {
-    id: 10,
-    title: "جغرافية الوطن العربي",
-    icon: <IconGlobe className=" size-16" />,
-    color: "#10B981", // Emerald Green
-    description: "استكشاف جغرافية الوطن العربي وسوريا.",
-  },
-  {
-    id: 11,
-    title: "تكنولوجيا المعلومات",
-    icon: <IconDeviceDesktop className=" size-16" />,
-    color: "#4A152F", // Teal
-    description: "تعلم أساسيات تكنولوجيا المعلومات والاتصالات.",
-  },
-  {
-    id: 12,
-    title: "اللغة الانكليزية",
-    icon: <IconLanguage className=" size-16" />,
-    color: "#F06013", // Indigo
-    description: "تعلم أساسيات اللغة الإنجليزية.",
-  },
-];
+]

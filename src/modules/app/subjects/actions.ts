@@ -10,7 +10,7 @@ export async function getSubjects() {
 
   const { data, error } = await supabase
     .from("subjects")
-    .select("id, title, description")
+    .select("id, title, group, color, lastupdate") // icon
     .eq("grade_id", user.grade_id);
     
   if (error) {

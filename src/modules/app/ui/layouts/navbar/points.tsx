@@ -1,11 +1,12 @@
 "use client"
 
 import * as React from "react"
-import { Hexagon, X } from "lucide-react"
+import { X } from "lucide-react"
 import { Popover, PopoverContent, PopoverTrigger } from "@ui//popover"
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger, DrawerClose } from "@ui//drawer"
 import { buttonVariants } from "@ui//button"
 import { cn } from "@/lib/utils"
+import { StarFilledIcon } from "@radix-ui/react-icons"
 
 interface PointsProps {
   value?: number
@@ -59,8 +60,8 @@ export function Points({
   
   const PointsTrigger = () => (
     <>
-      <Hexagon className="size-5! text-primary fill-primary" />
-      <Hexagon className="size-2.5! text-background group-hover:fill-accent group-hover:text-accent fill-background absolute top-[9px] right-[13px]" />
+      <StarFilledIcon className="size-5! text-primary fill-primary" />
+      <StarFilledIcon className="size-2.5! text-background group-hover:fill-accent group-hover:text-accent fill-background absolute top-[9px] right-[13px]" />
       <span>{value}</span>
     </>
   )
@@ -68,7 +69,7 @@ export function Points({
   const DesktopView = () => (
     <div className="hidden md:block">
       <Popover>
-        <PopoverTrigger className={cn("flex gap-1 text-lg relative px-2! py-1! h-7! group", buttonVariants({variant: "ghost"}))}>
+        <PopoverTrigger className={cn("flex gap-1! text-lg relative px-2! py-1! h-7! group", buttonVariants({variant: "ghost"}))}>
           <PointsTrigger/>
         </PopoverTrigger>
         <PopoverContent className="w-auto p-6" align="center" side="bottom" alignOffset={0} sideOffset={10}>

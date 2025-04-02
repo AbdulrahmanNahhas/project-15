@@ -3,6 +3,7 @@ import { Noto_Kufi_Arabic } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/components/context/auth-context";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/context/theme-provider";
 
 const notoKufiArabic = Noto_Kufi_Arabic({
   variable: "--font-kufi",
@@ -24,11 +25,18 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ar" suppressHydrationWarning>
       <body className={`${notoKufiArabic.variable}`}>
         <AuthProvider>
-          <Toaster />
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            // disableTransitionOnChange
+          >
+            <Toaster />
+            {children}
+          </ThemeProvider>
         </AuthProvider>
       </body>
     </html>

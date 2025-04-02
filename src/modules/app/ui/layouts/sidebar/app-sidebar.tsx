@@ -17,6 +17,7 @@ import { NavGroup } from "@/modules/app/ui/layouts/sidebar/nav-group";
 import { navigationData } from "@/data/app/sidebar/navigation";
 import { NavUser } from "./nav-user";
 import { usePathname } from "next/navigation";
+import config from "@/data/config";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { setOpenMobile } = useSidebar();
@@ -42,7 +43,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </div>
             <div className="flex flex-col gap-0.5 leading-none">
               <span className="font-semibold">المنصة السورية</span>
-              <span className="text-start text-xs">v1.0.0</span>
+              <span className="text-start text-xs">v{config.version}</span>
             </div>
           </Link>
         </SidebarMenuButton>

@@ -37,7 +37,7 @@ const INITIAL_GOALS: Goal[] = [
   { id: "3", title: "حل اختبار في الفيزياء", isCompleted: true },
 ];
 
-export function ActivityCard() {
+const ActivityCard = ({className}: {className?: string})=> {
   const [goals, setGoals] = useState<Goal[]>(INITIAL_GOALS);
 
   const handleToggleGoal = (goalId: string) => {
@@ -65,7 +65,8 @@ export function ActivityCard() {
     <div
       className={cn(
         "relative h-fit rounded-3xl p-6 bg-background border text-right rtl",
-        "transition-all duration-300 bg-accent/25 hover:bg-accent/0"
+        "transition-all duration-300 bg-accent/25 hover:bg-accent/0",
+        className
       )}
     >
       {/* العنوان */}
@@ -192,3 +193,5 @@ export function ActivityCard() {
     </div>
   );
 }
+
+export {ActivityCard};

@@ -90,7 +90,7 @@ const LoginPageContent = () => {
  return (
    <div className="flex items-center justify-center min-h-screen">
      {/* Auth Card Container */}
-     <div className="w-full max-w-md auth-card-shadow px-8 pt-8 pb-6 rounded-3xl border-primary bg-primary/1 sm:border sm:my-10 duration-500 space-y-4">
+     <div className="w-full max-w-md auth-card-shadow px-8 pt-8 pb-6 rounded-3xl border-primary bg-background sm:border sm:my-10 duration-500 space-y-4">
        {/* Logo Header */}
        <div className="text-3xl font-semibold flex items-center gap-1 mx-auto flex-col mb-5!">
          <Image 

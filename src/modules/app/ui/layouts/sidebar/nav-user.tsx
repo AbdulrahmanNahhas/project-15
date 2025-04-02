@@ -50,9 +50,9 @@ export function NavUser({ texts = true }: { texts?: boolean }) {
 
     return (
       <>
-        <Avatar className="size-10 rounded-lg">
+        <Avatar className="size-10 rounded-lg flex items-center justify-center">
           <AvatarImage src={user.avatar} alt={user.username} />
-          <AvatarFallback className="rounded-lg">
+          <AvatarFallback className="rounded-lg flex items-center justify-center w-full h-full">
             <IconUserFilled />
           </AvatarFallback>
         </Avatar>
@@ -94,9 +94,11 @@ export function NavUser({ texts = true }: { texts?: boolean }) {
                   الملف الشخصي
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              <DropdownMenuItem asChild>
+              <Link href={`/settings`}>
                 <Settings2Icon className="mr-2" />
                 الإعدادات
+              </Link>
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
